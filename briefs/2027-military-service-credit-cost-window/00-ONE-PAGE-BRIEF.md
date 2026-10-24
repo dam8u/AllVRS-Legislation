@@ -10,7 +10,15 @@
        See 04-Annex-2-Closure-FM1-FM5.md, FM-4 sections 4.4 and 4.6.
      The "General fund cost: $0" line is UNAFFECTED and remains correct.
      00-ONE-PAGE-BRIEF.pdf has NOT been regenerated and is stale.
-     Owner for the revision: MOO-288 / VRS Counsel.
+
+     STATUS as of October 24, 2026 (MOO-293):
+       - The FULL brief (01) has been updated to v1.2 and carries the
+         corrected figure. This one-pager has NOT, deliberately.
+       - How to present a tens-of-millions present-value liability against a
+         $0 general fund ask is a political judgment, not a modelling one.
+         Three framings have been put to the board/JLCVSO for decision.
+       - This file and the PDF stay frozen until that decision lands.
+     Owner for the revision: Fiscal & Impact Modeler, on the board's answer.
      ============================================================ -->
 
 # Let veteran state employees buy their military retirement credit at a fair price

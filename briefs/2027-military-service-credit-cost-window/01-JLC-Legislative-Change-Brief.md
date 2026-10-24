@@ -161,6 +161,19 @@ The payroll denominator is **$26,762,817,000** — Annual Covered Payroll across
 
 **The single input that would most narrow this range is historical take-up**, which VRS holds and nobody else does. The grid spans a factor of 14, and roughly 6 of that 14 is take-up alone. Prior-service purchase take-up is generally low because members must fund it from pay; if VRS's actual § 51.1-142.2 experience is in the low single digits, the honest headline is the bottom row.
 
+### Who bears it — three figures, never one
+
+Because JLCVSO decided against a local opt-in, the exposure splits across three sets of employers, and it should always be presented that way. **Local exposure flows through political-subdivision employer rates under § 51.1-145 and never touches the general fund.** At 20% take-up:
+
+| Who bears the employer-rate consequence | Eligible pool | Present value at 20% take-up |
+|---|---|---|
+| **State agencies** — state employees, SPORS, VaLORS, JRS | 4,113 – 8,099 | **$20.3M – $39.9M** |
+| **Teachers** — school divisions, shared with the Commonwealth through the Standards of Quality | 2,699 – 6,768 | **$13.3M – $33.3M** |
+| **Political subdivisions** — § 51.1-145 rates, **no general fund** | 4,753 – 9,169 | **$23.4M – $45.2M** |
+| **Total** | 11,565 – 24,036 | **$57.0M – $118.4M** |
+
+Two things to be straightforward about. The teacher line is **not** split between the Commonwealth and localities, because that requires the Standards of Quality composite share, which is a DPB budget input rather than a VRS one — JLCVSO should ask DPB for it rather than let anyone assume it. And the **political-subdivision line is the largest of the three**, arriving without a local opt-in. That is the number the Commission on Local Government will read first, and it is the most likely source of organised opposition. Brief them before filing, not after.
+
 ### The cross-check that matters most
 
 **VRS has already priced a more generous version of this bill, and our figures come in below it.**
@@ -221,10 +234,16 @@ All of these run upward, and all should be put to VRS:
 
 If the price never expires, a member could wait until the eve of retirement and buy credit only when it is obviously profitable — for example, to cross the Rule of 90 or to reach the 15-year threshold for the retiree health insurance credit. That is called adverse selection and it is the objection VRS is most likely to raise.
 
-The draft bill in Annex A answers it directly, with two guardrails that cost veterans nothing:
+Because JLCVSO decided on **immediate access on the effective date**, the actuary will price an unbounded cohort — which puts the entire weight of adverse-selection control on the guardrails. The draft bill in Annex A offers two, and they do very different amounts of work:
 
-- **The Board may require any military purchase to be completed at least 12 months before the member's effective date of retirement.** No eve-of-retirement purchases.
+- **The Board may require any military purchase to be completed at least 12 months before the member's effective date of retirement.** A clean anti-gaming rule that costs veterans almost nothing. But it caps the exposure by only about **3%–4%**, because the actuarial multiple is a smooth function of age — there is no cliff in it to cut off. Worth having; not a cost control.
 - **The Board may set the normal-cost rate for military purchases as a schedule that varies by the member's age.** An older member pays a somewhat higher rate — still a published, predictable, affordable rate rather than a bespoke actuarial bill.
+
+> **The most important drafting finding in this package, and it is one phrase long.** Priced as a dial, the **age-graded** schedule removes only about **15%** of the exposure even when turned all the way up. Grading on age recovers the benefit-*amount* excess, but the dominant cost driver is retirement-date acceleration — and acceleration is driven by proximity to an eligibility *threshold*, which is age **and service** together. A 55-year-old with 25 years of service and a 55-year-old with 8 years would pay the identical age-graded rate while costing the Fund very different amounts.
+>
+> Express the same authority as varying by the member's **age and creditable service**, or by the member's **distance from unreduced retirement eligibility**, and the dial bites: at 50% recovery it **halves** the exposure ($57.0M → $28.5M at 20% take-up); at 100% the bill is actuarially neutral by construction and the fiscal note is **zero**.
+>
+> This is a drafting change, not a policy change — still a published schedule, still predictable, still no individualised actuarial bill handed to a veteran. **It is the single most powerful cost control available, it should be in the bill as filed, and it is the first thing to offer the money committees.** If only one guardrail survives negotiation, it must be this one. (Annex 2 Closure, FM-4 § 4.8. **Referred to VRS counsel and the Division of Legislative Services for the Annex A redraft.**)
 
 **A point of accuracy about the actuarial price.** VRS **does not publish** the actuarial equivalent cost rate: the published *Purchase of Prior Service Cost Rates* charts say only "Actuarial Cost" in every post-window cell, with no factor table, no age grading and no worked example. But the rate basis exists. The Board's own minutes of June 18, 2025 record that "the **actuarial equivalent cost rates are developed by the Plan Actuary** based on the assumptions and demographic data from the prior year valuations" — rates, plural, refreshed annually by Gabriel, Roeder, Smith & Company. So this is a **requestable document**, not a per-member computation that would have to be commissioned, and JLCVSO should ask for it by that description.
 
@@ -238,7 +257,7 @@ The draft bill in Annex A answers it directly, with two guardrails that cost vet
 
 2. **Let veterans pay over up to 60 months** through payroll deduction, instead of being capped at 12 months inside a closing window. This fixes the cash-flow problem that is the real barrier, and it costs the retirement system nothing.
 
-3. **Give the VRS Board two guardrails** against eve-of-retirement purchases: authority to set an age-graded normal-cost schedule for military purchases, and authority to require that a purchase be completed at least 12 months before retirement.
+3. **Give the VRS Board two guardrails** against eve-of-retirement purchases: authority to set a graded normal-cost schedule for military purchases **varying by the member's age and creditable service — or equivalently by distance from unreduced retirement eligibility, not by age alone** — and authority to require that a purchase be completed at least 12 months before retirement. The wording of the first guardrail is the difference between removing 15% of the exposure and being able to remove all of it; see the fiscal risk discussion above. **The Annex A draft still says "age," and needs this one-phrase amendment before it goes to Legislative Services.**
 
 **No regulatory change is required.** The pricing rule is in statute, so it takes a bill. Once the statute is amended, the VRS Board already has authority to set the applicable normal-cost rate "in its sole discretion," so VRS can implement the rate schedule administratively.
 
@@ -279,8 +298,10 @@ Two fallbacks, in order of preference:
 2. **Decide how the cost is presented to legislators.** The present-value liability is in the tens of millions while the general fund ask is, correctly, $0. Both statements are true; which one leads is a political judgment, not a modelling one. **This is an open board decision and the printed one-page leave-behind is on hold until it is taken.**
 3. **Pick a price structure** — A-1, A-2 or A-3 — with the interest-rate trade-off above in view. The draft bill currently implements A-3.
 4. **Pre-brief VRS staff** and request a preliminary cost estimate before filing. The Board's impact statement under § 30-19.1:7 will shape the bill's fate more than anything else. Annex 2 Closure, FM-1 § 1.7, contains a drafted eight-item data request ready to send; item 5 (historical take-up) is the single input that would most narrow the cost range.
-5. **Identify patrons** on House Appropriations and Senate Finance & Appropriations, plus the chair of the Military and Veterans Caucus.
-6. **Send Annex A to the Division of Legislative Services** for formal drafting, with the 10.01% alternate hazardous duty drafting note above.
+5. **Ask DPB for the Standards of Quality composite share** so the teacher line of the exposure table can be split between the Commonwealth and localities. It is a budget input, not a VRS one, and this brief deliberately does not assume it.
+6. **Brief the Commission on Local Government** before filing. The political-subdivision line is the largest of the three and arrives without a local opt-in.
+7. **Identify patrons** on House Appropriations and Senate Finance & Appropriations, plus the chair of the Military and Veterans Caucus.
+8. **Amend Annex A's rate-schedule authority from "age" to "age and creditable service"** — see item 3 of the recommendation — and then **send Annex A to the Division of Legislative Services** for formal drafting, with the 10.01% alternate hazardous duty note above.
 
 ---
 
