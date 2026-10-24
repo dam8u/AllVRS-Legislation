@@ -186,6 +186,22 @@ A third option, if VRS insists: require a minimum period of membership service (
 
 **For JLCVSO — policy decisions needed before filing:**
 
+> **Q10 and Q11 were decided by JLCVSO on October 24, 2026.**
+>
+> - **Q10 — Scope: all VRS members, no local opt-in.** The current draft already does
+>   this; **no conforming amendment is required.** Note the two consequences JLCVSO has
+>   accepted: (1) political subdivisions bear the cost through their own § 51.1-145
+>   employer rates, so the Commission on Local Government will receive and may comment
+>   adversely on the § 30-19.1:7 impact statement; (2) **the fiscal estimate in Annex B
+>   covers the state classified workforce only** and must be re-scoped to the full active
+>   membership before filing. Flagged to the Fiscal & Impact Modeler and to VRS.
+> - **Q11 — Transition: immediate access on the effective date.** The current draft already
+>   does this; no amendment required. The actuary will therefore price an unbounded
+>   cohort, which raises the importance of the two adverse-selection guardrails in § 2.2.
+> - **Q12 — Concession ladder: still open.** Decide before the bill is heard.
+>
+> The original analysis of each option is preserved below for the record.
+
 - **Q10. Scope.** State employees only, or also teachers and political subdivision employees? Because § 51.1-142.2 applies to all VRS members, the draft as written reaches **all three**. Local governments set their own contribution rates under § 51.1-145, so including them imposes cost on localities and will draw comment from the Commission on Local Government in the § 30-19.1:7 statement. **Options:** (a) all members (current draft, broadest coalition, most opposition); (b) state employees only (narrowest, but creates a new inequity between state and local veteran employees); (c) all members, with an opt-in resolution requirement for political subdivisions, following the pattern already used in § 51.1-153 B 4. **Option (c) is the recommended compromise** and the draft can be conformed to it readily.
 - **Q11. Transition.** Should current employees already past the window gain access on the effective date, or through a defined one-time enrollment period? Immediate access is simpler and is what the current draft provides; a defined period gives the actuary a bounded cohort to price, which may produce a friendlier impact statement.
 - **Q12. Concession ladder.** Confirm in advance which of these JLCVSO is willing to trade: the 60-month payment term, the age-graded rate schedule, the 12-month pre-retirement deadline, a minimum membership service requirement, or a reduction of the military cap below four years. *Decide this before the bill is heard, not during the hearing.*
@@ -215,6 +231,6 @@ A third option, if VRS insists: require a minimum period of membership service (
 | Fiscal estimate | **Analyst estimate only.** Requires VRS actuarial confirmation (Q1–Q5). Assumptions in Annex B. |
 | Stakeholder analysis (VRS, DHRM, localities, employee associations) | **Not started.** |
 | Red team / adversarial counsel review | **Not started.** |
-| JLCVSO policy decisions Q10–Q12 | **Pending.** |
+| JLCVSO policy decisions Q10–Q12 | **Q10 (scope: all members, no opt-in) and Q11 (transition: immediate) decided October 24, 2026 — draft already conforms. Q12 (concession ladder) still open.** |
 
 This annex is not final and must not be presented as final until the VRS actuarial figures are in hand and the red-team review records a verdict.

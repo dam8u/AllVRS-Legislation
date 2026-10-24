@@ -38,25 +38,30 @@ same four years of military credit than the brand-new hire down the hall. Same s
 the country, same credit, different price — and the only difference is how long they have
 worked for Virginia.
 
-**Who it helps:** about **3,400** veterans now working for the Commonwealth, plus roughly
-**600** more hired every year.
+**Who it helps:** every veteran in VRS — state employees, teachers, and local government
+employees. About **3,400** of them work in the state classified workforce today, plus
+roughly **600** more hired every year. (That is the one group with a verified veteran
+count.)
 
 ---
 
 ## COST
 
-**Under $2 million one time. Under $100,000 a year after that. No general fund money.**
+**Very small, and no general fund money.** The bill does not create a new benefit — it
+only changes a price and a payment schedule.
 
-That one-time figure is about **5 cents out of every $100** of a single year's classified
-state payroll.
+For the state workforce, the cost is **under $2 million one time and under $100,000 a year**
+after that — about **5 cents out of every $100** of a single year's payroll. Because the
+bill also covers teachers and local employees, the statewide dollar figure is larger, but
+it stays the same tiny share of payroll.
 
-It is small because most veterans already pay close to full value. Everyone hired since
-2014 is in the Hybrid plan, where a year of credit is worth only 1% of pay — so the
+It is small because most veterans already pay close to full value today. Everyone hired
+since 2014 is in the Hybrid plan, where a year of credit is worth only 1% of pay — so the
 regular price nearly covers the real cost already.
 
-> These are JLCVSO analyst estimates built from published VRS rates — **not VRS figures.**
-> VRS must file an official impact statement on any VRS bill (§ 30-19.1:7). JLCVSO should
-> ask VRS for its number **before** the bill is filed.
+> These are JLCVSO analyst estimates from published VRS rates — **not VRS figures** — and
+> they cover state employees only. VRS must file an official impact statement on any VRS
+> bill (§ 30-19.1:7). JLCVSO should ask VRS for its number **before** the bill is filed.
 
 ---
 

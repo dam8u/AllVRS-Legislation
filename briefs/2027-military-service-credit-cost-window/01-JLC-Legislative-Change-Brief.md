@@ -90,6 +90,8 @@ That matters politically: a bill that changes a price is far easier to pass, and
 
 **Under $2 million, one time, and under $100,000 a year after that. No general fund appropriation is needed.** The cost is absorbed in the employer contribution rate VRS already certifies.
 
+**Scope note (added v1.1):** these figures cover the **state classified workforce only**. JLCVSO has since decided the bill should cover all VRS members, including teachers and local government employees. The dollar total will be larger in proportion to the covered payroll; the *per-member* logic below does not change, and local costs fall on local employer rates under § 51.1-145, not the general fund. **The estimate must be re-scoped before filing.**
+
 ### Why the cost is small
 
 VRS defines the "actuarial equivalent cost" as *"the amount of money needed in today's dollars to pay for the total value of the increase in the employee's future retirement benefit or earlier retirement eligibility date."* In plain terms: **actuarial cost is the break-even price.** So the entire cost of this bill is the gap between the normal-cost price the veteran pays and that break-even price. Nothing more.
@@ -157,7 +159,7 @@ Two fallbacks, in order of preference:
 
 ### Next steps for JLCVSO
 
-1. **Confirm the scope decision:** state employees only, or also teachers and local government employees? Locals pay their own contribution rates, so including them without an opt-in will draw opposition from the Commission on Local Government. *(Decision needed from JLCVSO — see Annex A, § 7.)*
+1. ~~Confirm the scope decision.~~ **Decided October 24, 2026: all VRS members, no local opt-in, with immediate access on the effective date.** The draft already does both, so no redraft is needed. Two consequences to prepare for: the Commission on Local Government will see the impact statement and may oppose, and **the cost figures above cover the state workforce only and must be re-scoped to full VRS membership before filing.**
 2. **Pre-brief VRS staff** and request a preliminary cost estimate before filing. The Board's impact statement under § 30-19.1:7 will shape the bill's fate more than anything else.
 3. **Identify patrons** on House Appropriations and Senate Finance & Appropriations, plus the chair of the Military and Veterans Caucus.
 4. **Send Annex A to the Division of Legislative Services** for formal drafting.

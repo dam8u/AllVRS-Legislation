@@ -1,10 +1,22 @@
 # Annex B — Fiscal Assumption Register and Source Appendix
 
 **Companion to:** JLC Legislative Change Brief — Military Service Credit Cost Window
-**Date:** October 24, 2026 | **Version:** v1.0 | **Owner:** VRS Legislative Counsel (JLCVSO support)
+**Date:** October 24, 2026 | **Version:** v1.1 | **Owner:** VRS Legislative Counsel (JLCVSO support)
 **Retrieval date for all sources:** October 24, 2026
 
 > **Status of every number in this package.** All *legal* claims are verified against primary sources. All *workforce* and *published rate* claims are verified against primary sources. The **actuarial equivalent cost estimates and the resulting total cost figures are JLCVSO analyst estimates**, not VRS figures. They are shown with their formulas so VRS can replace them. See Annex A, § 7, Q1–Q5.
+
+> **Scope limitation — added v1.1, October 24, 2026.** Every population and cost figure in
+> this annex is built on the **state classified workforce** (DHRM data), because that is
+> the only population with a published veteran count. JLCVSO has since decided the bill
+> will cover **all VRS members**, including teachers and political subdivision employees.
+> **This estimate therefore understates the bill's total cost and must be re-scoped before
+> filing.** The re-scope needs two inputs neither of which is currently verified: (1) active
+> membership counts by employer class, and (2) the veteran share of the teacher and local
+> employee populations. The *per-member* gap methodology in § 3 is unaffected and should be
+> reused; only the covered-population multiplier changes. Local-employer costs flow through
+> political subdivision employer rates under § 51.1-145, not the general fund. Assigned to
+> the Fiscal & Impact Modeler; flag for VRS actuarial confirmation.
 
 ---
 

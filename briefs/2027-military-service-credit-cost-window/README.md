@@ -24,7 +24,8 @@ Read in this order. Most legislators and staff should never need to go past file
 | Fiscal estimate | **Analyst estimate.** Requires VRS actuarial confirmation (Annex A, Q1–Q5) |
 | Stakeholder analysis | Not started |
 | Red team / adversarial counsel review | Not started |
-| JLCVSO policy decisions (scope, transition, concession ladder) | Pending (Annex A, Q10–Q12) |
+| JLCVSO policy decisions | **Scope and transition decided 10/24/2026: all VRS members, no local opt-in, immediate access. Draft already conforms.** Concession ladder (Annex A, Q12) still open. |
+| Fiscal re-scope to full VRS membership (required by the scope decision) | Not started |
 
 **Not final.** Do not present as final until VRS actuarial figures are in hand and
 the red-team review records a verdict.
