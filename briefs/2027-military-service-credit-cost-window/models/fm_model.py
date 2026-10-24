@@ -489,6 +489,109 @@ def price_a3_anc(p: Profile, years=1.0, group="non-hazardous"):
 
 
 # ============================================================================
+# WHO BEARS THE COST — state vs local
+# ============================================================================
+
+# Employer groups mapped to who pays the employer contribution rate.
+#   state       — state agency employer rates; general fund and nongeneral fund
+#   teacher     — school division rates, shared with the Commonwealth through
+#                 the Standards of Quality; NOT allocated here, reported apart
+#   local       — political subdivision rates under 51.1-145; no general fund
+COST_BEARER = {
+    "VRS State Employees": "state",
+    "SPORS": "state",
+    "VaLORS": "state",
+    "JRS": "state",
+    "VRS Teachers": "teacher",
+    "VRS Political Subdivision Employees": "local",
+}
+
+
+def fm4_state_local_split():
+    """Eligible pool split by who bears the employer-rate consequence.
+    DERIVED population; the bearer mapping is statutory."""
+    buckets = {}
+    for g, vlo, vhi, lo, hi in fm1_eligible_pool():
+        b = COST_BEARER[g]
+        cur = buckets.setdefault(b, [0.0, 0.0, []])
+        cur[0] += lo
+        cur[1] += hi
+        cur[2].append(g)
+    return buckets
+
+
+# ============================================================================
+# THE TWO GUARDRAILS, PRICED AS DIALS
+# ============================================================================
+
+def multiple_at(plan, purchase_age, retire_age):
+    """AEC/ANC multiple on the benefit-amount channel at a given purchase age."""
+    anc = ANC[(plan, "non-hazardous")]
+    return aec_pct_of_salary(plan, purchase_age, retire_age) / anc
+
+
+def price_age_graded(p: Profile, years=1.0, recovery=0.0, retire_age=None):
+    """GUARDRAIL A — the age-graded approximate-normal-cost schedule that the
+    draft bill would authorise the Board to set.
+
+        price = ANC x (1 + recovery x max(0, multiple(age) - 1))
+
+    `recovery` is the dial, 0.0 to 1.0:
+      0.00 = flat published ANC at every age  (identical to A-3)
+      1.00 = the member pays full actuarial value, so net cost tends to zero
+
+    Below the break-even age the multiple is under 1.0 and the member already
+    overpays, so the schedule never charges less than the published ANC — which
+    is what makes it politically presentable as "still a published rate."
+    """
+    r = PLAN_RETIRE_AGE[p.plan] if retire_age is None else retire_age
+    mult = multiple_at(p.plan, p.age, r)
+    anc = ANC[(p.plan, "non-hazardous")]
+    graded = anc * (1 + recovery * max(0.0, mult - 1.0))
+    return graded * p.salary * years
+
+
+def price_threshold_graded(p: Profile, years=1.0, recovery=0.0):
+    """GUARDRAIL A-PRIME — the same age-graded authority, but graded on
+    DISTANCE FROM UNREDUCED ELIGIBILITY (age AND service) instead of on age
+    alone.
+
+    Age alone cannot capture the acceleration cost: a 55-year-old with 25 years
+    of service and a 55-year-old with 8 years face the same age-graded rate but
+    wildly different acceleration exposure. Grading on the full multiple — which
+    is what threshold proximity drives — makes the dial actually bite.
+
+    At recovery = 1.0 the member pays full value and net cost is zero by
+    construction. This is the drafting recommendation, not a modelling choice.
+    """
+    r = fm4_acceleration(p, years_purchased=years)
+    anc_price = price_a3_anc(p, years)
+    return anc_price + recovery * max(0.0, r["cost_total"] - anc_price)
+
+
+def guardrail_b_multiple_cap(plan, service_at_purchase, salary_age_grid,
+                             months_before=12):
+    """GUARDRAIL B — require the purchase to be completed at least
+    `months_before` months before the effective date of retirement.
+
+    This does not change the price. It caps how close to the unreduced date a
+    purchase may be made, and therefore caps the AEC/ANC multiple the Fund can
+    be exposed to. Returns the capped multiple for each (age, service) pair on
+    the grid: the multiple evaluated at the latest permitted purchase age.
+    """
+    out = []
+    for age, svc in salary_age_grid:
+        a0 = unreduced_age(plan, age, svc)
+        latest = a0 - months_before / 12.0
+        r = PLAN_RETIRE_AGE[plan]
+        # The exposure is the multiple at the latest moment a purchase is
+        # permitted; later purchases are barred, so this is the ceiling.
+        m = multiple_at(plan, min(latest, r - 0.01), r)
+        out.append((age, svc, a0, latest, m))
+    return out
+
+
+# ============================================================================
 # REPORT
 # ============================================================================
 
@@ -763,6 +866,127 @@ def main():
     print("     A priced purchase should sit BELOW a free grant. It does.")
     print("     The brief v1.0 figure of about $3,750 per member sat an order of")
     print("     magnitude below the band; that was the signal it was too low.")
+
+    # ---- 5. Who bears it: state vs teacher vs local --------------------
+    print("\n  5. WHO BEARS THE COST — reported separately, because local")
+    print("     exposure flows through political subdivision employer rates")
+    print("     under 51.1-145 and never touches the general fund, and the")
+    print("     Commission on Local Government receives the 30-19.1:7")
+    print("     statement.\n")
+    blended = (sum(v[0] * v[2] for v in per_plan.values())
+               / max(1e-9, sum(v[0] for v in per_plan.values())))
+    print(f"    Pool-weighted blended A-3 net PV per purchaser: {money(blended)}")
+    print("    (ESTIMATE: applied uniformly across employer groups. Plan mix by")
+    print("     employer group is not published. SPORS/VaLORS are Plan 1/Plan 2")
+    print("     hazardous duty, where BOTH the benefit value and the member")
+    print("     price are materially higher, so the net direction for those two")
+    print("     groups is genuinely unclear and should not be read off this.)\n")
+    buckets = fm4_state_local_split()
+    label = {"state": "State agencies (GF + NGF)",
+             "teacher": "Teachers (school divisions, SOQ-shared)",
+             "local": "Political subdivisions (51.1-145, no GF)"}
+    print(f"    {'bearer':<44}{'pool':>20}{'PV cost @20% take-up':>30}")
+    for b in ("state", "teacher", "local"):
+        lo, hi, groups = buckets[b]
+        print(f"    {label[b]:<44}{f'{lo:,.0f} - {hi:,.0f}':>20}"
+              f"{f'{money(lo*0.20*blended)} - {money(hi*0.20*blended)}':>30}")
+        print(f"      ({', '.join(groups)})")
+    tl = sum(buckets[b][0] for b in buckets)
+    th = sum(buckets[b][1] for b in buckets)
+    print(f"    {'TOTAL':<44}{f'{tl:,.0f} - {th:,.0f}':>20}"
+          f"{f'{money(tl*0.20*blended)} - {money(th*0.20*blended)}':>30}")
+    print("\n    Teachers are reported as their own bucket rather than split:")
+    print("    the Commonwealth funds its share of the teacher retirement rate")
+    print("    through the Standards of Quality and localities fund the rest, so")
+    print("    allocating it requires the SOQ composite share — which is a")
+    print("    budget input, not a VRS one. Flagged for DPB, not assumed here.")
+
+    # ---- 6. The two guardrails, as dials -------------------------------
+    print("\n  6. THE TWO GUARDRAILS, PRICED AS DIALS")
+    print("     Immediate access on the effective date means the actuary prices")
+    print("     an UNBOUNDED cohort, which puts the whole weight of adverse-")
+    print("     selection control on these two provisions.\n")
+
+    print("     GUARDRAIL A — Board authority to set an age-graded ANC schedule.")
+    print("     Dial = share of the above-break-even excess recovered from the")
+    print("     member. 0% is plain A-3; 100% is full actuarial value.\n")
+    print(f"     {'recovery':>10}" + "".join(f"{p:>14}" for p in reps)
+          + f"{'blended':>12}{'PV @20%':>16}")
+    for rec in (0.00, 0.25, 0.50, 0.75, 1.00):
+        cells, wsum, wn = [], 0.0, 0.0
+        for plan, pr in reps.items():
+            r = fm4_acceleration(pr, years_purchased=YEARS_PURCHASED_AVG)
+            net = r["cost_total"] - price_age_graded(
+                pr, YEARS_PURCHASED_AVG, recovery=rec)
+            cells.append(money(net))
+            wsum += per_plan[plan][0] * net
+            wn += per_plan[plan][0]
+        bl = wsum / max(1e-9, wn)
+        print(f"     {rec:>9.0%}" + "".join(f"{c:>14}" for c in cells)
+              + f"{money(bl):>12}{money(tl*0.20*bl):>16}")
+    print("\n     FINDING — the age-graded schedule AS DRAFTED is a WEAK dial.")
+    print("     Turning it from 0% to 100% removes only about 15% of the")
+    print("     exposure. The reason is structural: grading on AGE recovers only")
+    print("     the benefit-amount excess, and the dominant cost driver is")
+    print("     retirement-date acceleration, which is driven by proximity to an")
+    print("     eligibility THRESHOLD — age AND service together. A 55-year-old")
+    print("     with 25 years of service and a 55-year-old with 8 years pay the")
+    print("     same age-graded rate and cost the Fund very different amounts.")
+
+    print("\n     GUARDRAIL A-PRIME — the same authority, graded on DISTANCE FROM")
+    print("     UNREDUCED ELIGIBILITY instead of on age alone. This is a drafting")
+    print("     change, not a policy change: still a published schedule, still")
+    print("     predictable, still no individualised actuarial bill.\n")
+    print(f"     {'recovery':>10}" + "".join(f"{p:>14}" for p in reps)
+          + f"{'blended':>12}{'PV @20%':>16}")
+    for rec in (0.00, 0.25, 0.50, 0.75, 1.00):
+        cells, wsum, wn = [], 0.0, 0.0
+        for plan, pr in reps.items():
+            r = fm4_acceleration(pr, years_purchased=YEARS_PURCHASED_AVG)
+            net = r["cost_total"] - price_threshold_graded(
+                pr, YEARS_PURCHASED_AVG, recovery=rec)
+            cells.append(money(net))
+            wsum += per_plan[plan][0] * net
+            wn += per_plan[plan][0]
+        bl = wsum / max(1e-9, wn)
+        print(f"     {rec:>9.0%}" + "".join(f"{c:>14}" for c in cells)
+              + f"{money(bl):>12}{money(tl*0.20*bl):>16}")
+    print("\n     Reading: THIS is the dial that bites. At 50% recovery it halves")
+    print("     the exposure; at 100% the bill is actuarially neutral by")
+    print("     construction and the fiscal note is zero. It is the single most")
+    print("     powerful cost control available, and it is the one to offer the")
+    print("     money committees first.")
+    print("\n     RECOMMENDATION TO DRAFTING: the Board's rate-schedule authority")
+    print("     should be expressed as varying by the member's age AND creditable")
+    print("     service, or by the member's distance from unreduced retirement")
+    print("     eligibility — NOT by age alone. As currently described the")
+    print("     guardrail will not carry the weight the fiscal note puts on it.")
+
+    print("\n     GUARDRAIL B — require completion at least N months before the")
+    print("     effective date of retirement. This does not change the price; it")
+    print("     caps how close to the unreduced date a purchase may be made, and")
+    print("     so caps the multiple the Fund can be exposed to.\n")
+    grid = [(50, 25), (55, 25), (58, 28), (60, 29)]
+    for plan in ("Plan 1", "Hybrid"):
+        print(f"     {plan}: ceiling on the AEC/ANC multiple")
+        print(f"       {'age':>5}{'svc':>5}{'unreduced':>11}"
+              + "".join(f"{str(w)+'mo':>10}" for w in (0, 12, 24, 36)))
+        for w in [None]:
+            pass
+        rows = {w: guardrail_b_multiple_cap(plan, None, grid, months_before=w)
+                for w in (0, 12, 24, 36)}
+        for i, (age, svc) in enumerate(grid):
+            a0 = rows[0][i][2]
+            line = f"       {age:>5}{svc:>5}{a0:>11.1f}"
+            for w in (0, 12, 24, 36):
+                line += f"{rows[w][i][4]:>9.2f}x"
+            print(line)
+        print()
+    print("     Reading: a 12-month window shaves the ceiling only modestly,")
+    print("     because the multiple is a smooth function of age — there is no")
+    print("     cliff in it to cut off. Guardrail B is worth having as an")
+    print("     anti-gaming rule and it costs veterans almost nothing, but it is")
+    print("     NOT a substitute for Guardrail A. Do not let it be traded for A.")
 
     print("\n" + "=" * 78)
     print("""CAVEATS

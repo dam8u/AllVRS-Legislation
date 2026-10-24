@@ -25,6 +25,23 @@ Three of the five items close with official sources. Two close as qualified nega
 | **FM-4** | **Closed as a modelled decomposition with take-up sensitivity** | Acceleration is **20%–49%** of the total cost on this basis, and that is a **floor**. A-1's cost turns almost entirely on the statutory interest rate — a drafting choice, not an actuarial one. |
 | **FM-5** | **Closed — qualified negative, well sourced** | **No.** No new ANC rates took effect July 1, 2026. The rates are updated only on the quadrennial cycle, and VRS told its own committee on June 17, 2026 that the next assumption review is **2029**. The "Updated: July 1, 2026" stamp is a document refresh of one page. |
 
+### And one finding that was not asked for but outranks most of what was
+
+Pricing the Annex A guardrails as dials, as the scope decision requires, showed that **the age-graded rate schedule as currently described removes only about 15% of the exposure.** Grading on age recovers the benefit-amount excess but not the acceleration cost, which is driven by proximity to an eligibility threshold — age *and* service together. Graded instead on **distance from unreduced eligibility**, the same authority can remove anything up to 100%. That is a one-phrase drafting change and it is the highest-leverage edit available anywhere in this package. **FM-4 § 4.8.**
+
+### Compliance with the October 24, 2026 scope decision
+
+The JLCVSO decision (all VRS members, no local opt-in, immediate access on the effective date) set five requirements for this work. All five are met:
+
+| Requirement | Where |
+|---|---|
+| Re-scope the estimate — Annex B is state classified only, bill is ~6× broader | FM-1 § 1.1 (6.6× by headcount), FM-4 § 4.4 |
+| Verify active membership counts by employer class | FM-1 § 1.1 — OFFICIAL, ACFR FY2025 Figs. 2.3 / 2.9 |
+| Source the veteran share for teachers and locals; do **not** extend DHRM's 6% | FM-1 § 1.4 — NCES 2.3% / 3.1% for teachers; BLS-derived 5.75% for state-and-local government. DHRM's 6% is used for state employees only. |
+| Reuse the Annex B § 3 per-member gap methodology; only the population multiplier changes | FM-2 § 2.3 — the same M × G × ä × v identity, which independently reproduces Annex B's 47–48 break-even ages |
+| Report state and local exposure separately (§ 51.1-145, Commission on Local Government) | FM-4 § 4.7 — three buckets; teacher line left unsplit pending the SOQ share from DPB |
+| Price the two adverse-selection guardrails as dials (unbounded cohort) | FM-4 § 4.8 |
+
 ---
 
 ## FM-1 — How many members hold purchasable military service, and how many are past the window?
@@ -365,7 +382,71 @@ VRS's own § 30-19.1:7 fiscal impact statement on **HB 1867 (2023)** — which w
 
 A purchase at which the member still pays must cost the Fund **less** than a free grant of the same service. These figures do; two of three sit inside VRS's own band and the third sits just below it, which is exactly the expected pattern. The brief v1.0 per-member figure sat roughly a factor of three below even the floor of a band VRS produced for a **free** benefit. That was the signal, available in the brief's own Annex 3 source list at S8, that the arithmetic was too low.
 
-### 4.7 Not priced here
+### 4.7 Who bears it — state, teacher and local exposure reported separately
+
+Required by the JLCVSO scope decision of October 24, 2026 (all VRS members, no local opt-in). Local exposure flows through political-subdivision employer rates under § 51.1-145 and **never touches the general fund**, and the Commission on Local Government receives the § 30-19.1:7 statement — so the figures must not be presented as one number.
+
+Pool-weighted blended A-3 net present value per purchaser: **$24,627** (DERIVED).
+
+| Who bears the employer-rate consequence | Eligible pool | PV cost at 20% take-up |
+|---|---|---|
+| **State agencies** (general fund + nongeneral fund) — VRS State Employees, SPORS, VaLORS, JRS | 4,113 – 8,099 | **$20.3M – $39.9M** |
+| **Teachers** — school divisions, shared with the Commonwealth through the Standards of Quality | 2,699 – 6,768 | **$13.3M – $33.3M** |
+| **Political subdivisions** — § 51.1-145 employer rates, no general fund | 4,753 – 9,169 | **$23.4M – $45.2M** |
+| **Total** | 11,565 – 24,036 | **$57.0M – $118.4M** |
+
+Two things to be explicit about.
+
+**Teachers are reported as their own bucket rather than split between the Commonwealth and localities.** Allocating the teacher line requires the Standards of Quality composite share, which is a budget input rather than a VRS one. **Flagged for DPB; not assumed here.**
+
+**The blended per-purchaser figure is applied uniformly across employer groups, and that is an ESTIMATE.** Plan mix by employer group is not published. It is least reliable for SPORS and VaLORS, which are Plan 1 / Plan 2 hazardous duty, where *both* the benefit value (richer multipliers, earlier thresholds) and the member price (19.15% against 10.74%) are materially higher. The net direction for those two groups is genuinely unclear and should not be read off this table — it is item 1 of the § 1.7 data request.
+
+**The political-subdivision line is the largest of the three.** That is the number the Commission on Local Government will see, and it arrives without a local opt-in. It is the most likely source of organised opposition to the bill and should be briefed before filing, not after.
+
+### 4.8 The two guardrails, priced as dials
+
+Immediate access on the effective date means the actuary prices an **unbounded cohort**, which puts the entire weight of adverse-selection control on the two guardrails in Annex A. Pricing them as dials produced the most consequential drafting finding in this package.
+
+**Guardrail A — Board authority to set an age-graded approximate-normal-cost schedule.** Dial = the share of the above-break-even excess recovered from the member; 0% is plain A-3, 100% is full actuarial value.
+
+| Recovery | Plan 1 | Plan 2 | Hybrid | Blended | PV at 20% take-up |
+|---|---:|---:|---:|---:|---:|
+| 0% | $47,967 | $17,174 | $6,779 | $24,627 | $57.0M |
+| 50% | $44,142 | $16,273 | $6,382 | $22,827 | $52.8M |
+| 100% | $40,317 | $15,371 | $5,985 | $21,027 | $48.6M |
+
+> **Finding: the age-graded schedule as currently described is a weak dial.** Turning it all the way from 0% to 100% removes only about **15%** of the exposure.
+>
+> The reason is structural, not a modelling artefact. Grading on **age** recovers only the benefit-amount excess. The dominant cost driver is retirement-date acceleration, and acceleration is driven by proximity to an eligibility **threshold** — age *and* service together. A 55-year-old with 25 years of service and a 55-year-old with 8 years would pay the identical age-graded rate while costing the Fund very different amounts. Annex A asks this guardrail to carry the adverse-selection argument; as described, it cannot.
+
+**Guardrail A′ — the same authority, graded on distance from unreduced eligibility rather than on age alone.** This is a *drafting* change, not a policy change: still a published schedule, still predictable, still no individualised actuarial bill handed to a veteran.
+
+| Recovery | Plan 1 | Plan 2 | Hybrid | Blended | PV at 20% take-up |
+|---|---:|---:|---:|---:|---:|
+| 0% | $47,967 | $17,174 | $6,779 | $24,627 | $57.0M |
+| 25% | $35,975 | $12,880 | $5,084 | $18,470 | $42.7M |
+| **50%** | **$23,984** | **$8,587** | **$3,389** | **$12,313** | **$28.5M** |
+| 75% | $11,992 | $4,293 | $1,695 | $6,157 | $14.2M |
+| 100% | $0 | $0 | $0 | $0 | **$0** |
+
+**This is the dial that bites.** At 50% recovery it halves the exposure; at 100% the bill is actuarially neutral by construction and the fiscal note is zero. It is the single most powerful cost control available and the one to offer the money committees first.
+
+> **Recommendation to Legislative Services.** Express the Board's rate-schedule authority as varying by the member's **age and creditable service**, or by the member's **distance from unreduced retirement eligibility** — *not* by age alone. One phrase, and it is the difference between a guardrail that removes 15% of the exposure and one that can remove all of it.
+
+**Guardrail B — require completion at least N months before the effective date of retirement.** This does not change the price. It caps how close to the unreduced date a purchase may be made, and therefore caps the multiple the Fund can be exposed to. Ceiling on the AEC/ANC multiple:
+
+| Plan | Age / service | Unreduced at | No rule | 12 mo | 24 mo | 36 mo |
+|---|---|---:|---:|---:|---:|---:|
+| Plan 1 | 50 / 25 | 55.0 | 1.35× | 1.30× | 1.26× | 1.21× |
+| Plan 1 | 55 / 25 | 60.0 | 1.61× | 1.56× | 1.50× | 1.45× |
+| Plan 1 | 60 / 29 | 61.0 | 1.67× | 1.61× | 1.56× | 1.50× |
+| Hybrid | 50 / 25 | 57.5 | 1.40× | 1.35× | 1.30× | 1.25× |
+| Hybrid | 55 / 25 | 60.0 | 1.53× | 1.47× | 1.42× | 1.37× |
+| Hybrid | 60 / 29 | 60.5 | 1.55× | 1.50× | 1.45× | 1.40× |
+
+A 12-month window shaves the ceiling by only about 3%–4%, because the multiple is a smooth function of age — there is no cliff in it to cut off. **Guardrail B is worth having**: it is a clean anti-gaming rule, it costs veterans almost nothing, and it is easy to defend. But it is **not a substitute for Guardrail A′, and it should not be traded for it** in negotiation. If only one guardrail survives, it must be A′.
+
+### 4.9 Not priced here
 
 Carried forward from the brief, still unpriced, all pushing upward: the health insurance credit including its 15-year step function (§ 51.1-1400); adverse selection; the early-retirement reduction subsidy (§ 4.2); VRS administrative cost, for which HB 1867's analogue was about $78,000 one-time; and the employer-side payroll and backfill consequences of earlier retirement, which are a cost to agencies and school divisions, not to the Fund, and which must not be netted against the pension figures.
 
@@ -405,6 +486,12 @@ For MOO-288 to action. Listed most material first.
 8. **Surface the A-1 interest-rate trade-off before the JLC picks a structure.** (FM-4 § 4.3.)
 9. **Add A-3's administrative advantage:** every rate group already has a Board-adopted rate, so A-3 needs no new rate-setting. (FM-3.)
 10. **State that the July 1, 2025 rates are good through at least June 30, 2029.** (FM-5.)
+
+11. **Change one phrase in the Annex A rate-schedule authority.** Grade by age **and creditable service**, or by distance from unreduced eligibility — not by age alone. As described the guardrail removes about 15% of the exposure; redrawn it can remove all of it. **This is the highest-leverage single edit in the package.** (FM-4 § 4.8.)
+
+12. **Report state, teacher and local exposure as three figures, never one.** The political-subdivision line is the largest of the three and arrives without a local opt-in. Brief the Commission on Local Government before filing. (FM-4 § 4.7.)
+
+13. **Ask DPB for the Standards of Quality composite share** so the teacher line can be split between the Commonwealth and localities. It is a budget input, not a VRS one, and this annex deliberately does not assume it. (FM-4 § 4.7.)
 
 ---
 
