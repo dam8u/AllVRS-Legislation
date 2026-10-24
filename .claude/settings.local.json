@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/davidmoody/.paperclip/instances/default/projects/73723db3-6591-4410-8da2-1f684e9148e4/b51320fa-d9d5-48fc-a36e-2ecb5fd6ae7c/AllVRS-Legislation/scripts/paperclip-issue-update.sh:*)",
+      "Bash(/Users/davidmoody/.paperclip/instances/default/projects/73723db3-6591-4410-8da2-1f684e9148e4/b51320fa-d9d5-48fc-a36e-2ecb5fd6ae7c/AllVRS-Legislation/scripts/paperclip:*)",
+      "Bash(curl:*)",
+      "Bash(env)",
+      "Bash(env:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/davidmoody/.paperclip/instances/default/companies/73723db3-6591-4410-8da2-1f684e9148e4",
+      "/Users/davidmoody/.paperclip/instances/default/companies/73723db3-6591-4410-8da2-1f684e9148e4/acp-engine/agents/a92b5d16-2e68-4fc5-9f9e-2db1a5ea7039",
+      "/Users/davidmoody/.paperclip/instances/default/workspaces/a92b5d16-2e68-4fc5-9f9e-2db1a5ea7039"
+    ],
+    "defaultMode": "default"
+  }
+}
