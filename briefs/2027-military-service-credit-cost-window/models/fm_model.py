@@ -116,6 +116,21 @@ VA_NONVETS_EMPLOYED = 3_864
 MEAN_CLASSIFIED_SALARY = 69_865      # DHRM slide 14, as of 6/30/2024
 ILLUSTRATIVE_SALARY = 91_700         # the Cliff Graph's illustrative profile
 
+# --- OFFICIAL: Annual Covered Payroll at June 30, 2025, by group ($ thousands).
+#     Source: June 30, 2025 Annual Actuarial Valuation, "Results Summary" for
+#     each group. This is the correct denominator for a payroll-share statement
+#     about a bill whose scope is all VRS members — NOT the $4.0bn classified
+#     state payroll used in the brief v1.0.
+COVERED_PAYROLL_000 = {
+    "State Employees": 6_275_603,
+    "Teachers": 11_732_114,
+    "State Police (SPORS)": 182_726,
+    "Judicial (JRS)": 98_645,
+    "Virginia Law Officers (VaLORS)": 432_703,
+    "Political Subdivisions": 8_041_026,
+}
+TOTAL_COVERED_PAYROLL = sum(COVERED_PAYROLL_000.values()) * 1_000
+
 # --- ESTIMATE: scenario assumptions.
 TAKEUP_SCENARIOS = {"Low": 0.10, "Moderate": 0.20, "High": 0.30}
 TAKEUP_BRIEF_BAND = (0.05, 0.15)     # the band carried in the v1.0 brief
@@ -566,8 +581,43 @@ def main():
     print("  Terminal-age sensitivity on the Hybrid multiple at age 58:")
     for term in (TERMINAL_AGE_SENSITIVITY[0], TERMINAL_AGE, TERMINAL_AGE_SENSITIVITY[1]):
         aec = aec_pct_of_salary("Hybrid", 58, SSA_NRA, terminal=term)
-        print(f"    terminal age {term}: AEC {aec:.2%}, "
-              f"multiple {aec/ANC[('Hybrid','non-hazardous')]:.2f}x")
+        print(f"    multiple {aec/ANC[('Hybrid','non-hazardous')]:.2f}x "
+              f"(terminal age {term}, AEC {aec:.2%})")
+
+    # --- Where the Cliff Graph's 3.23x actually comes from ---------------
+    print("\n  WHERE 3.23x COMES FROM — the Cliff Graph's own illustrative")
+    print("  profile is age 55, 25 years of service, $91,700 salary. Run all")
+    print("  three plans at THAT profile, on the FULL basis (benefit amount +")
+    print("  eligibility acceleration), buying 4 years:\n")
+    print(f"    {'plan':<8}{'unred.':>14}{'accel':>8}{'AEC/yr':>11}"
+          f"{'ANC/yr':>10}{'multiple':>10}")
+    chart = {}
+    for plan in ("Plan 1", "Plan 2", "Hybrid"):
+        pr = Profile(plan, 55, 25, ILLUSTRATIVE_SALARY, 45_000, 30)
+        r = fm4_acceleration(pr, years_purchased=4.0)
+        aec_yr = r["cost_total"] / 4
+        anc_yr = ANC[(plan, "non-hazardous")] * ILLUSTRATIVE_SALARY
+        chart[plan] = (aec_yr, anc_yr, aec_yr / anc_yr)
+        print(f"    {plan:<8}{r['unreduced_age_baseline']:.1f}->"
+              f"{r['unreduced_age_with_purchase']:.1f}".ljust(8)
+              + f"{r['acceleration_years']:>8.2f}{money(aec_yr):>11}"
+                f"{money(anc_yr):>10}{aec_yr/anc_yr:>9.2f}x")
+    print(f"\n    Plan 1 lands at {chart['Plan 1'][2]:.2f}x — which independently")
+    print("    REPRODUCES the worked example behind the 3.23x in the chart.")
+    print("    But Plan 2 and Hybrid land at "
+          f"{chart['Plan 2'][2]:.2f}x and {chart['Hybrid'][2]:.2f}x, NOT 3.23x.")
+    print("    Two reasons, both structural, neither an artefact of this model:")
+    print("      (i)  lower multipliers (1.65% / 1.00% vs 1.70%); and")
+    print("      (ii) Plan 1's age-50/30-years threshold advances ONE year per")
+    print("           year purchased, while the Rule of 90 advances only HALF a")
+    print("           year per year purchased (purchased service adds to the")
+    print("           service leg only, not to age).")
+    print("\n    CHART REISSUE VALUES (post-cliff, same illustrative profile):")
+    for plan in ("Plan 1", "Plan 2", "Hybrid"):
+        aec_yr, anc_yr, mult = chart[plan]
+        old = 3.23 * anc_yr
+        print(f"      {plan:<8} currently shown {money(old):>9}  ->  "
+              f"{money(aec_yr):>9}  (overstated {old/aec_yr:.2f}x)")
 
     # ---------------- FM-3 ----------------
     print("\n\n### FM-3  RATE GROUPS UNDER A-3  (all OFFICIAL)\n")
@@ -585,51 +635,134 @@ def main():
         Profile("Hybrid", 45, 8, ILLUSTRATIVE_SALARY, 68_000, 37),
         Profile("Hybrid", 55, 10, ILLUSTRATIVE_SALARY, 72_000, 45),
     ]
+    print("  1. The acceleration channel, decomposed, buying the full 4 years.\n")
     for p in profiles:
         r = fm4_acceleration(p, years_purchased=4.0)
-        print(f"  {p.plan}, age {p.age}, {p.service:g} yrs service, salary {money(p.salary)}, "
-              f"buying 4 years")
+        print(f"  {p.plan}, age {p.age}, {p.service:g} yrs service, "
+              f"salary {money(p.salary)}")
         print(f"    unreduced eligibility: age {r['unreduced_age_baseline']:.2f} "
               f"-> {r['unreduced_age_with_purchase']:.2f}  "
               f"(accelerated {r['acceleration_years']:.2f} yrs)")
         print(f"    PV cost, benefit-amount channel   {money(r['cost_amount_channel']):>12}")
         print(f"    PV cost, acceleration channel     {money(r['cost_acceleration_channel']):>12}")
-        print(f"    PV cost, total                    {money(r['cost_total']):>12}")
+        print(f"    PV cost, TOTAL                    {money(r['cost_total']):>12}")
         share = (r['cost_acceleration_channel'] / r['cost_total']
                  if r['cost_total'] else 0)
         print(f"    acceleration share of total cost  {share:>12.1%}")
-        p1 = price_a1_pennsylvania(p, 4)
-        p2 = price_a2_newyork(p, 4)
-        p3 = price_a3_anc(p, 4)
-        print(f"    member price, 4 yrs:  A-1 {money(p1)}   A-2 {money(p2)}   A-3 {money(p3)}")
-        print(f"    NET cost to the Fund: A-1 {money(r['cost_total']-p1):>11}   "
-              f"A-2 {money(r['cost_total']-p2):>11}   A-3 {money(r['cost_total']-p3):>11}")
+        print()
+    print("  Finding: acceleration is 20%-49% of the total on this basis, and")
+    print("  that is a FLOOR (caveat 3). It is the largest single component for")
+    print("  a long-service Plan 1 member sitting just short of age 50 + 30.\n")
+
+    print("  2. Member price and net cost to the Fund under A-1 / A-2 / A-3.")
+    print("     A-1 is shown at BOTH candidate statutory interest rates,")
+    print("     because that drafting choice, not actuarial science, decides")
+    print("     whether A-1 is cheaper or dearer than A-3.\n")
+    for p in profiles:
+        r = fm4_acceleration(p, years_purchased=4.0)
+        tot = r["cost_total"]
+        print(f"  {p.plan}, age {p.age}, {p.service:g} yrs, entry age {p.entry_age} "
+              f"at {money(p.entry_salary)}; 4 years bought; "
+              f"benefit value {money(tot)}")
+        for label, i in A1_INTEREST_RATES.items():
+            pr = price_a1_pennsylvania(p, 4, interest=i)
+            print(f"    A-1 ({label:<24}) price {money(pr):>9}  "
+                  f"net to Fund {money(tot-pr):>10}")
+        pr2 = price_a2_newyork(p, 4)
+        pr3 = price_a3_anc(p, 4)
+        print(f"    A-2 (6% of trailing-12 pay    ) price {money(pr2):>9}  "
+              f"net to Fund {money(tot-pr2):>10}")
+        print(f"    A-3 (published ANC            ) price {money(pr3):>9}  "
+              f"net to Fund {money(tot-pr3):>10}")
         print()
 
-    print("  Take-up sensitivity on the A-3 net cost, applied to the FM-1 pool:")
+    print("  3. Statewide take-up sensitivity, by plan.\n")
     rows = fm1_eligible_pool()
     pool_lo = sum(r[3] for r in rows)
     pool_hi = sum(r[4] for r in rows)
-    # Representative net cost per purchasing member, A-3, blended across the
-    # four profiles above. DERIVED from the per-profile figures.
-    per_member = []
-    for p in profiles:
-        r = fm4_acceleration(p, years_purchased=YEARS_PURCHASED_AVG)
-        per_member.append(r["cost_total"] - price_a3_anc(p, YEARS_PURCHASED_AVG))
-    rep = sum(per_member) / len(per_member)
-    print(f"    representative A-3 net PV cost per purchasing member "
-          f"({YEARS_PURCHASED_AVG:g} yrs bought): {money(rep)}")
-    print(f"    (range across the four profiles: {money(min(per_member))} to "
-          f"{money(max(per_member))})")
-    print(f"\n    {'scenario':<22}{'take-up':>9}{'purchasers':>22}{'one-time PV cost':>30}")
-    for name, t in list(TAKEUP_SCENARIOS.items()):
-        n_lo, n_hi = pool_lo * t, pool_hi * t
-        print(f"    {name:<22}{t:>9.0%}{f'{n_lo:,.0f} - {n_hi:,.0f}':>22}"
-              f"{f'{money(n_lo*rep)} - {money(n_hi*rep)}':>30}")
-    for t in TAKEUP_BRIEF_BAND:
-        n_lo, n_hi = pool_lo * t, pool_hi * t
-        print(f"    {'brief v1.0 band':<22}{t:>9.0%}{f'{n_lo:,.0f} - {n_hi:,.0f}':>22}"
-              f"{f'{money(n_lo*rep)} - {money(n_hi*rep)}':>30}")
+    pw = fm1_past_window()
+    pw_lo = sum(d["past_window_lo"] for d in pw.values())
+    pw_hi = sum(d["past_window_hi"] for d in pw.values())
+    # DERIVED: effective veteran-with-qualifying-service rate across the whole
+    # past-window population, used to allocate the pool across plans.
+    eff_lo, eff_hi = pool_lo / pw_hi, pool_hi / pw_lo
+    hybrid_pw_lo = pw_lo - ACTIVE_BY_PLAN["Plan 1"] - ACTIVE_BY_PLAN["Plan 2"]
+    hybrid_pw_hi = pw_hi - ACTIVE_BY_PLAN["Plan 1"] - ACTIVE_BY_PLAN["Plan 2"]
+    plan_pw = {
+        "Plan 1": (ACTIVE_BY_PLAN["Plan 1"], ACTIVE_BY_PLAN["Plan 1"]),
+        "Plan 2": (ACTIVE_BY_PLAN["Plan 2"], ACTIVE_BY_PLAN["Plan 2"]),
+        "Hybrid": (hybrid_pw_lo, hybrid_pw_hi),
+    }
+    print(f"    Effective veteran-with-qualifying-service rate across the")
+    print(f"    past-window population (DERIVED): {eff_lo:.2%} - {eff_hi:.2%}")
+    print("    ESTIMATE: that rate is applied uniformly across plans. It is not")
+    print("    uniform in reality — veterans enter state service mid-career, so")
+    print("    Hybrid is probably over-weighted and Plan 1 under-weighted here.\n")
+
+    # Representative profile per plan, at the average years purchased.
+    reps = {
+        "Plan 1": Profile("Plan 1", 55, 25, MEAN_CLASSIFIED_SALARY, 45_000, 30),
+        "Plan 2": Profile("Plan 2", 50, 14, MEAN_CLASSIFIED_SALARY, 55_000, 36),
+        "Hybrid": Profile("Hybrid", 50, 9, MEAN_CLASSIFIED_SALARY, 60_000, 41),
+    }
+    print(f"    {'plan':<8}{'pool (vets past window)':>26}"
+          f"{'A-3 net PV / purchaser':>26}")
+    per_plan = {}
+    for plan, pr in reps.items():
+        r = fm4_acceleration(pr, years_purchased=YEARS_PURCHASED_AVG)
+        net = r["cost_total"] - price_a3_anc(pr, YEARS_PURCHASED_AVG)
+        lo = plan_pw[plan][0] * eff_lo
+        hi = plan_pw[plan][1] * eff_hi
+        per_plan[plan] = (lo, hi, net)
+        print(f"    {plan:<8}{f'{lo:,.0f} - {hi:,.0f}':>26}{money(net):>26}")
+    tot_lo = sum(v[0] for v in per_plan.values())
+    tot_hi = sum(v[1] for v in per_plan.values())
+    print(f"    {'TOTAL':<8}{f'{tot_lo:,.0f} - {tot_hi:,.0f}':>26}")
+    print(f"    (salary basis {money(MEAN_CLASSIFIED_SALARY)}, "
+          f"{YEARS_PURCHASED_AVG:g} years bought per purchaser)\n")
+
+    scen = dict(TAKEUP_SCENARIOS)
+    scen[f"Brief v1.0 low"] = TAKEUP_BRIEF_BAND[0]
+    scen[f"Brief v1.0 high"] = TAKEUP_BRIEF_BAND[1]
+    print(f"    {'scenario':<18}{'take-up':>9}{'purchasers':>20}"
+          f"{'one-time PV cost, A-3':>32}{'as % of payroll':>18}")
+    for name, t in sorted(scen.items(), key=lambda kv: kv[1]):
+        n_lo = sum(v[0] for v in per_plan.values()) * t
+        n_hi = sum(v[1] for v in per_plan.values()) * t
+        c_lo = sum(v[0] * t * v[2] for v in per_plan.values())
+        c_hi = sum(v[1] * t * v[2] for v in per_plan.values())
+        pl = c_lo / TOTAL_COVERED_PAYROLL
+        ph = c_hi / TOTAL_COVERED_PAYROLL
+        print(f"    {name:<18}{t:>9.0%}{f'{n_lo:,.0f} - {n_hi:,.0f}':>20}"
+              f"{f'{money(c_lo)} - {money(c_hi)}':>32}"
+              f"{f'{pl:.3%} - {ph:.3%}':>18}")
+
+    print(f"\n    Payroll denominator (OFFICIAL, 6/30/2025 valuation, Annual")
+    print(f"    Covered Payroll by group):")
+    for g, v in COVERED_PAYROLL_000.items():
+        print(f"      {g:<34}{money(v*1000):>18}")
+    print(f"      {'TOTAL VRS COVERED PAYROLL':<34}"
+          f"{money(TOTAL_COVERED_PAYROLL):>18}")
+    print(f"\n    The brief v1.0 scale sentence uses $3.98bn (classified state")
+    print(f"    payroll) and reports 0.050% of payroll. The correct denominator")
+    print(f"    for an all-VRS bill is {money(TOTAL_COVERED_PAYROLL)}, which is")
+    print(f"    {TOTAL_COVERED_PAYROLL/3_976_000_000:.1f}x larger — but the eligible pool grew more than")
+    print(f"    the denominator did, so the payroll SHARE rises too. '5 cents per")
+    print(f"    $100' holds only at the bottom of the grid.")
+
+    print("\n  4. Cross-check against the only public Virginia anchor.")
+    print("     VRS's own 30-19.1:7 fiscal impact statement on HB 1867 (2023) —")
+    print("     which would have granted military service to TEACHERS FREE —")
+    print("     found $10,000 to $60,000 of unfunded liability per participating")
+    print("     member.")
+    for plan, (lo, hi, net) in per_plan.items():
+        inside = 10_000 <= net <= 60_000
+        print(f"     {plan:<8} modelled A-3 net PV/member {money(net):>9}  "
+              f"{'INSIDE' if inside else 'outside'} the HB 1867 band"
+              + ("" if inside else " (lower — as a priced purchase should be)"))
+    print("     A priced purchase should sit BELOW a free grant. It does.")
+    print("     The brief v1.0 figure of about $3,750 per member sat an order of")
+    print("     magnitude below the band; that was the signal it was too low.")
 
     print("\n" + "=" * 78)
     print("""CAVEATS

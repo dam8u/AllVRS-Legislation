@@ -1,3 +1,18 @@
+<!-- ============================================================
+     HOLD — DO NOT PRINT OR DISTRIBUTE  (flagged October 24, 2026)
+     The COST block below is superseded. It carries "under $2 million one
+     time" and "about 5 cents out of every $100," both of which were built
+     on state classified employees only and on the price-discount channel
+     only. Re-scoped to all VRS members and with retirement-date
+     acceleration priced, the modelled one-time present value of
+     recommendation A-3 is on the order of $13M-$182M, or 0.05%-0.68% of
+     VRS covered payroll.
+       See 04-Annex-2-Closure-FM1-FM5.md, FM-4 sections 4.4 and 4.6.
+     The "General fund cost: $0" line is UNAFFECTED and remains correct.
+     00-ONE-PAGE-BRIEF.pdf has NOT been regenerated and is stale.
+     Owner for the revision: MOO-288 / VRS Counsel.
+     ============================================================ -->
+
 # Let veteran state employees buy their military retirement credit at a fair price
 
 **Joint Leadership Council of Veterans Service Organizations — 2027 Session**

@@ -4,6 +4,17 @@
 **Date:** October 24, 2026 | **Version:** v1.1 | **Owner:** VRS Legislative Counsel (JLCVSO support)
 **Retrieval date for all sources:** October 24, 2026
 
+> ## ⚠ Partly superseded — October 24, 2026
+>
+> **[Annex 2 Closure (04-Annex-2-Closure-FM1-FM5.md)](04-Annex-2-Closure-FM1-FM5.md) supersedes the population and total-cost figures in this annex.** Specifically:
+>
+> - **§ 1, F-30 / F-31 and § 2, A-08 → A-14** — the population was built from DHRM's 56,917 classified state employees. The brief's scope is all 378,060 VRS active members across three plans and six employer groups. Official plan and employer-group denominators are now in Annex 2 Closure, FM-1.
+> - **§ 2, A-13 (the ~$1,500 per-year gap)** — priced the benefit-amount channel only. Retirement-date acceleration is 20%–49% of the cost and is now priced in Annex 2 Closure, FM-4 § 4.2.
+> - **§ 3.4 and § 3.5 (the total-cost arithmetic and the "under $2 million" headline)** — **do not quote.** Re-scoped and with acceleration priced, the modelled one-time present value of recommendation A-3 is on the order of **$13M–$182M**. Annex 2 Closure, FM-4 § 4.4.
+> - **§ 4, "Virginia's total veteran population"** — now verified. BLS *Employment Situation of Veterans* Table 6A, 2025 annual averages: **646,000**.
+>
+> **Still current and unaffected:** § 1 F-01 → F-29 and F-36 (all legal and published-rate facts); § 2 A-01 → A-07 (the actuarial assumptions, now additionally confirmed against the June 30, 2025 valuation); § 3.1 → § 3.3 (the governing identity, the AEC formula, and the worked gap tables, whose break-even ages of 47–48 are reproduced independently in Annex 2 Closure, FM-2 § 2.3); and § 3.6 (what a veteran pays today).
+
 > **Status of every number in this package.** All *legal* claims are verified against primary sources. All *workforce* and *published rate* claims are verified against primary sources. The **actuarial equivalent cost estimates and the resulting total cost figures are JLCVSO analyst estimates**, not VRS figures. They are shown with their formulas so VRS can replace them. See Annex A, § 7, Q1–Q5.
 
 > **Scope limitation — added v1.1, October 24, 2026.** Every population and cost figure in
