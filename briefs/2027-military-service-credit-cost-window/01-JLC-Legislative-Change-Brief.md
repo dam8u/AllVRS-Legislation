@@ -11,7 +11,18 @@
 | **Estimated cost** | Under $2 million one-time; under $100,000 per year ongoing |
 | **People helped** | About 3,400 veterans now working for the Commonwealth, plus roughly 600 more hired every year |
 | **Status** | Draft for JLCVSO review — not yet reviewed by VRS or Legislative Services |
-| **Version / date** | v1.0, October 24, 2026 |
+| **Version / date** | v1.1, October 24, 2026 |
+
+> ### The whole thing in 30 seconds
+>
+> Veteran state employees can already buy up to four years of military service toward
+> their VRS pension. **The cheap price expires 24 months after their first day of work** —
+> right when they can least afford the $18,666 bill, and before most of them even hear
+> about it. We ask that the deadline be removed for military service, and that veterans be
+> allowed to pay over five years. **Cost: under $2 million one time, $0 from the general
+> fund.**
+>
+> *For a leave-behind version of this, use **00-ONE-PAGE-BRIEF**.*
 
 ---
 
@@ -85,11 +96,11 @@ VRS defines the "actuarial equivalent cost" as *"the amount of money needed in t
 
 That gap is **much smaller than people assume**, and for younger members it is zero or negative:
 
-| Veteran's age when buying | Hybrid Plan (ANC 6.68%) | Plan 1 (ANC 12.50%) |
+| Veteran's age when buying | Hybrid Plan (nearly everyone) | Plan 1 (closed to new hires) |
 |---|---|---|
-| 40 | veteran **overpays** by ~2% of salary | plan closed to new hires |
-| 50 | roughly break-even | roughly break-even |
-| 58 | gap of ~2.3% of salary (~$1,590/yr of credit) | gap of ~5.3% of salary (~$3,720/yr of credit) |
+| 40 | veteran **overpays** — the state comes out ahead | plan closed to new hires |
+| 50 | about break-even — no real cost | about break-even — no real cost |
+| 58 | state absorbs about $1,590 per year of credit | state absorbs about $3,720 per year of credit |
 
 The reason: the Hybrid plan's pension multiplier is only **1.0% of final average pay per year** (§ 51.1-169 D 1). A year of Hybrid credit simply is not worth much, so the normal-cost rate of 6.68% is already close to — and for younger members above — the true cost. **And every veteran hired since January 1, 2014 is in the Hybrid plan.** The expensive-gap cases are limited to the shrinking, closed Plan 1 and Plan 2 populations.
 

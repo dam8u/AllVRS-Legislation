@@ -7,9 +7,12 @@ than only within the first 24 months after their first date of hire.
 
 ## Contents
 
+Read in this order. Most legislators and staff should never need to go past file 00.
+
 | File | Audience | Contents |
 |---|---|---|
-| [01-JLC-Legislative-Change-Brief.md](01-JLC-Legislative-Change-Brief.md) | Delegates, senators, legislative staff | Plain-English brief in OBJECTIVE / DISCUSSION / COST / RECOMMENDATION format |
+| [00-ONE-PAGE-BRIEF.md](00-ONE-PAGE-BRIEF.md) | **Senators, delegates, busy staff — the leave-behind** | The entire ask on one page, plain English, OBJECTIVE / DISCUSSION / COST / RECOMMENDATION |
+| [01-JLC-Legislative-Change-Brief.md](01-JLC-Legislative-Change-Brief.md) | Legislative staff who want the backup | Same four sections, with every figure, citation and the fallback positions |
 | [02-Annex-A-Legal-Analysis-and-Draft-Bill.md](02-Annex-A-Legal-Analysis-and-Draft-Bill.md) | Division of Legislative Services, VRS counsel | Draft bill language, defined-term analysis, statutory conflicts, unintended-effects check, alternatives, open questions |
 | [03-Annex-B-Fiscal-Assumptions-and-Sources.md](03-Annex-B-Fiscal-Assumptions-and-Sources.md) | VRS actuaries, House Appropriations, Senate Finance & Appropriations | Claim/evidence table, fiscal assumption register, full cost model, unverified claims, primary sources |
 
