@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+
+# Word lock files, created whenever a .docx in the package is open for editing.
+~$*.docx
+
+.DS_Store

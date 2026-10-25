@@ -21,6 +21,30 @@ Read in this order. Most legislators and staff should never need to go past file
 | [06-Annex-C-Stakeholder-Analysis.md](06-Annex-C-Stakeholder-Analysis.md) | **Policy Director, patron selection, anyone walking the halls** | **The political map — v1.0.** Concrete effects, stakeholder table with a reason and a confidence label on every row, the committee and subcommittee path with what each venue has done with similar bills, the real fight, the coalition ladder with the price of each ally, other-state precedent on purchase timing, patron recommendations, and the unknowns. Desk research on the public record only; no stakeholder was contacted. |
 | [models/fm_model.py](models/fm_model.py) | Anyone checking the arithmetic | The reproducible model behind Annex 2 Closure. Every input tagged OFFICIAL / DERIVED / ESTIMATE. Run `python3 fm_model.py`. |
 
+## Editable Word copies
+
+Every Markdown file in this folder has a `.docx` twin alongside it, for anyone who
+needs to edit, comment or track changes in Word — including
+[00-ONE-PAGE-BRIEF.docx](00-ONE-PAGE-BRIEF.docx), the editable counterpart of the
+printed leave-behind.
+
+**The Markdown is the source of record.** The `.docx` files are generated, and a
+hand-edit to one will be overwritten the next time they are rebuilt. Carry changes
+back into the `.md` and regenerate, from the repository root:
+
+```
+python3 tools/md_to_docx.py      # rebuild every .docx in this folder
+python3 tools/verify_docx.py     # word-by-word and figure-by-figure fidelity check
+python3 tools/pagecheck.py       # confirm the one-pager still fits one letter page
+```
+
+`verify_docx.py` exists because a dropped digit in a Word copy is a worse failure
+than a layout problem — the Word copy is the one that gets forwarded and edited. It
+reconstructs the text of each `.docx` and diffs it against the Markdown, then
+compares every money, percent and Code-section figure as a multiset, so a changed
+count cannot hide inside an otherwise-matching diff. See
+[tools/README.md](../../tools/README.md).
+
 ## Status
 
 | Component | Status |
