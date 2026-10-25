@@ -97,10 +97,9 @@ in the wrong place for three reasons:
   stays **10.3 years** — five times longer than the window.
 
 **How many people.** **All 110,474 active Plan 1 members are already past the deadline as a
-matter of law** — 29% of everyone working under VRS. Across all three plans, an estimated
-**11,600 to 24,000** veterans hold military service they could still buy. Treat that as a
-ceiling: § 51.1-142.2 B 3 already bars a veteran whose service counts toward a military
-retirement they draw, and VRS has not told us yet how many that removes.
+matter of law** — 29% of everyone under VRS. Across all three plans, an estimated **11,600
+to 24,000** veterans hold service they could still buy — a ceiling, because § 51.1-142.2
+B 3 already bars a veteran whose service counts toward a military retirement they draw.
 
 ---
 
@@ -120,19 +119,17 @@ one-time cost to the Fund: **$28 million to $166 million**. Spread over 20 years
 to 20%** today.
 
 **The range is wide for one reason: nobody outside VRS knows how many veterans will buy.**
-Members pay out of their own pockets, so take-up is normally low — but this bill removes
-the three things holding it down, so past experience understates it. VRS holds that data
-and JLCVSO has formally asked for it.
+Members pay from their own pockets, so take-up is normally low — but this bill removes the
+three things holding it down, so past experience understates it. JLCVSO has asked VRS for
+that data.
 
 **The cost per veteran falls on its own.** It is **$47,967** for a Plan 1 member and
-**$6,779** for a Hybrid member — one seventh as much. Hybrid is 53% of the workforce today
-and **100% of all future hires**, so this bill gets cheaper every year with no further
-legislation.
+**$6,779** for a Hybrid member. Hybrid is 53% of the workforce today and **100% of future
+hires**, so this bill gets cheaper every year with no further legislation.
 
-> These are JLCVSO analyst estimates from published VRS rates, covering all VRS members —
-> **they are not VRS figures**. VRS must file its own impact statement on any VRS bill
-> (§ 30-19.1:7), and on a comparable 2023 bill it reported $10,000 to $60,000 per member.
-> **JLCVSO should ask VRS for its number before this bill is filed.**
+> JLCVSO analyst estimates from published VRS rates — **not VRS figures**. VRS must file
+> its own statement on any VRS bill (§ 30-19.1:7); on a comparable 2023 bill it reported
+> $10,000 to $60,000 per member. **Ask VRS for its number before this bill is filed.**
 
 ---
 
@@ -152,5 +149,4 @@ takes a bill.
 
 ---
 
-*Draft bill text: **Annex A**. Cost assumptions and sources: **Annex B** and the **Annex 2
-closure**. Full brief with all citations: **01-JLC-Legislative-Change-Brief**.*
+*Bill text: **Annex A**. Cost sources: **Annex B**, **Annex 2 closure**. Full brief: **01**.*
