@@ -109,7 +109,11 @@ These are the official denominators. They replaced the DHRM classified-workforce
 | F-51 | **Annual Covered Payroll** by group at 6/30/2025 | Teachers $11,732,114,000; Pol. Subdivisions $8,041,026,000; State $6,275,603,000; VaLORS $432,703,000; SPORS $182,726,000; JRS $98,645,000. **Total $26,762,817,000** | VRS Annual Actuarial Valuation, June 30, 2025 | Results Summary, each group | 2 | High |
 | F-54 | **Total Normal Cost** by group | State 8.73%; Teachers 9.22%; SPORS 18.37%; VaLORS 14.30%; Judicial 27.11% | same | Results Summary — Employer Contribution Rate Detail | 2 | High |
 | F-55 | **Board-adopted** long-term assumptions | Investment return **6.75%**; COLA **2.50% Plan 1**, **2.25% Plan 2 / Hybrid**; payroll growth **3.0%** (2.5% VaLORS) | same | Executive Summary | 2 | High |
-| F-56 | VRS § 30-19.1:7 fiscal impact statement on **HB 1867 (2023)** — free grant of active-duty military service to teachers — found **$10,000 to $60,000 of unfunded liability per participating member**, and roughly **$78,000 one-time** VRS administrative cost | — | VRS financial and policy impact statement, HB 1867, 2023 Reg. Sess. | **pinpoint not yet captured — see § 5, U-06** | 2 | Medium |
+| F-56 | **HB 1867 (2023)** — free grant of up to 4 years of prior active-duty military service to teachers. VRS: "each person who purchases up to 48 months of active military service would create an unfunded liability that **ranges from $10,000 - $60,000** depending on the age and service and compensation of the member" | verbatim | VRS, *2023 Fiscal Impact Statement*, HB 1867 | Item 6; dated 1/16/2023, doc. HB1867.DOC/VRS | 2 | High |
+| F-60 | **VRS's own worked total for HB 1867**: "if 1,500 members (1% of the Teacher population) had this type of service, and the average cost was **$35,000**, the total cost to the fund could be **$50 million**." Current unfunded liability of the Teacher Plan: **$11.8 billion** | verbatim | same | Items 6 and 9 | 2 | High |
+| F-61 | VRS cost to implement HB 1867: **approximately $78,000 for FY 2023** (NGF, Item 498 — handbooks, manuals, e-courses, web materials, employer and member communication). **Employer cost to implement: "None."** GF budget impact: **"No immediate impact."** | — | same | Items 6, 7, 8 | 2 | High |
+| F-62 | **VRS cannot identify who holds unexercised military service.** "While VRS is not able to determine the number of current teachers or future teachers who would have prior active military service to purchase… it is unknown how many teachers have prior military service available to be granted." | verbatim | same | Item 6 | 2 | High |
+| F-63 | VRS, on the value of the credit: "Prior service credit counts toward **vesting, eligibility for retirement and eligibility for the health insurance credit**, if offered by the employer." And: "Granting of service in a pooled plan will effectively **spread the cost of each period of granted service over all of the employers** in the Teacher plan." | verbatim | same | Items 12 and 6 | 2 | High |
 
 ### 1.4 Virginia and federal workforce facts
 
@@ -150,7 +154,7 @@ Every entry: the value, its basis, who owns resolving it, and how much it moves 
 | A-05 | Retirement age, Plan 2 and Hybrid | Modelled from the member's own unreduced-eligibility date | F-07 (SSA NRA); § 51.1-153 B 3 | Earlier eligibility **raises** cost; this is the acceleration channel, priced at FM-4 § 4.2 | VRS actuary |
 | A-06 | Retirement age, Plan 1 cohort | Modelled from the member's own unreduced-eligibility date | F-07; § 51.1-153 B 1 | as above | VRS actuary |
 | A-07 | Annuity basis | Level-COLA **annuity-certain to age 87** | **ESTIMATE — not a VRS mortality table.** Reconciles to within ~3% of the v1.1 factors it replaces; see § 7.3 | Terminal age 84 / 87 / 90 moves the AEC/ANC **multiple** by roughly −10% / +9%; the multiple is far more stable than the dollar level (§ 3.4) | VRS actuary |
-| A-16 | Combined member + employer normal cost, used to price recommendation A-1 | **OFFICIAL — F-54**, State Employees 8.73% | A-1's character turns on the **statutory interest rate**, a drafting choice rather than an actuarial one | Legislative Services; FM-4 § 4.3 |
+| A-16 | Combined member + employer normal cost, used to price recommendation A-1 | **OFFICIAL — F-54**, State Employees 8.73% | Applied to early-career pay and carried forward at a statutory interest rate, per A-1 as described in Annex A, § 6 | **A-1's whole character turns on that statutory interest rate, which is a drafting choice rather than an actuarial one.** At 4% A-1 is cheaper to the veteran than A-3; at 6.75% it is nearly double, and for both Hybrid profiles it over-recovers — the price exceeds the entire modelled value of the credit | Legislative Services; FM-4 § 4.3 |
 
 > **A-05 and A-06 changed in substance, not merely in value.** v1.1 used flat retirement ages of 67 and 65. The live model derives each profile's unreduced-eligibility date and then moves it, because that movement *is* the dominant cost channel. A flat retirement age cannot price acceleration at all, which is the larger half of why v1.1's total was too low.
 
@@ -196,7 +200,7 @@ All of these push the figure **upward**. None is netted against the pension cost
 - **Adverse selection** (Annex A, § 5.1). Immediate access on the effective date means the actuary prices an **unbounded cohort**, so the entire weight of control sits on the two Annex A guardrails — priced as dials at FM-4 § 4.8 and registered here as A-28.
 - **The early-retirement reduction subsidy** (F-48). Reaching an *unreduced* date earlier also extinguishes a reduction the member would otherwise have borne. Runs in one direction only: upward. This is why the 20%–49% acceleration share is a **floor**.
 - **Refund option value** (§ 51.1-128).
-- **VRS administrative cost** of implementing a graded schedule and 60-month payment agreements. HB 1867's analogue was ~$78,000 one-time (F-56).
+- **VRS administrative cost** of implementing a graded schedule and 60-month payment agreements. HB 1867's analogue was ~$78,000 of NGF implementation cost, with **employer cost to implement reported as "None"** (F-61).
 - **Employer-side payroll and backfill consequences of earlier retirement.** A cost to agencies and school divisions, not to the Fund. **Must not be netted against the pension figures.**
 - **Hazardous duty** is now *in* scope and priced at F-22 / F-43 rates — but see A-25: the net direction for SPORS and VaLORS is unresolved.
 
@@ -301,11 +305,11 @@ Salary bases, both official: **$69,865** = mean classified salary (F-34). **$70,
 | ID | Claim | Status | What would resolve it |
 |---|---|---|---|
 | U-01 | **Historical take-up** for § 51.1-142.2 military purchases | **Not available publicly.** The single input that most changes the answer (A-22) | **VRS data request item 5** — purchases completed per year for ten years, split by ANC vs AEC pricing, with average years and average dollars. Annex A, Q5 |
-| U-02 | Number of members holding **verified but unpurchased** military service | **Irreducibly unavailable outside VRS.** Verified military service exists in VRS records only for members who already applied (F-29); members who hold it and never applied are not identifiable from VRS data at all, only from an employer self-identification field — which is what F-31 is, and why it is a floor | **VRS data request items 1–4, 6–7**, drafted in full at FM-1 § 1.7 |
+| U-02 | Number of members holding **verified but unpurchased** military service | **Irreducibly unavailable — and now confirmed so by VRS itself.** F-62: VRS told the 2023 General Assembly it "is not able to determine the number of current teachers or future teachers who would have prior active military service to purchase." Verified military service exists in VRS records only for members who already applied (F-29); members who hold it and never applied are not identifiable from VRS data at all, only from an employer self-identification field — which is what F-31 is, and why it is a floor. **This is useful rather than merely limiting:** it means no one can produce a point estimate here, so the range in FM-1 § 1.6 is not a shortcoming of this analysis | Items 1–4 and 6–7 of the § 1.7 request still narrow it as far as it can be narrowed. **A point estimate should not be promised to anyone** |
 | U-03 | Whether purchased military service counts toward **hazardous-duty service thresholds** | **Not determined.** More consequential than in v1.1, since hazardous duty is in scope and carries the largest per-member exposure | VRS counsel — Annex A, Q4 |
 | U-04 | **Plan mix by employer group** | **Not published.** Governs A-25; the SPORS / VaLORS net is unresolvable without it | **VRS data request item 1** |
 | U-05 | The **actuarial-equivalent-cost factor basis** | **Exists and is requestable — this changed between v1.1 and v2.0.** F-46: the Plan Actuary develops AEC rates annually from the prior-year valuation. It is a document, not a per-member computation that must be commissioned. Say "VRS does not publish it," not "VRS has none" | **VRS data request item 8**, naming Gabriel, Roeder, Smith & Company (F-52) |
-| U-06 | **Pinpoint for the HB 1867 fiscal impact statement** (F-56) | **Figure relied on; citation incomplete.** The $10,000–$60,000 per-member band is the package's only independent cross-check on magnitude (FM-4 § 4.6) and is currently cited without a document URL or page. **The weakest citation supporting a load-bearing claim in the package** | Retrieve the § 30-19.1:7 statement for HB 1867 (2023) from LIS or the VRS legislative file; record title, date and page. **Owner: Fiscal & Impact Modeler** |
+| U-06 | **Pinpoint for the HB 1867 fiscal impact statement** (F-56) | **CLOSED October 25, 2026.** Retrieved from Virginia LIS (document HB1867F158, dated 1/16/2023). The band is verbatim and the statement contains **more** than was being cited: VRS's own worked total of **$50 million** at 1% teacher take-up on a **$35,000** average (F-60), the $78,000 administrative figure with "employer cost to implement: None" (F-61), VRS's own statement that it cannot identify who holds the service (F-62), and VRS confirming the credit reaches vesting, retirement eligibility and the HIC (F-63). Confidence raised Medium → High. See § 7.5 | — |
 | U-07 | **SB 950 (2026)** putting new judges in Plan 2 (F-42) | **Verified only at one remove** — read from the VRS ACFR FY2025 legislative summary, not from the chapter text | Retrieve the 2026 Acts of Assembly chapter text for SB 950 |
 | U-08 | **Standards of Quality composite share** | **Deliberately not assumed** (A-26) | DPB |
 | U-09 | Veteran **new hires** per year into state service | **Estimate retired, not replaced** (A-14 → § 2.3). DHRM publishes the veteran share of the standing workforce, not of new hires. Likely above 6% given the § 2.2-2903 preference (F-18) | DHRM or Cardinal HCM new-hire data disaggregated by veteran status |
@@ -332,7 +336,7 @@ All retrieved October 24, 2026. This is the consolidated list for the package; A
 - [VRS Annual Actuarial Valuation, June 30, 2025](https://employers.varetire.org/media/employers/pdf/financial-reporting/valuations/valuation-report-vrs.pdf) — Executive Summary; Results Summary by group
 - [*VRS 101 / Who We Serve*](https://www.varetire.org/media/shared/pdf/publications/intro-to-vrs-brochure.pdf) — 2025 edition, p. 4
 - VRS Board of Trustees minutes — [June 18, 2025](https://www.varetire.org/media/members/pdf/board/minutes/2025/board-of-trustees-minutes-06-18-25.pdf) (RBA 2025-06-10; the quadrennial-cycle and Plan-Actuary statements) · [February 5, 2026](https://www.varetire.org/media/members/pdf/board/minutes/2026/board-of-trustees-minutes-02-05-26.pdf) · [April 23, 2026](https://www.varetire.org/media/members/pdf/board/minutes/2026/board-of-trustees-minutes-04-23-26.pdf) · [June 17, 2026](https://www.varetire.org/media/members/pdf/board/minutes/2026/board-of-trustees-minutes-06-17-26.pdf) (B&A report; Early Retirement Factors Study)
-- VRS financial and policy impact statement, **HB 1867 (2023)** — **pinpoint outstanding, U-06**
+- [VRS, *2023 Fiscal Impact Statement*, **HB 1867**](https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+oth+HB1867F158+PDF) — the § 30-19.1:7 statement; dated January 16, 2023, document HB1867.DOC/VRS, 3 pp. Bill history: [LIS HB 1867, 2023 Reg. Sess.](https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1867=) (patron P. Scott; left in Appropriations 2/7/2023)
 
 **Virginia government:**
 
@@ -351,9 +355,9 @@ All retrieved October 24, 2026. This is the consolidated list for the package; A
 
 ---
 
-## 7. Reconciliation log — what this pass changed, and four checks it produced
+## 7. Reconciliation log — what this pass changed, and the checks it produced
 
-v2.0 is not a transcription of Annex 2 Closure. Reconciling the two documents required four checks, and all four produced findings.
+v2.0 is not a transcription of Annex 2 Closure. Reconciling the two documents required four arithmetic checks (§ 7.1–§ 7.3 and § 7.4), and all four produced findings. Closing the one citation gap the pass opened produced a fifth that was not sought (§ 7.5).
 
 ### 7.1 The salary basis of the live cost model was inherited unexamined — and it holds
 
@@ -406,7 +410,39 @@ So that the retraction can be defended rather than merely stated. Both figures c
 
 **Also corrected:** the scale sentence. "About 5 cents out of every $100 of a single year's payroll" is right only at the very bottom of the live grid (0.049%) and understates the top by about fourteen times (0.681%). Brief v1.2 and the one-pager carry the corrected framing.
 
-### 7.5 Items this pass closed, and items it opened
+### 7.5 The HB 1867 statement, retrieved — and it validates the model more sharply than expected
+
+U-06 was opened and closed in this pass. The statement (VRS, *2023 Fiscal Impact Statement*, HB 1867, dated 1/16/2023) turned out to carry three things the package was not using.
+
+**1. VRS published its own total, and it is in our order of magnitude — for teachers alone, free, at 1% take-up.**
+
+> "if 1,500 members (1% of the Teacher population) had this type of service, and the average cost was $35,000, the total cost to the fund could be **$50 million**." (F-60)
+
+So the only total VRS has ever published for a benefit of this shape is **$50 million against the teacher population alone, at 1% participation, for a free grant.** Our $13M–$182M across six employer groups, three plans, 5%–30% take-up, for a benefit the member still pays for, is plainly the same order of magnitude. **It is the retracted "under $2 million" that is the outlier, not the new range** — and that can now be demonstrated from VRS's own arithmetic rather than argued.
+
+**2. The per-member figures agree structurally, not just in magnitude.** A priced purchase must cost the Fund less than a free grant of identical service. By how much is predictable: the member pays the approximate normal cost, so the Fund bears `1 − 1/m` of the value, where `m` is the AEC/ANC multiple.
+
+```
+Our blended A-3 net PV per purchaser / VRS free-grant average
+  = $24,627 / $35,000  =  0.704
+
+Predicted band from the modelled multiples (FM-2 § 2.4, m = 2.76x - 3.54x):
+  1 - 1/2.76 = 0.638   ...   1 - 1/3.54 = 0.718
+```
+
+**0.704 sits inside that band**, and nearest to the 3.23× profile (0.690). Two independently constructed quantities — our per-purchaser present value, and VRS's average cost for a free grant — stand in exactly the ratio the pricing structure requires. This is the strongest single validation in the package, and neither half of it was built to produce the other.
+
+**3. VRS's own words close two of our open items and support a third.**
+
+- **F-62 confirms U-02 is irreducible.** VRS: it "is not able to determine the number of current teachers or future teachers who would have prior active military service to purchase." The population range in FM-1 § 1.6 is therefore not a weakness of this analysis — **nobody can do better, including VRS.** Say that plainly rather than apologising for the range.
+- **F-63 confirms the eligibility channel from VRS's own mouth:** prior service credit "counts toward vesting, eligibility for retirement and eligibility for the health insurance credit." That is § 3.2's two channels and the § 2.4 HIC exclusion, stated by VRS in a filed impact statement.
+- **F-61 is the better precedent for our § 30-19.1:7 posture than we were claiming.** VRS put the administrative cost at ~$78,000 NGF, **employer cost to implement at "None," and the general fund at "no immediate impact"** — for a *free* grant. Our A-3 asks for no new rate-setting at all (FM-3, point 4), so its administrative footprint should be no larger. **This is direct VRS precedent for the $0 general fund claim**, which previously rested on the structure of § 51.1-145 alone.
+
+**One asymmetry to carry honestly.** F-63 also notes that granting service in a pooled plan "will effectively spread the cost of each period of granted service over all of the employers in the Teacher plan." That is the mechanism by which our political-subdivision and teacher exposure lines reach employers who have no veteran purchasing — and it is what the Commission on Local Government will focus on (FM-4 § 4.7). It cuts against us and should be in the brief before someone else puts it there.
+
+**Scale comparator now available:** the Teacher Plan's unfunded liability is **$11.8 billion** (F-60). VRS's own $50M example is 0.42% of it.
+
+### 7.6 Items this pass closed, and items it opened
 
 **Closed by Annex A v1.1** (commit 3704a3e), both originating in FM-4 § 4.8 and FM-3:
 
@@ -419,9 +455,9 @@ So that the retraction can be defended rather than merely stated. Both figures c
 
 | Item | Owner |
 |---|---|
-| **U-06 — pinpoint the HB 1867 fiscal impact statement.** The package's only independent magnitude cross-check and currently its weakest citation | Fiscal & Impact Modeler |
+| **U-06 — pinpoint the HB 1867 fiscal impact statement** | **Closed in this pass.** Retrieved, verbatim, and it strengthened the package rather than merely citing it — § 7.5. F-56 confidence Medium → High; F-60 to F-63 added |
 | **U-07 — retrieve the SB 950 (2026) chapter text** rather than relying on the ACFR legislative summary | Fiscal & Impact Modeler |
-| Annex 2 Closure § 4.6 cited "the brief's own Annex 3 source list at S8." **There is no Annex 3 in this package** and no S-numbered source list | **Fixed in this pass** — 04 § 4.6 now cites F-56 and carries the U-06 citation note |
+| Annex 2 Closure § 4.6 cited "the brief's own Annex 3 source list at S8." **There is no Annex 3 in this package** and no S-numbered source list | **Fixed in this pass** — 04 § 4.6 rewritten on the retrieved statement, citing F-56 and F-60 to F-63 |
 | **A-26 / U-08 — the DPB Standards of Quality composite share**, to split the teacher exposure line | DPB request, via Fiscal & Impact Modeler |
 | **A-28 — the guardrail dial setting.** Now a policy choice rather than a drafting defect: 0% is plain A-3, 100% drives the fiscal note to zero by removing the pricing subsidy from exactly the long-service Plan 1 veterans most eager for the bill | JLCVSO (Annex A, Q12) |
 | **A-22 / U-01 — historical take-up.** Roughly a factor of 6 of the grid's factor-of-14 span | VRS data request item 5 |

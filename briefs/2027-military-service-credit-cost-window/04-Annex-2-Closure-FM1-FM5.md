@@ -371,7 +371,11 @@ This is a present-value liability, not a cash appropriation. It would be absorbe
 
 ### 4.6 Independent cross-check — and why it validates this and not the old figure
 
-VRS's own § 30-19.1:7 fiscal impact statement on **HB 1867 (2023)** — which would have granted active-duty military service to teachers **free** — found **$10,000 to $60,000 of unfunded liability per participating member.**
+**Source now pinpointed** (Annex B F-56, F-60 to F-63): VRS, *2023 Fiscal Impact Statement*, **HB 1867**, dated January 16, 2023, document HB1867.DOC/VRS — the § 30-19.1:7 statement on a bill that would have granted up to four years of active-duty military service to teachers **free**. VRS, Item 6, verbatim:
+
+> "each person who purchases up to 48 months of active military service would create an unfunded liability that **ranges from $10,000 - $60,000** depending on the age and service and compensation of the member."
+
+**Per-member comparison:**
 
 | | Modelled A-3 net PV per member | Against the HB 1867 band |
 |---|---:|---|
@@ -380,7 +384,29 @@ VRS's own § 30-19.1:7 fiscal impact statement on **HB 1867 (2023)** — which w
 | Hybrid | $6,779 | below — as a *priced* purchase should be |
 | **Brief v1.0** | **~$3,750** | **an order of magnitude below the floor** |
 
-A purchase at which the member still pays must cost the Fund **less** than a free grant of the same service. These figures do; two of three sit inside VRS's own band and the third sits just below it, which is exactly the expected pattern. The brief v1.0 per-member figure sat roughly a factor of three below even the floor of a band VRS produced for a **free** benefit. That was the signal — available at the time in the HB 1867 statement itself, now registered as Annex B F-56 — that the arithmetic was too low. (**Citation note:** the HB 1867 statement is relied on here for magnitude but is not yet pinpointed to a document URL and page. Tracked as Annex B U-06, owner Fiscal & Impact Modeler. It is the weakest citation under a load-bearing claim in this package.)
+A purchase at which the member still pays must cost the Fund **less** than a free grant of the same service. These figures do; two of three sit inside VRS's own band and the third sits just below it, which is exactly the expected pattern. The brief v1.0 per-member figure sat roughly a factor of three below even the floor of a band VRS produced for a **free** benefit. That was the signal, available at the time in the HB 1867 statement itself, that the arithmetic was too low.
+
+**The agreement is structural, not just a matter of magnitude.** VRS also published a worked total — Items 6 and 9, verbatim: *"if 1,500 members (1% of the Teacher population) had this type of service, and the average cost was **$35,000**, the total cost to the fund could be **$50 million**."* Because the member pays the approximate normal cost, the Fund bears `1 − 1/m` of the value, where `m` is the AEC/ANC multiple:
+
+```
+blended A-3 net PV per purchaser / VRS free-grant average
+  = $24,627 / $35,000  =  0.704
+
+predicted from the § 2.4 multiples (m = 2.76x - 3.54x):
+  1 - 1/2.76 = 0.638   ...   1 - 1/3.54 = 0.718      0.704 lands inside, nearest the 3.23x profile
+```
+
+Two independently constructed quantities stand in exactly the ratio the pricing structure requires, and neither was built to produce the other.
+
+**And it reframes which figure is the outlier.** The only total VRS has ever published for a benefit of this shape is **$50 million for the teacher population alone, at 1% participation, with no member price.** Against that, $13M–$182M across six employer groups, three plans and 5%–30% take-up, for a benefit the member pays for, is plainly the same order of magnitude — while "under $2 million" is not. That can now be shown from VRS's own arithmetic rather than argued. (Teacher Plan unfunded liability, for scale: **$11.8 billion**; VRS's $50M example is 0.42% of it.)
+
+**Three further findings from the same document**, carried in full at Annex B § 7.5:
+
+1. **VRS cannot identify who holds the service** — it "is not able to determine the number of current teachers or future teachers who would have prior active military service to purchase" (F-62). The FM-1 § 1.6 range is therefore not a shortcoming of this analysis; no one can do better, including VRS. **Do not promise anyone a point estimate.**
+2. **VRS confirms the eligibility channel**: prior service credit "counts toward vesting, eligibility for retirement and eligibility for the health insurance credit" (F-63) — § 4.1's two channels and the § 4.9 HIC exclusion, in VRS's own filed words.
+3. **Direct VRS precedent for the $0 general fund claim** (F-61): for a *free* grant VRS put its own implementation cost at ~$78,000 NGF, **employer cost to implement at "None," and the general fund at "no immediate impact."** A-3 requires no new rate-setting at all (FM-3, point 4), so its administrative footprint should be no larger.
+
+**One line in it cuts against us, and should be in the brief before someone else finds it.** F-63: granting service in a pooled plan "will effectively spread the cost of each period of granted service over all of the employers in the Teacher plan." That is the mechanism by which the teacher and political-subdivision exposure lines at § 4.7 reach employers who have no veteran purchasing at all — and it is what the Commission on Local Government will read first.
 
 ### 4.7 Who bears it — state, teacher and local exposure reported separately
 
