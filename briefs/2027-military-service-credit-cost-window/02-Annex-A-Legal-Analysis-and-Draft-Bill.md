@@ -239,9 +239,12 @@ A third option, if VRS insists: require a minimum period of membership service (
 >   this; **no conforming amendment is required.** Note the two consequences JLCVSO has
 >   accepted: (1) political subdivisions bear the cost through their own § 51.1-145
 >   employer rates, so the Commission on Local Government will receive and may comment
->   adversely on the § 30-19.1:7 impact statement; (2) **the fiscal estimate in Annex B
->   covers the state classified workforce only** and must be re-scoped to the full active
->   membership before filing. Flagged to the Fiscal & Impact Modeler and to VRS.
+>   adversely on the § 30-19.1:7 impact statement; (2) the fiscal estimate originally
+>   covered the state classified workforce only and had to be re-scoped to the full active
+>   membership. **That re-scope is complete** — Annex 2 Closure, FM-1 and FM-4, with the
+>   three-way state / teacher / local exposure split at FM-4 § 4.7. The political-subdivision
+>   line is the largest of the three and arrives without a local opt-in, so brief the
+>   Commission on Local Government before filing, not after.
 > - **Q11 — Transition: immediate access on the effective date.** The current draft already
 >   does this; no amendment required. The actuary will therefore price an unbounded
 >   cohort, which raises the importance of the two adverse-selection guardrails in § 2.2.

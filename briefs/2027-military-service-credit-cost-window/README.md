@@ -16,8 +16,8 @@ Read in this order. Most legislators and staff should never need to go past file
 | [00-ONE-PAGE-BRIEF.html](00-ONE-PAGE-BRIEF.html) | — | Print template for the PDF. Regenerate with:<br>`"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --no-pdf-header-footer --print-to-pdf=00-ONE-PAGE-BRIEF.pdf file://$PWD/00-ONE-PAGE-BRIEF.html` |
 | [01-JLC-Legislative-Change-Brief.md](01-JLC-Legislative-Change-Brief.md) | Legislative staff who want the backup | Same four sections, with every figure, citation and the fallback positions. **v1.2 — carries the re-scoped cost figure.** |
 | [02-Annex-A-Legal-Analysis-and-Draft-Bill.md](02-Annex-A-Legal-Analysis-and-Draft-Bill.md) | Division of Legislative Services, VRS counsel | Draft bill language, defined-term analysis, statutory conflicts, unintended-effects check, alternatives, open questions. **v1.1 — the rate-schedule authority is now graded on age *and* creditable service, and the alternate hazardous duty option is addressed. This is the version to transmit.** |
-| [03-Annex-B-Fiscal-Assumptions-and-Sources.md](03-Annex-B-Fiscal-Assumptions-and-Sources.md) | VRS actuaries, House Appropriations, Senate Finance & Appropriations | Claim/evidence table, fiscal assumption register, full cost model, unverified claims, primary sources |
-| [04-Annex-2-Closure-FM1-FM5.md](04-Annex-2-Closure-FM1-FM5.md) | VRS actuaries, House Appropriations, Senate Finance & Appropriations | **Closes the five fiscal open items.** Official plan and employer-group denominators, the AEC/ANC multiple surface, every rate group including hazardous duty, the acceleration decomposition with take-up sensitivity, and the July 1, 2026 rate question. Supersedes Annex B's population and total-cost figures. |
+| [03-Annex-B-Fiscal-Assumptions-and-Sources.md](03-Annex-B-Fiscal-Assumptions-and-Sources.md) | VRS actuaries, House Appropriations, Senate Finance & Appropriations | **The package's evidence base — v2.0, reconciled.** Verified-fact register (the single pinpoint index for the whole package), assumption register with owner and sensitivity for every judgment in the model, the cost methodology, what a veteran pays today at published rates, open-claims index, consolidated primary sources, and a reconciliation log. **Carries no total-cost figure at all** — see the division-of-labour rule at its § 0. |
+| [04-Annex-2-Closure-FM1-FM5.md](04-Annex-2-Closure-FM1-FM5.md) | VRS actuaries, House Appropriations, Senate Finance & Appropriations | **The package's cost figures — every derived and estimated number lives here.** Closes the five fiscal open items: official plan and employer-group denominators, the AEC/ANC multiple surface, every rate group including hazardous duty, the acceleration decomposition with take-up sensitivity, the exposure split, the guardrail dials, and the July 1, 2026 rate question. |
 | [models/fm_model.py](models/fm_model.py) | Anyone checking the arithmetic | The reproducible model behind Annex 2 Closure. Every input tagged OFFICIAL / DERIVED / ESTIMATE. Run `python3 fm_model.py`. |
 
 ## Status
@@ -34,17 +34,27 @@ Read in this order. Most legislators and staff should never need to go past file
 | Re-scoped figure applied to the full brief (01) | **Complete 10/24/2026 — v1.2.** All ten mechanical corrections from Annex 2 Closure applied, plus items 11–13 (the guardrail dial, three-way exposure split, DPB SOQ request) |
 | Re-scoped figure applied to the one-page leave-behind (00) | **Complete 10/25/2026.** Board accepted Option C (lead with $0 general fund, state the range in our own words, name take-up as the swing factor, close with HB 1867). PDF regenerated; HOLD lifted |
 | Annex A rate-schedule authority ("age" → "age and creditable service") | **Closed 10/25/2026 — Annex A v1.1, § 2.2.** Widened to age and creditable service, with the amount purchased added as a factor, publication and uniformity requirements, an actuarial-equivalent-cost ceiling, and an express no-spillover sentence confining the schedule to subdivision B 2. Counsel analysis at § 2.5. The package is now internally consistent |
+| Annex B reconciliation (the last file carrying pre-re-scope figures) | **Closed 10/25/2026 — Annex B v2.0.** Rewritten as the package's evidence base under a non-duplication rule: official facts here, derived and estimated figures in Annex 2 Closure only, so the two cannot diverge. Population and total-cost arithmetic removed; A-08…A-15 formally retired with a mapping to their replacements; four reconciliation checks logged at § 7, one of which corrects A-03 (Plan 1 COLA 3.0% → Board-adopted 2.50%) and one of which validates the live model's inherited salary basis to within 0.5%. New: member-price table for hazardous duty and judicial groups. **Annex B is cleared to circulate outside the working group** |
 | Alternate hazardous duty option (10.01%, no plan column) | **Closed for the bill 10/25/2026 — Annex A v1.1, § 2.6.** Reached for subdivision B 2 purchases by factor (v) of the § 2.2 schedule authority, anchored to "the benefits permitted by § 51.1-138." The same pre-existing mismatch for other purchase categories is deliberately left alone. Two confirmations open at Annex A Q13–Q14 |
 
-> **Carried figures that are now superseded.** The re-scope changed the headline.
-> Brief v1.0/v1.1 and Annex B carry "under $2 million one-time," built on state
-> classified employees only and on the price-discount channel only. Re-scoped to
-> all three plans and all employer groups, and with retirement-date acceleration
-> priced, the modelled one-time present value of recommendation A-3 is **on the
-> order of $13M–$182M** depending on pool and take-up. See Annex 2 Closure,
-> FM-4 § 4.4, and the HB 1867 cross-check at § 4.6. **Do not quote the $2 million
-> figure.** The full brief (01) and the one-pager (00) now carry the corrected
-> figure; **Annex B does not.**
+> **The superseded cost figure — retracted everywhere in the package as of 10/25/2026.**
+> Brief v1.0/v1.1 and Annex B v1.1 carried "under $2 million one-time, under $100,000
+> per year," built on state classified employees only and on the price-discount channel
+> only. Re-scoped to all three plans and all employer groups, and with retirement-date
+> acceleration priced, the modelled one-time present value of recommendation A-3 is
+> **on the order of $13M–$182M** depending on pool and take-up. The general fund ask
+> remains, correctly, **$0**. See Annex 2 Closure, FM-4 § 4.4, and the HB 1867
+> cross-check at § 4.6. **Do not quote the $2 million figure.** Every current file now
+> carries the corrected figure or no figure at all: the one-pager (00) and the full
+> brief (01) state it; **Annex B v2.0 states no total-cost figure by design** and
+> records at its § 7.4 exactly why the old one was wrong, so the retraction can be
+> defended rather than merely asserted.
+>
+> **How the two fiscal annexes divide, so that neither can be quoted against the other.**
+> **OFFICIAL published values live in Annex B § 1**, cited once with a pinpoint.
+> **Every DERIVED or ESTIMATED value lives in Annex 2 Closure only**, with Annex B
+> carrying the pointer, owner and sensitivity but never the figure. The two documents
+> compute nothing in common. Full rule and allocation table at Annex B § 0.
 
 > **Board decision, now closed.** The present-value liability is in the tens of
 > millions while the general fund ask remains, correctly, $0. Both are true — this is

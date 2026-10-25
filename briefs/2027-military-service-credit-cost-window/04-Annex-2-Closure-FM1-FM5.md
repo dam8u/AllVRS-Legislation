@@ -380,7 +380,7 @@ VRS's own § 30-19.1:7 fiscal impact statement on **HB 1867 (2023)** — which w
 | Hybrid | $6,779 | below — as a *priced* purchase should be |
 | **Brief v1.0** | **~$3,750** | **an order of magnitude below the floor** |
 
-A purchase at which the member still pays must cost the Fund **less** than a free grant of the same service. These figures do; two of three sit inside VRS's own band and the third sits just below it, which is exactly the expected pattern. The brief v1.0 per-member figure sat roughly a factor of three below even the floor of a band VRS produced for a **free** benefit. That was the signal, available in the brief's own Annex 3 source list at S8, that the arithmetic was too low.
+A purchase at which the member still pays must cost the Fund **less** than a free grant of the same service. These figures do; two of three sit inside VRS's own band and the third sits just below it, which is exactly the expected pattern. The brief v1.0 per-member figure sat roughly a factor of three below even the floor of a band VRS produced for a **free** benefit. That was the signal — available at the time in the HB 1867 statement itself, now registered as Annex B F-56 — that the arithmetic was too low. (**Citation note:** the HB 1867 statement is relied on here for magnitude but is not yet pinpointed to a document URL and page. Tracked as Annex B U-06, owner Fiscal & Impact Modeler. It is the weakest citation under a load-bearing claim in this package.)
 
 ### 4.7 Who bears it — state, teacher and local exposure reported separately
 
