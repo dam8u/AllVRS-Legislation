@@ -141,7 +141,7 @@ These are the official denominators. They replaced the DHRM classified-workforce
 | F-58 | Virginia veterans employed 357k; nonveterans employed 3,864k; Virginia **veteran civilian noninstitutional population 646,000** | 2025 annual averages | BLS, *Employment Situation of Veterans*, Tables 6A and 6B | 2025 annual averages | 3 | High |
 | F-59 | **2.3%** of U.S. public school teachers are military veterans; **3.1%** in the South region | 2.3% / 3.1% | NCES, *Digest of Education Statistics*, table 209.27 | 2016 data | 3 | Medium — age of data |
 | F-73 | **The Standards of Quality state / local split.** "The Local Composite Index of Ability-To-Pay (LCI) … [d]etermines each locality's share of SOQ funding … **Formula ensures at the statewide level: 55% state share and 45% local share**." Corroborated independently by JLARC: "In general, the state pays approximately **55 percent** of SOQ program costs, and localities collectively pay the remaining **45 percent**." VRS teacher retirement contributions are an SOQ account; the non-basic-aid accounts are split "based on an unadjusted total cost of the programs funded through each account" using the LCI | **55% / 45%** | House Appropriations Committee, *Elementary and Secondary Education 101*; **and** JLARC, *State Spending on the K–12 Standards of Quality: 2024 Update* (Rpt. 601) | HAC slide 7 (Jan. 2026); JLARC p. 5 | 3 | High — two independent sources |
-| F-74 | LCI mechanics and spread | Capped at **.8000** so no locality's share exceeds 80% and the state's is at least 20%. **9 divisions at the .8000 cap in 2026–28**; lowest 2026–28 LCI **.1573 (Radford)**, i.e. 84.27% state share. Recalculated every two years | — | House Appropriations Committee, *Elementary and Secondary Education 101* | slide 7 (Jan. 2026) | 3 | High |
+| F-74 | LCI mechanics and spread | Capped at **.8000** so no locality's share exceeds 80% and the state's is at least 20%. **9 divisions at the .8000 cap in 2026–28**; lowest 2026–28 LCI **.1573 (Radford)**, i.e. 84.27% state share. Recalculated every two years | House Appropriations Committee, *Elementary and Secondary Education 101* | slide 7 (Jan. 2026) | 3 | High |
 
 > **The role of the DHRM block (F-30 → F-35) changed in v2.0 and must not be misread.**
 > These remain verified Tier 3 facts, and two of them are still load-bearing. What changed is what they are *for*.
@@ -519,7 +519,7 @@ A-29 was registered in v2.1 after red team S-4, with its direction stated and it
 
 A-29 is the distance between 100% and those rates, and it is now measured rather than asserted.
 
-**Result.** Re-pricing both channels under the Board's decrements, with every other input imported from `fm_model` unchanged:
+**Result.** Re-pricing both channels under the Board's decrements, with every other input imported from `fm_model` unchanged. **This table is on the State Employees decrements**; the Teacher legs, which are the ones that matter most to the pool, are below and are *higher*. Percentages are the share of the deterministic figure that survives.
 
 | Profile | Eligibility moves | Expected retirement moves | Amount channel | Acceleration channel | Full cost |
 |---|---|---|---|---|---|
