@@ -8,10 +8,10 @@
 | **Target session** | 2027 Regular Session, Virginia General Assembly |
 | **Code section** | § 51.1-142.2, Code of Virginia (one subsection) |
 | **General fund ask** | **$0.** This is an employer-contribution-rate liability amortised under the VRS Funding Policy, not an appropriation |
-| **Estimated cost** | **One-time present value of $13M – $182M**, depending on the eligible pool and take-up — **0.05% – 0.68% of VRS covered payroll** ($26.76bn). Analyst estimate. See COST, below |
+| **Estimated cost** | **One-time present value of $28M – $166M**, depending on the eligible pool and take-up — **0.11% – 0.62% of VRS covered payroll** ($26.76bn), or **about 1 to 4 basis points** on employer contribution rates amortised over 20 years. Analyst estimate. See COST, below |
 | **People helped** | **All 110,474 active Plan 1 members — 29.2% of the entire VRS active population — are past the deadline as a matter of law.** Across all three plans, an estimated **10,600 – 26,300** members hold purchasable military service and are past the window |
 | **Status** | Draft for JLCVSO review — not yet reviewed by VRS or Legislative Services |
-| **Version / date** | **v1.2, October 24, 2026.** Cost re-scoped from the state classified workforce to full VRS membership, and retirement-date acceleration priced. **Supersedes v1.1 and the Annex B cost model.** Basis: [04-Annex-2-Closure-FM1-FM5](04-Annex-2-Closure-FM1-FM5.md) |
+| **Version / date** | **v1.3, October 25, 2026.** Applies the red team findings to the COST section: the eligible-pool pairing correction (S-3), the publishable range rebuilt on one assumption set (S-5), the amortised rate impact added (M-5), and two claims withdrawn — that the HB 1867 comparison shows this estimate is conservative (S-1), and that a veteran under 47–48 subsidises the Fund (S-2). The general fund statement is narrowed to the one that is true (F-1/F-2). **Supersedes v1.2, v1.1 and the Annex B cost model.** Basis: [04-Annex-2-Closure-FM1-FM5](04-Annex-2-Closure-FM1-FM5.md), [05-Red-Team-and-Counsel-Review](05-Red-Team-and-Counsel-Review.md) |
 
 > ### The whole thing in 30 seconds
 >
@@ -21,12 +21,15 @@
 > about it. We ask that the deadline be removed for military service, and that veterans be
 > allowed to pay over five years.
 >
-> **Cost: $0 from the general fund.** The pension liability is real but it is a
-> contribution-rate item, not an appropriation: a one-time present value modelled at
-> **$13M – $182M**, which is **5 to 68 cents out of every $100 of VRS covered payroll**.
-> VRS's own fiscal impact statement on HB 1867 (2023) priced a *free* grant of this same
-> service at **$10,000 – $60,000 of unfunded liability per member**; because our veterans
-> still pay, this bill comes in at or below that band per member.
+> **No appropriation is requested.** The pension liability is real but it is a
+> contribution-rate item: a one-time present value modelled at **$28M – $166M**, which is
+> **11 to 62 cents out of every $100 of VRS covered payroll**, or **about 1 to 4 basis
+> points** on employer rates amortised over 20 years against rates that run 14%–20% today.
+> Those contributions are carried in a future appropriation act for state agencies and for
+> the Commonwealth's share of teacher rates, and in their own § 51.1-145 rates for school
+> divisions and localities. VRS's own fiscal impact statement on HB 1867 (2023) priced a
+> *free* grant of this same service at **$10,000 – $60,000 of unfunded liability per
+> member**; VRS will file its own statement on this bill under § 30-19.1:7.
 >
 > *For a leave-behind version of this, use **00-ONE-PAGE-BRIEF**.*
 
@@ -132,7 +135,9 @@ That matters politically: a bill that changes a price is far easier to pass, and
 
 **The pension liability itself is real and it is not small.** Modelled as a one-time present value for recommendation A-3 (keep the published normal-cost price; remove the deadline):
 
-**$13 million to $182 million**, depending on how large the eligible pool turns out to be and how many members actually buy — which is **0.05% to 0.68% of VRS covered payroll**, or between 5 cents and 68 cents out of every $100 of payroll.
+**$28 million to $166 million**, depending on how large the eligible pool turns out to be and how many members actually buy — which is **0.11% to 0.62% of VRS covered payroll**, or between 11 cents and 62 cents out of every $100 of payroll.
+
+**Amortised, which is the form a fiscal impact statement actually uses.** § 51.1-145 I certifies a *rate*, not a present value. Spread as a level percent of payroll over 20 years at the Board's own 6.75% return and 3.0% payroll growth, the same liability is **0.8 to 4.4 basis points** on employer contribution rates — against statewide employer rates in the **14%–20%** range. Both numbers are true and the brief should carry both: the present value is what the money committees will quote, and the rate impact is what employers will actually pay.
 
 > **Correction to v1.1, stated plainly because the money committees will find it otherwise.** Brief v1.1 said "under $2 million one-time, under $100,000 per year ongoing." That figure should not be used. It was not a calculation error — it was internally consistent for what it covered — but it covered only the state classified workforce (about 2,600 people against a pool of 10,600–26,300) and only the price-discount channel, leaving out retirement-date acceleration, which is 20%–49% of the cost. Carried to this bill's actual scope and with acceleration priced, the per-member figure moves from about $3,750 to $6,779–$47,967. **Do not quote the $2 million figure.**
 
@@ -142,28 +147,30 @@ Representative net present-value cost to the Fund per purchasing member, at the 
 
 | Plan | Eligible pool | Net present value per purchaser |
 |---|---|---:|
-| Plan 1 | 3,966 – 9,027 | **$47,967** |
-| Plan 2 | 2,417 – 5,502 | **$17,174** |
-| Hybrid | 4,177 – 11,792 | **$6,779** |
-| **Total pool** | **10,561 – 26,321** | |
+| Plan 1 | 4,343 – 8,243 | **$47,967** |
+| Plan 2 | 2,647 – 5,024 | **$17,174** |
+| Hybrid | 4,575 – 10,769 | **$6,779** |
+| **Total pool** | **11,565 – 24,036** | |
 
-Take-up is the swing factor, and nobody outside VRS knows it:
+Take-up is the swing factor, and nobody outside VRS knows it. The **Low / Moderate / High** rows are the current scenario set; the 5% and 15% rows belong to the superseded v1.1 band and are shown only as markers, **not** as the published floor:
 
 | Take-up over five years | Purchasers | **One-time present value** | As % of VRS covered payroll |
 |---:|---|---|---|
-| 5% | 528 – 1,316 | **$13.0M – $30.4M** | 0.049% – 0.113% |
-| 10% | 1,056 – 2,632 | **$26.0M – $60.7M** | 0.097% – 0.227% |
-| 15% | 1,584 – 3,948 | **$39.0M – $91.1M** | 0.146% – 0.340% |
-| 20% | 2,112 – 5,264 | **$52.0M – $121.5M** | 0.194% – 0.454% |
-| 30% | 3,168 – 7,896 | **$78.0M – $182.2M** | 0.292% – 0.681% |
+| *5% — superseded band* | *578 – 1,202* | *$14.2M – $27.7M* | *0.053% – 0.104%* |
+| **10% — Low** | 1,157 – 2,404 | **$28.5M – $55.5M** | 0.106% – 0.207% |
+| *15% — superseded band* | *1,735 – 3,605* | *$42.7M – $83.2M* | *0.160% – 0.311%* |
+| **20% — Moderate** | 2,313 – 4,807 | **$57.0M – $110.9M** | 0.213% – 0.415% |
+| **30% — High** | 3,470 – 7,211 | **$85.4M – $166.4M** | 0.319% – 0.622% |
+
+> **Two corrections to the v1.2 grid, both made October 25, 2026, and both raise the floor.** (1) *Red team S-3:* the model paired each end of the eligible pool with the **opposite** end of the past-window population, which inflated the spread and made this grid disagree with the "who bears it" table 25 lines below. Pairing like with like reconciles the two on a single pool of **11,565 – 24,036**. (2) *Red team S-5:* the published "$13M – $182M" took its **floor** from the 5% row of the superseded v1.1 band and its **ceiling** from the 30% row of the current scenario set — one range built from two assumption sets. Applying both corrections, **the range to publish is $28M – $166M**, and it supersedes both "$13M – $182M" and the "$26M – $182M" interim figure. Reproduce with `models/fm_model.py`, section 3.
 
 The payroll denominator is **$26,762,817,000** — Annual Covered Payroll across all six VRS groups, June 30, 2025 valuation (teachers $11.73bn, political subdivisions $8.04bn, state employees $6.28bn, VaLORS $433m, SPORS $183m, JRS $99m). Brief v1.1 used the classified state payroll of roughly $4.0bn and quoted "about 5 cents out of every $100." That phrase survives only at the very bottom cell of this grid and understates the top by roughly fourteen times.
 
-**The single input that would most narrow this range is historical take-up**, which VRS holds and nobody else does. The grid spans a factor of 14, and roughly 6 of that 14 is take-up alone. Prior-service purchase take-up is generally low because members must fund it from pay; if VRS's actual § 51.1-142.2 experience is in the low single digits, the honest headline is the bottom row.
+**The single input that would most narrow this range is historical take-up**, which VRS holds and nobody else does. Prior-service purchase take-up is generally low because members must fund it from pay — **but past experience understates what this bill will produce.** The observed low take-up was produced under actuarial-equivalent pricing after 24 months, 6-to-12-month payment terms, and members who never heard of the option in time, and this bill removes all three. JLCVSO cannot tell legislators the bill will reach veterans who currently miss out and simultaneously tell the money committees that take-up will stay where it was. Historical take-up, when VRS supplies it, must be adjusted **upward** for the removal of those three frictions rather than used raw.
 
 ### Who bears it — three figures, never one
 
-Because JLCVSO decided against a local opt-in, the exposure splits across three sets of employers, and it should always be presented that way. **Local exposure flows through political-subdivision employer rates under § 51.1-145 and never touches the general fund.** At 20% take-up:
+Because JLCVSO decided against a local opt-in, the exposure splits across three sets of employers, and it should always be presented that way. **Only the political-subdivision line is outside the general fund entirely** — it flows through those employers' own § 51.1-145 rates. The state-agency line is **general fund and nongeneral fund**, and the Commonwealth carries a share of the teacher line through the Standards of Quality; both are picked up in a **future** appropriation act under § 51.1-145 K. Say that plainly rather than let a House Appropriations analyst find it. At 20% take-up:
 
 | Who bears the employer-rate consequence | Eligible pool | Present value at 20% take-up |
 |---|---|---|
@@ -172,22 +179,26 @@ Because JLCVSO decided against a local opt-in, the exposure splits across three 
 | **Political subdivisions** — § 51.1-145 rates, **no general fund** | 4,753 – 9,169 | **$23.4M – $45.2M** |
 | **Total** | 11,565 – 24,036 | **$57.0M – $118.4M** |
 
+**Why this total is not identical to the 20% row above ($57.0M – $110.9M).** The pool is the same — 11,565 – 24,036, and after the S-3 correction the two derivations agree exactly. The dollars differ because this table applies a single **pool-weighted blended** net cost of $24,627 per purchaser across employer groups, since VRS does not publish plan mix by employer group, while the grid applies the **per-plan** net costs. The low ends agree to the dollar; the high ends differ by about 7% for that reason alone. Quote the grid for the headline and this table for the split, and say which is which.
+
 Two things to be straightforward about. The teacher line is **not** split between the Commonwealth and localities, because that requires the Standards of Quality composite share, which is a DPB budget input rather than a VRS one — JLCVSO should ask DPB for it rather than let anyone assume it. And the **political-subdivision line is the largest of the three**, arriving without a local opt-in. That is the number the Commission on Local Government will read first, and it is the most likely source of organised opposition. Brief them before filing, not after.
 
-### The cross-check that matters most
+### The only public Virginia anchor — and what it does and does not prove
 
-**VRS has already priced a more generous version of this bill, and our figures come in below it.**
+**VRS has already priced a related bill. Our figures and VRS's bracket the answer; do not claim ours is the conservative one.**
 
-In 2023, VRS filed a § 30-19.1:7 fiscal impact statement on **HB 1867**, which would have granted active duty military service to teachers **free of charge**. VRS found **$10,000 to $60,000 of unfunded liability per participating member.**
+In 2023, VRS filed a § 30-19.1:7 fiscal impact statement on **HB 1867**, which would have granted active duty military service to teachers **free of charge**. VRS found **$10,000 to $60,000 of unfunded liability per participating member**, average **$35,000**.
 
 | | Net present value per member | Against VRS's own HB 1867 band |
 |---|---:|---|
 | Plan 1 | $47,967 | **inside the band** |
 | Plan 2 | $17,174 | **inside the band** |
-| Hybrid | $6,779 | below it — as a *priced* purchase should be |
+| Hybrid | $6,779 | below it |
 | *Brief v1.1* | *~$3,750* | *an order of magnitude below the floor* |
 
-A purchase at which the member still pays must cost the Fund **less** than a free grant of the same service. These figures do exactly that: two of three sit inside VRS's own band and the third sits just below it. That is the expected pattern, and it is the strongest available evidence that this estimate is in the right range rather than optimistic.
+> **Read this table carefully, because the obvious inference from it is wrong.** Our figures are **net of what the member pays**, for **2.5** purchased years. VRS's are for a **free** grant of **four** years. Those are not the same quantity, so "inside the band" is not evidence that this estimate is conservative, and earlier drafts of this brief were wrong to say so. **Put on the same footing — free, four years — our Plan 1 figure is about $123,520, roughly twice the top of VRS's range.** The honest statement is a bracket: the two estimates straddle the answer, ours sits at the higher end on a like-for-like basis, and the only figure that will count is the one VRS files under § 30-19.1:7. There is also a plan-mix caveat that runs in a knowable direction: VRS's $35,000 is a **teacher-only** average, and teachers are a longer-tenure workforce, so if they skew more Plan 1 than our blend, VRS's average reflects a costlier mix than ours does.
+
+What the comparison **is** good for is magnitude and direction. It is how we know brief v1.1 was wrong: ~$3,750 per member sat roughly a factor of three below even the floor of a band VRS produced for a **free** benefit. That signal was available in the HB 1867 statement at the time.
 
 ### Where the cost actually comes from
 
@@ -197,7 +208,7 @@ Acceleration is **20% to 49%** of the total cost, and that is a floor, not a cei
 
 **The mechanical asymmetry the JLC needs to understand, which appeared nowhere in v1.1:**
 
-> Under Plan 1's **age 50 with 30 years** threshold (§ 51.1-153 B 1), once a member is past 50 the service leg binds alone, so **one purchased year advances retirement eligibility by one full year**.
+> Under Plan 1's **age 50 with 30 years** threshold (§ 51.1-153 B 2), once a member is past 50 the service leg binds alone, so **one purchased year advances retirement eligibility by one full year**.
 >
 > Under the **Rule of 90** (§ 51.1-153 B 3, Plan 2 and Hybrid), a year actually worked adds two points — one of age and one of service. A purchased year adds only the service point, because purchased credit is creditable service but it is not time lived. So **one purchased year advances Rule-of-90 eligibility by only half a year**.
 
@@ -214,7 +225,11 @@ VRS's approximate normal cost rate is defined as "the average cost of one year o
 | 55 | 1.35× | 1.31× | 1.28× |
 | **Break-even age** | **46.6** | **47.4** | **48.2** |
 
-A multiple below 1.0× means the veteran is paying **more** than the credit is actuarially worth. The break-even clusters tightly at **age 47–48 in all three plans**. Below that age the veteran subsidises the Fund. That is the strongest fiscal argument this proposal has, and it is why the Hybrid per-member figure is only $6,779.
+A multiple below 1.0× means the veteran is paying more than **the increase in their pension check** is worth. The break-even clusters tightly at **age 47–48 in all three plans** — **on the benefit-amount channel alone.** That restriction is load-bearing.
+
+> **Do not say "below 47–48 the veteran subsidises the Fund."** Earlier drafts did, and called it the strongest fiscal argument the proposal has. It is withdrawn. It is computed on the benefit-amount channel only, which is roughly half the cost; the cost figures in this brief are computed on the **full** basis, benefit amount *plus* retirement-date acceleration. Re-run on that full basis there is **no age at which the member overpays**, in any plan, at any age from 28 to 61. Quoting one basis to sell the bill and the other to price it is the single easiest contradiction for an actuary to find, and a legislator can find it unaided by noticing that the Hybrid per-member cost is $6,779 while nearly every Hybrid member is under 47.
+>
+> **The argument that survives on the same basis the cost is computed on is the plan mix.** Hybrid costs **$6,779** per member against Plan 1's **$47,967** — about one seventh. Hybrid is **53% of actives today and 100% of all future hires**, so the per-member cost of this bill declines as the membership turns over, with no further legislation. Use that one instead.
 
 **A caution about the Cliff Graph.** The 3.23× jump in the Cliff Graph is defensible — reproduced independently at 3.54× for Plan 1 at the chart's own illustrative profile (age 55, 25 years, $91,700) once eligibility acceleration is included. But that profile is a long-service member sitting just short of an eligibility threshold, which is the **worst case, not the typical one**. Across ages the multiple ranges from about **0.5× to about 3.5×**. A single-profile chart reads as universal, and it should not. *The chart should be reissued with a second panel plotting the multiple against purchase age, with the 47–48 break-even line marked.*
 
