@@ -2,8 +2,8 @@
 
 **Companion to:** JLC Legislative Change Brief — Virginia's 24-Month Military-Service Purchase Price Cliff (Va. Code § 51.1-142.2)
 **Closes:** Annex 2 open items FM-1, FM-2, FM-3, FM-4, FM-5
-**Date:** October 24, 2026 · **Owner:** Fiscal & Impact Modeler · **Issue:** MOO-291
-**Reproducible model:** [`models/fm_model.py`](models/fm_model.py) — run `python3 fm_model.py`
+**Date:** October 24, 2026 · **Revised October 25, 2026** (red team F-1, M-4, S-4, S-5 — see § 2.3, § 4.5, § 4.8.1, § 4.8.2) · **Owner:** Fiscal & Impact Modeler · **Issue:** MOO-291, MOO-295
+**Reproducible models:** [`models/fm_model.py`](models/fm_model.py) — run `python3 fm_model.py`; [`models/f1_lawful_class_rate.py`](models/f1_lawful_class_rate.py) — the lawful-class-rate, full-basis break-even and restated-exposure checks behind the October 25 revisions
 
 > **Labelling convention used throughout.** **OFFICIAL** = published by VRS, the Commonwealth, or a federal statistical agency. **DERIVED** = arithmetic on official inputs, formula shown. **ESTIMATE** = scenario assumption, not a prediction. No figure in this annex is a VRS actuarial certification; under § 30-19.1:7 the VRS Board files the official impact statement.
 
@@ -27,7 +27,9 @@ Three of the five items close with official sources. Two close as qualified nega
 
 ### And one finding that was not asked for but outranks most of what was
 
-Pricing the Annex A guardrails as dials, as the scope decision requires, showed that **the age-graded rate schedule as currently described removes only about 15% of the exposure.** Grading on age recovers the benefit-amount excess but not the acceleration cost, which is driven by proximity to an eligibility threshold — age *and* service together. Graded instead on **distance from unreduced eligibility**, the same authority can remove anything up to 100%. That is a one-phrase drafting change and it is the highest-leverage edit available anywhere in this package. **FM-4 § 4.8.** **Adopted October 25, 2026 in Annex A v1.1, § 2.2** — see the status note at the end of § 4.8.
+Pricing the Annex A guardrails as dials, as the scope decision requires, showed that **the age-graded rate schedule as originally described removes only about 15% of the exposure.** Grading on age recovers the benefit-amount excess but not the acceleration cost, which is driven by proximity to an eligibility threshold — age *and* service together. Graded instead on **distance from unreduced eligibility**, the same authority reaches the acceleration channel as well. That is a one-phrase drafting change and it remains the highest-leverage edit available anywhere in this package. **FM-4 § 4.8.** **Adopted October 25, 2026 in Annex A v1.1, § 2.2.**
+
+> **Revised October 25, 2026 (red team F-1).** This passage previously said the redrawn authority "can remove anything up to 100%," and § 4.8 said the fiscal note goes to zero at the 100% setting. **Both are withdrawn.** That arithmetic prices each member individually, which Annex A § 2.2's uniformity-within-classification requirement and individual actuarial-equivalent-cost ceiling together forbid. A **lawful uniform class rate** recovers **0%–96% of the above-ANC excess depending on the class, with a 59%–66% class mean — and only about 23% in the Plan 1 long-service cohort the bill leads with.** The honest planning figure is a residual of **$20M–$48M** at 20% take-up, not $0. **The guardrail is a mitigation, not a neutrality device.** Full analysis, the restated band and two drafting options at **§ 4.8.1**.
 
 ### Compliance with the October 24, 2026 scope decision
 
@@ -224,7 +226,25 @@ Inputs, all OFFICIAL: multipliers 1.70% / 1.65% / 1.00% (§ 51.1-155 A 1; § 51.
 | 60 | 1.61× | 1.57× | 1.53× |
 | **Break-even age** | **46.6** | **47.4** | **48.2** |
 
-The break-even ages cluster tightly at **47–48 in all three plans**. Below that age the veteran **overpays** at the approximate-normal-cost price — the member subsidises the Fund. That finding survives in the brief v1.0 and should be kept; it is the strongest fiscal argument the proposal has.
+The break-even ages cluster tightly at **47–48 in all three plans** — **on the benefit-amount channel alone.** That restriction is load-bearing and was not previously stated here.
+
+> **Correction, October 25, 2026 (red team S-4).** Brief v1.0 and v1.2 carried this as "below that age the veteran **overpays** — the member subsidises the Fund … **the strongest fiscal argument this proposal has**." **That claim is withdrawn.** It is computed on the benefit-amount channel only, which is the basis this package elsewhere calls roughly half the cost (§ 4.3: acceleration is 20%–49%, and that is a floor). It is therefore the superseded basis being used to explain a re-scoped number.
+>
+> Re-run on the **full basis** (benefit amount *plus* retirement-date acceleration), salary held constant at $69,865 and 2.5 years purchased, there is **no age at which the member overpays** — in any plan, at any age tested from 30 to 50:
+>
+> | Plan | ANC price | Full-basis value at age 35 | at 40 | at 45 | at 50 |
+> |---|---:|---:|---:|---:|---:|
+> | Plan 1 | $21,833 | $34,138 | $40,822 | $48,815 | $58,372 |
+> | Plan 2 | $18,759 | $25,412 | $30,388 | $36,337 | $43,451 |
+> | Hybrid | $11,667 | $15,401 | $18,417 | $22,022 | $26,334 |
+>
+> The Fund is out money at every cell. `models/f1_lawful_class_rate.py`, `breakeven_full_basis()`.
+>
+> **What replaces it.** The argument that actually holds on the full basis is the **plan-mix argument**: Hybrid per-member net cost is **$6,779**, roughly **one seventh** of Plan 1's $47,967, and Hybrid is **53% of actives today and 100% of future hires**. The bill's per-member cost therefore *declines* as the membership turns over, without any further legislation. That is defensible on the same basis the cost figures are computed on, and it is the sentence the brief and the one-pager should carry instead.
+>
+> **Counter-note, stated because the direction matters.** The full basis assumes **every purchaser retires at the earliest unreduced date** — now registered as **Annex B A-29**, previously unstated. That assumption pushes cost *up*: a member who would have worked to 65 regardless generates no acceleration cost. If real behaviour is partial, the full-basis figures are conservative and the true break-even lies between the two bases. The defect corrected here is reporting **one basis for break-even and the other for cost** without reconciling them, and never naming the behavioural assumption at all.
+
+The benefit-amount-channel break-even remains the right number for one narrow purpose: it is what makes the AEC/ANC **multiple** fall below 1.0× for younger members, which is the § 2.4 point about the Cliff Graph. It is not a statement about whether the Fund gains or loses.
 
 ### 2.4 Where the 3.23× actually comes from — and what to do about the graph
 
@@ -244,7 +264,7 @@ On the benefit-amount channel alone, 3.23× is **unreachable**: the surface tops
 
 **But the chart is still misleading, and in a way the current footnotes do not cure.** A single-profile chart invites the inference that *every* veteran faces a 3.23× jump. The multiple ranges from **0.5× to 3.5×**, and for the large majority of the Hybrid population — every non-hazardous member hired since January 1, 2014, mostly under 47 — the multiple is **below 1.0×**, meaning the ANC price is already above actuarial value.
 
-**Recommended reissue (for MOO-288 to action):** keep the existing values at the illustrative profile; do **not** change them. Add a second panel plotting the AEC/ANC multiple against purchase age, with the 47–48 break-even line marked, and replace caution 1 with: *"the multiple is profile-specific and ranges from about 0.5× to about 3.5×; 3.23× describes a long-service member sitting just short of an eligibility threshold, which is the worst case, not the typical one."*
+**Recommended reissue (for MOO-288 to action):** keep the existing values at the illustrative profile; do **not** change them. Add a second panel plotting the AEC/ANC multiple against purchase age, with the 47–48 **benefit-amount-channel** break-even line marked — labelled as such, per § 2.3's correction, because it is a statement about the multiple and not about whether the Fund gains — and replace caution 1 with: *"the multiple is profile-specific and ranges from about 0.5× to about 3.5×; 3.23× describes a long-service member sitting just short of an eligibility threshold, which is the worst case, not the typical one."*
 
 Two reasons the spread is structural, not a modelling artefact:
 
@@ -361,13 +381,31 @@ Representative net present-value cost per purchasing member, at the mean classif
 
 The denominator is 6.7× larger than the one brief v1.0 used — but **the eligible pool grew by more than the denominator did**, so the payroll share rises as well. "Five cents per $100" is right at the very bottom of the grid (0.049%) and understates the top by about fourteen times (0.681%, or about 68 cents per $100). The one-pager's hedge — that the statewide figure is larger "but it stays the same tiny share of payroll" — is therefore **not correct**, and should be replaced with a figure from this column.
 
-**Against the brief's "under $2 million one-time."** Even the gentlest cell in this grid — the brief's own 5% take-up, on the low pool — is **$13 million**, more than six times the brief's ceiling. The difference is entirely accounted for by the two things the brief said it would do but did not carry into the arithmetic: extending to all plans and all three employer groups (pool 2,600 → 10,561–26,321) and pricing acceleration (about $3,750 per member → $6,779–$47,967).
+**Against the brief's "under $2 million one-time."** Even the gentlest cell in this grid — the brief's own 5% take-up, on the low pool — is **$13 million**, more than six times the brief's ceiling. (That 5% row is itself from the superseded band; on the current scenario set the floor is **$26 million**, thirteen times the brief's ceiling. See § 4.5.) The difference is entirely accounted for by the two things the brief said it would do but did not carry into the arithmetic: extending to all plans and all three employer groups (pool 2,600 → 10,561–26,321) and pricing acceleration (about $3,750 per member → $6,779–$47,967).
 
 This is a present-value liability, not a cash appropriation. It would be absorbed in the employer contribution rate and amortised under the VRS Funding Policy, as the brief correctly says. But the number the money committees will see is the present value, and **$2 million is not that number.**
 
 ### 4.5 The one input that would most change this
 
-**Historical take-up.** The grid spans a factor of 14 from the gentlest to the harshest cell, and roughly 6 of that 14 is take-up alone. Item 5 of the § 1.7 data request would collapse most of it. Prior-service purchase take-up is generally low because members must fund it from pay; if VRS's actual § 51.1-142.2 experience is in the low single digits, the honest headline is the bottom row and not the top.
+**Historical take-up.** The grid spans a factor of 14 from the gentlest to the harshest cell, and roughly 6 of that 14 is take-up alone. Item 5 of the § 1.7 data request would collapse most of it.
+
+> **Correction, October 25, 2026 (red team S-5) — two defects in the same assumption.**
+>
+> **(a) The published floor was taken from a band this package retired.** The headline "$13M–$182M" takes its **floor** from the 5% row, which is the **brief v1.0 band of 5%–15% that the re-scope superseded**, and its **ceiling** from the 30% row of the *current* scenario set. That is one range built from two assumption sets. On the current scenario set alone (Low 10% / Moderate 20% / High 30%) the range is:
+>
+> | Take-up | One-time present value |
+> |---|---:|
+> | 5% — *superseded band, retained only as a floor marker* | $13.0M – $30.4M |
+> | **10% — current Low** | **$26.0M – $60.7M** |
+> | 20% — current Moderate | $52.0M – $121.5M |
+> | **30% — current High** | **$78.0M – $182.2M** |
+> | **50% — stress case** (publicised, payroll-deductible, self-identified population) | **$130.0M – $303.7M** |
+>
+> **The range to publish is $26M–$182M.** The floor doubles. The previous sentence here — that if experience is in the low single digits "the honest headline is the bottom row" — **is withdrawn**: the bottom row is not on the current assumption set, and calling it "the honest headline" imported the retired floor into the live document.
+>
+> **(b) Historical take-up is a downward-biased estimator of post-reform take-up, and the bias runs the wrong way for us.** The justification for a low assumption is that members must fund purchases from pay. But the observed low take-up was produced under a regime with (i) actuarial-equivalent pricing after 24 months, (ii) 6–12 month payment terms, and (iii) members who, on this package's own theory of the case, never hear about the option in time. **The bill removes all three.** Using pre-reform behaviour to forecast post-reform behaviour, when the reform targets precisely the frictions that suppressed the behaviour, is a selection error — and it is the one assumption most likely to be wrong in the direction that hurts. JLCVSO cannot simultaneously tell legislators the bill will reach veterans who currently miss out and tell the money committees that take-up will stay where it was.
+>
+> **Consequences adopted here:** the 50% row is carried as a stress case rather than omitted; **data request item 5 is reclassified from a request to a pre-filing blocker** (Annex B A-22 / U-01); and historical take-up, when obtained, must be adjusted upward for the removal of the three frictions rather than used raw.
 
 ### 4.6 Independent cross-check — and why it validates this and not the old figure
 
@@ -457,11 +495,92 @@ Immediate access on the effective date means the actuary prices an **unbounded c
 | 75% | $11,992 | $4,293 | $1,695 | $6,157 | $14.2M |
 | 100% | $0 | $0 | $0 | $0 | **$0** |
 
-**This is the dial that bites.** At 50% recovery it halves the exposure; at 100% the bill is actuarially neutral by construction and the fiscal note is zero. It is the single most powerful cost control available and the one to offer the money committees first.
+**This is the dial that bites** — but **not all the way, and the 100% row above is not a lawful setting.** See § 4.8.1, which supersedes the reading previously given here. The sentence this table originally carried — "at 100% the bill is actuarially neutral by construction and the fiscal note is zero" — **is withdrawn.**
 
-> **Recommendation to Legislative Services.** Express the Board's rate-schedule authority as varying by the member's **age and creditable service**, or by the member's **distance from unreduced retirement eligibility** — *not* by age alone. One phrase, and it is the difference between a guardrail that removes 15% of the exposure and one that can remove all of it.
+#### 4.8.1 What a *lawful* uniform class rate can actually recover — F-1
 
-> **Status: adopted, October 25, 2026 — Annex A v1.1, § 2.2.** Counsel widened the authority to age **and** creditable service (with distance from unreduced eligibility named as the equivalent alternative), added the amount of service purchased as a third factor, and attached publication, uniformity-within-classification, and actuarial-equivalent-cost-ceiling constraints plus an express sentence confining the schedule to subdivision B 2. The counsel analysis is at Annex A § 2.5. **Guardrail A as modelled above is therefore superseded by Guardrail A′ as the description of what Annex A actually grants** — the 15% figure is retained here as the record of why the change was made, not as a current description of the draft. Two confirmations remain open at Annex A Q3a (how closely a published *class* rate tracks true AEC at the 100% setting) and Q14 (age/service as rate factors).
+> **Correction, October 25, 2026 (red team F-1, the most serious finding in the review).** The table above is produced by `price_threshold_graded()`, which charges each member `ANC + recovery × (that member's own full-basis value − ANC)`. At `recovery = 1.0` the member pays exactly their own actuarial value and the net is zero **by subtraction**. The function never computes a class rate: **it is individualised actuarial pricing, modelled.**
+>
+> Annex A § 2.2 forbids that. A Board schedule must (a) "apply uniformly to all members within the same classification" **and** (b) "not require payment of an amount exceeding the actuarial equivalent cost of the service credit purchased." Limb (b) binds **member by member**. So a single lawful uniform price for a class must be set at or below the **minimum** actuarial value in that class, not the mean:
+>
+> ```
+> P*(class) = max( published ANC price , min over members of AEC )
+> recovery  = (P* − ANC) / (class mean AEC − ANC)
+> ```
+>
+> which equals 1.0 only if actuarial value is **constant** inside the class — and it never is, because the class is exactly where the variation the schedule exists to price has been pooled away.
+
+**Verified independently** (`models/f1_lawful_class_rate.py`, not a re-run of the red team's script). Classes drawn as finely as the § 2.2 factors permit while remaining genuine published classes — plan × 5-year age band × 10-year service band, 2.5 years purchased, salary held constant at $69,865 so the only variation inside a class is the risk being priced. 60 priceable classes:
+
+| Class | min AEC | mean AEC | max/min | **100% dial actually recovers** |
+|---|---:|---:|---:|---:|
+| Plan 1, age 50–54, svc 30–39 | $55,066 | $56,559 | 1.05× | **96%** |
+| Plan 1, age 45–49, svc 30–39 | $46,394 | $50,057 | 1.17× | 87% |
+| Plan 1, age 50–54, svc 20–29 | $58,372 | $73,583 | 1.76× | 71% |
+| Plan 1, age 60–64, svc 20–29 | $35,256 | $55,745 | 2.77× | 40% |
+| **Plan 1, age 55–59, svc 20–29** | **$32,822** | **$69,446** | **3.06×** | **23%** |
+| Plan 1, age 50–54, svc 10–19 | $24,656 | $37,006 | 2.31× | 19% |
+| Plan 1, age 45–49, svc 10–19 | $22,954 | $45,716 | 2.45× | **5%** |
+| Plan 2, age 55–59, svc 10–19 | $26,410 | $35,987 | 1.64× | 44% |
+| Hybrid, age 50–54, svc 0–9 | $12,461 | $14,705 | 1.48× | 26% |
+| Hybrid, age 60–64, svc 30–39 | $26,047 | $27,291 | 1.09× | 92% |
+
+**Recovery band across all 60 classes: 0% – 96%. Unweighted mean: 63%.** Per plan: Plan 1 **mean 59%**, Plan 2 **66%**, Hybrid **65%**.
+
+**The class that matters recovers 23%.** Plan 1, age 55–59, 20–29 years of service is the cohort the one-pager leads with and the cohort Annex A § 2.5 names as "most eager for the bill." Within it, actuarial value spans **3.06×** — from $32,822 to over $100,000 — because a 55-year-old with 29 years is one year from the age-50/30-year door while a 59-year-old with 20 years is not. A uniform rate lawful for the first member recovers almost nothing from the second. **The fiscal note is not zero at any lawful setting of the schedule as drafted.**
+
+**Restated exposure.** Because the age-and-service distribution of the veteran pool is **not published** (A-22 / U-01), no weighting inside a plan is defensible; the equal-weighted class mean is the central estimate and the extremes are bounds on a *single* classification, not settings the Board could adopt system-wide.
+
+| Setting | Residual PV at 20% take-up |
+|---|---:|
+| 0% — plain published ANC, no schedule | $52.0M – $121.5M |
+| Lawful uniform rate, **best** class in each plan (92%–96%) | $2.7M – $6.5M |
+| **Lawful uniform rate, class mean (59%–66%) — the planning figure** | **$20.5M – $47.7M** |
+| Lawful uniform rate, **worst** class in each plan (0%) | $52.0M – $121.5M |
+| 100% individualised | $0 — **not lawful under § 2.2 as drafted** |
+
+**So the guardrail is worth roughly $20M–$48M of residual rather than $0.** That is still the most powerful cost control in the package — it removes about 60% of the above-ANC excess — but it is a *mitigation*, not a neutrality device, and it must be offered to the money committees as one.
+
+**A further defect, not in F-1, found on this pass.** In **4 of the 60 classes** the published ANC price **itself exceeds the lowest member's own actuarial value**:
+
+| Class | min AEC | ANC price | Shortfall |
+|---|---:|---:|---:|
+| Plan 1, age 40–44, svc 0–9 | $17,243 | $21,833 | $4,590 |
+| Plan 1, age 45–49, svc 0–9 | $20,619 | $21,833 | $1,214 |
+| Plan 2, age 45–49, svc 0–9 | $18,470 | $18,759 | $289 |
+| Hybrid, age 45–49, svc 0–9 | $11,194 | $11,667 | $474 |
+
+In these classes the § 2.2 individual-AEC ceiling is breached **by the baseline price**, before any dial is turned. Read literally, the ceiling would require the Board to charge those members **less than the published approximate normal cost** — so the ceiling is not merely a weak constraint on the dial, it is **inconsistent with the published-rate floor the draft also relies on.** This is a drafting matter for Annex A, flagged to the Drafting Specialist, and it strengthens the case for F-1's option (a) below.
+
+**The two ways out, both of which have a price.**
+
+- **(a) Strike the individual-AEC ceiling; cap at the actuarial equivalent cost determined *for the classification*.** A class rate becomes lawful and the dial recovers the class **mean** — close to the full $0-residual arithmetic. The cost: **some members pay above their own actuarial value**, which must be said out loud rather than discovered by a member. This also cures the four-class inconsistency above.
+- **(b) Keep the individual ceiling and uniformity, and re-state the fiscal case on the band above** — a central residual of **$20M–$48M at 20% take-up**, and effectively **no** recovery in the Plan 1 long-service cohort.
+
+**And a third problem that survives both.** At the 100% setting the member pays the actuarial equivalent cost — **which is what § 51.1-142.2 B 3 already charges today after 24 months.** The setting that drives the fiscal note toward zero is the setting at which the bill's *price promise* is extinguished; what remains is a published rate and the 60-month term. Annex A § 2.5 concedes this for Plan 1 veterans in one sentence. **The one-pager does not concede it anywhere** — it promises the "regular price … at any point in their career" on the same page. Flagged to Editor and Policy Director; it is not a modelling fix.
+
+**Annex A Q3a needs reframing**, from "how closely does a class rate track AEC" to **"is a class rate that recovers the class mean lawful under the ceiling we drafted."** On the analysis above the answer is no, and that is the question to put to VRS and to Legislative Services.
+
+#### 4.8.2 M-4 — the eligible pool is derived two ways, and the dials were quoted on the smaller one
+
+> **Correction, October 25, 2026 (red team M-4).** `fm_model.py` produces **two** pools for the same population, and the package has been quoting whichever was to hand:
+
+| Derivation | Pool | One-time PV at 20% take-up, 0% recovery |
+|---|---|---:|
+| **By plan** (FM-1 § 1.5 — the basis of the published $13M–$182M grid) | 10,561 – 26,321 | **$52.0M – $121.5M** |
+| **By employer group** (FM-4 § 4.7 — the basis of the who-bears table) | 11,565 – 24,036 | **$57.0M – $118.4M** |
+
+The high ends differ by 2,285 members, about 10%, because the by-plan derivation applies the veteran rate uniformly across plans while the by-group derivation applies group-specific rates. **Neither is wrong; they answer different questions**, and the by-group one is the only one that can produce the § 4.7 bearer split.
+
+What **was** wrong is quoting them interchangeably. Annex A § 5.1's guardrail arithmetic — "$57.0M → $48.6M," "$57.0M → $28.5M" — is the **low end of the group derivation**, presented without qualification as "the modelled exposure," against a published ceiling of **$182M** from the plan derivation. The guardrails were being asked to carry a number about a third of the exposure the same package advertises.
+
+**Adopted here:** every guardrail figure is now stated **at both pool ends** (§ 4.8.1), and the "PV at 20% take-up" column in the two dial tables above is identified as the **group-derivation low end** — a single point on a range, not the exposure. **Annex A § 5.1 needs the same two-ended restatement**; flagged to the Drafting Specialist, because the arithmetic there is mine but the sentence is theirs.
+
+> **Recommendation to Legislative Services.** Express the Board's rate-schedule authority as varying by the member's **age and creditable service**, or by the member's **distance from unreduced retirement eligibility** — *not* by age alone. One phrase, and it is the difference between a guardrail that removes about 15% of the exposure and one that removes roughly **60%**. *(Originally written "and one that can remove all of it"; corrected per F-1 — see § 4.8.1.)*
+
+> **Status: adopted, October 25, 2026 — Annex A v1.1, § 2.2; materially qualified October 25, 2026 by F-1.** Counsel widened the authority to age **and** creditable service (with distance from unreduced eligibility named as the equivalent alternative), added the amount of service purchased as a third factor, and attached publication, uniformity-within-classification, and actuarial-equivalent-cost-ceiling constraints plus an express sentence confining the schedule to subdivision B 2. The counsel analysis is at Annex A § 2.5. **Guardrail A as modelled above is therefore superseded by Guardrail A′ as the description of what Annex A actually grants** — the 15% figure is retained here as the record of why the change was made, not as a current description of the draft.
+>
+> **But the two constraints counsel attached are the binding ones.** Uniformity-within-classification plus an **individual** actuarial-equivalent-cost ceiling mean Guardrail A′ as *drafted* cannot be set to the values modelled in the A′ table above; the achievable band is **0%–96% recovery, 59%–66% at the class mean, ~23% in the dominant Plan 1 cohort**, for a residual of **$20M–$48M** rather than $0 (**§ 4.8.1**). What was adopted is therefore better than Guardrail A and materially weaker than the A′ table reads. **Annex A Q3a must be reframed** (§ 4.8.1), and **Q12 — the dial setting — is now a choice between two drafting options rather than a choice of a number on a 0–100% scale.** Q14 (age/service as rate factors) is unaffected.
 
 **Guardrail B — require completion at least N months before the effective date of retirement.** This does not change the price. It caps how close to the unreduced date a purchase may be made, and therefore caps the multiple the Fund can be exposed to. Ceiling on the AEC/ANC multiple:
 
@@ -517,7 +636,7 @@ For MOO-288 to action. Listed most material first.
 9. **Add A-3's administrative advantage:** every rate group already has a Board-adopted rate, so A-3 needs no new rate-setting. (FM-3.)
 10. **State that the July 1, 2025 rates are good through at least June 30, 2029.** (FM-5.)
 
-11. **Change one phrase in the Annex A rate-schedule authority.** Grade by age **and creditable service**, or by distance from unreduced eligibility — not by age alone. As described the guardrail removes about 15% of the exposure; redrawn it can remove all of it. **This is the highest-leverage single edit in the package.** (FM-4 § 4.8.)
+11. **Change one phrase in the Annex A rate-schedule authority.** Grade by age **and creditable service**, or by distance from unreduced eligibility — not by age alone. As originally described the guardrail removes about 15% of the exposure; redrawn it removes roughly **60%** — the class mean of what a *lawful uniform* rate can recover, leaving a residual of **$20M–$48M at 20% take-up** rather than zero (§ 4.8.1, red team F-1). **It remains the highest-leverage single edit in the package, but it is a mitigation and not a neutrality device**, and the accompanying § 2.2 ceiling has to be reframed with it. (FM-4 § 4.8, § 4.8.1.)
 
 12. **Report state, teacher and local exposure as three figures, never one.** The political-subdivision line is the largest of the three and arrives without a local opt-in. Brief the Commission on Local Government before filing. (FM-4 § 4.7.)
 
