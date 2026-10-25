@@ -13,13 +13,13 @@
 
 Three of the five items close with official sources. Two close as qualified negatives with the search recorded. But the work also produced **one finding that is material to the brief as currently drafted**:
 
-> **The brief's cost headline — "under $2 million one-time" — is not sustainable and should not go to the JLC.** It was built on (i) state classified employees only and (ii) the price-discount channel only. Once the brief's own stated scope (all three plans, state + teacher + political-subdivision employers) and its own stated dominant cost driver (retirement-date acceleration) are both carried into the arithmetic, the modelled one-time present-value cost of recommendation A-3 is **on the order of $13 million to $182 million**, depending on the eligible-pool band and take-up.
+> **The brief's cost headline — "under $2 million one-time" — is not sustainable and should not go to the JLC.** It was built on (i) state classified employees only and (ii) the price-discount channel only. Once the brief's own stated scope (all three plans, state + teacher + political-subdivision employers) and its own stated dominant cost driver (retirement-date acceleration) are both carried into the arithmetic, the modelled one-time present-value cost of recommendation A-3 is **on the order of $28 million to $166 million**, depending on the eligible-pool band and take-up. *(This passage read "$13 million to $182 million" when first written; that figure is retracted — see § 4.5.)*
 >
-> That is not a correction of a calculation error. The old arithmetic was internally consistent for what it covered. It covered roughly 2,600 people out of a pool this annex puts at 10,600–26,300, and it priced about 15%–30% of the cost per person. **See FM-4, § 4.4, and the independent cross-check against VRS's own HB 1867 fiscal impact statement at § 4.6, which supports the new magnitude and flags the old one as too low by roughly an order of magnitude.**
+> That is not a correction of a calculation error. The old arithmetic was internally consistent for what it covered. It covered roughly 2,600 people out of a pool this annex puts at 11,600–24,000, and it priced about 15%–30% of the cost per person. **See FM-4, § 4.4, and the independent cross-check against VRS's own HB 1867 fiscal impact statement at § 4.6, which supports the new magnitude and flags the old one as too low by roughly an order of magnitude.**
 
 | Item | Status | One-line answer |
 |---|---|---|
-| **FM-1** | **Closed as a sourced range + a drafted VRS data request** | Official plan and employer-group denominators now in hand. The *veteran-held-purchasable-service* count does not exist publicly and only VRS can produce it. Reportable range: **10,600–26,300** past-window members. Plan 1 (110,474) requires **no estimate at all** — it is past the window as a matter of law. |
+| **FM-1** | **Closed as a sourced range + a drafted VRS data request** | Official plan and employer-group denominators now in hand. The *veteran-held-purchasable-service* count does not exist publicly and only VRS can produce it. Reportable range: **11,600–24,000** past-window members. Plan 1 (110,474) requires **no estimate at all** — it is past the window as a matter of law. |
 | **FM-2** | **Closed — no VRS factor table exists, but a better basis now does** | VRS publishes no actuarial-equivalent factor table. The 3.23× is **approximately right for the Cliff Graph's own illustrative profile** (modelled 2.8×–3.5× across the three plans) — but it sits near the **top** of a **0.5×–3.5×** range. Below about age 47 the member **overpays** at the ANC price. The graph should be reissued with an age dimension, not with different numbers at that one profile. |
 | **FM-3** | **Closed — fully official** | Four rate groups, from the Board's own resolution. Includes a structural finding the brief does not yet carry: **there is no Hybrid hazardous-duty rate, because hazardous-duty members are statutorily excluded from Hybrid and enter Plan 2 instead — so Plan 2 is not a closed cohort.** |
 | **FM-4** | **Closed as a modelled decomposition with take-up sensitivity** | Acceleration is **20%–49%** of the total cost on this basis, and that is a **floor**. A-1's cost turns almost entirely on the statutory interest rate — a drafting choice, not an actuarial one. |
@@ -466,14 +466,18 @@ Two independently constructed quantities stand in the ratio the pricing structur
 
 Required by the JLCVSO scope decision of October 24, 2026 (all VRS members, no local opt-in). Local exposure flows through political-subdivision employer rates under § 51.1-145 and **never touches the general fund**, and the Commission on Local Government receives the § 30-19.1:7 statement — so the figures must not be presented as one number.
 
-Pool-weighted blended A-3 net present value per purchaser: **$24,627** (DERIVED).
+Pool-weighted blended A-3 net present value per purchaser: **$24,627** at the low end of the pool and **$23,077** at the high end (DERIVED). The two differ because the plan mix is not constant across the pool ends — Hybrid, by far the cheapest plan per purchaser, grows 2.35× between them against Plan 1's 1.90× — so a single blend cannot serve both.
 
 | Who bears the employer-rate consequence | Eligible pool | PV cost at 20% take-up |
 |---|---|---|
-| **State agencies** (general fund + nongeneral fund) — VRS State Employees, SPORS, VaLORS, JRS | 4,113 – 8,099 | **$20.3M – $39.9M** |
-| **Teachers** — school divisions, shared with the Commonwealth through the Standards of Quality | 2,699 – 6,768 | **$13.3M – $33.3M** |
-| **Political subdivisions** — § 51.1-145 employer rates, no general fund | 4,753 – 9,169 | **$23.4M – $45.2M** |
-| **Total** | 11,565 – 24,036 | **$57.0M – $118.4M** |
+| **State agencies** (general fund + nongeneral fund) — VRS State Employees, SPORS, VaLORS, JRS | 4,113 – 8,099 | **$20.3M – $37.4M** |
+| **Teachers** — school divisions, shared with the Commonwealth through the Standards of Quality | 2,699 – 6,768 | **$13.3M – $31.2M** |
+| **Political subdivisions** — § 51.1-145 employer rates, no general fund | 4,753 – 9,169 | **$23.4M – $42.3M** |
+| **Total** | 11,565 – 24,036 | **$57.0M – $110.9M** |
+
+**The total reconciles to the § 4.4 grid's 20% row to the dollar, at both ends.** That is worth stating because it is the first arithmetic a money committee will do — add the three buckets, compare to the headline — and until October 25, 2026 it did not hold.
+
+> **Corrected October 25, 2026.** The high ends above read $39.9M / $33.3M / $45.2M for a total of **$118.4M**, against a § 4.4 grid that gave **$110.9M** for the same 20% take-up on the same pool — a $7.5M gap. The cause was *not* the eligible pool, which red team S-3 had already reconciled. It was that this table struck the blended per-purchaser figure once, at the **low**-end plan weights, and then applied it to **both** ends of the employer-group headcount. The low-end blend overstates the high end by 6.3%, because Hybrid — the cheapest plan per purchaser — is a larger share of the high end. Striking the blend at each end closes the gap exactly. Left unfixed, this table would have reproduced the symptom S-3 was raised about, from a different cause, in the one place a reviewer is most likely to look.
 
 Two things to be explicit about.
 
@@ -786,7 +790,7 @@ For MOO-288 to action. Listed most material first.
 
 1. **Replace the cost headline.** "Under $2 million one-time; under $100,000 per year ongoing" cannot survive contact with the money committees. Replace with the FM-4 § 4.4 grid, a plain statement that the present value is in the tens of millions on central assumptions, and the § 4.6 cross-check showing the figure is *conservative relative to VRS's own HB 1867 band*. The $0 general fund ask is unaffected and remains correct — this is an employer-contribution-rate liability amortised under the VRS Funding Policy, not an appropriation.
 2. **Correct "Plan 2 is a closed cohort."** It is open for SPORS, VaLORS, political-subdivision hazardous duty, and — from July 1, 2026 — newly appointed judges. (FM-1 § 1.3, FM-3.)
-3. **Lead the population discussion with the one number that needs no estimate:** 110,474 active Plan 1 members, 29.2% of the entire VRS active population, are past the window as a matter of law. Then give the 10,600–26,300 range. (FM-1 § 1.2, § 1.6.)
+3. **Lead the population discussion with the one number that needs no estimate:** 110,474 active Plan 1 members, 29.2% of the entire VRS active population, are past the window as a matter of law. Then give the 11,600–24,000 range. (FM-1 § 1.2, § 1.6.)
 4. **Replace the single 6% veteran share with the four sourced bands**, and add the BLS 5.75% corroboration — it is the cheapest credibility the package can buy. (FM-1 § 1.4.)
 5. **Keep the Cliff Graph's values; add an age panel.** The 3.23× is defensible at its profile and is independently reproduced here; the problem is that one profile reads as universal when the real range is 0.5×–3.5×. (FM-2 § 2.4.)
 6. **Add the half-year-per-purchased-year Rule of 90 asymmetry.** It is the most important mechanical fact in the package and appears nowhere in the brief. (FM-4 § 4.1.)

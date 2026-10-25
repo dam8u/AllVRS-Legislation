@@ -913,10 +913,32 @@ def main():
     print("     under 51.1-145 and never touches the general fund, and the")
     print("     Commission on Local Government receives the 30-19.1:7")
     print("     statement.\n")
-    blended = (sum(v[0] * v[2] for v in per_plan.values())
-               / max(1e-9, sum(v[0] for v in per_plan.values())))
-    print(f"    Pool-weighted blended A-3 net PV per purchaser: {money(blended)}")
-    print("    (ESTIMATE: applied uniformly across employer groups. Plan mix by")
+    # Pool-weighted blended net cost per purchaser, struck SEPARATELY at each
+    # end of the pool.
+    #
+    # Corrected October 25, 2026. This previously computed one blend at the
+    # LOW-end plan weights and applied it to BOTH ends of the employer-group
+    # headcount. The plan mix is not constant across the pool ends -- Hybrid
+    # grows 2.35x between them against Plan 1's 1.90x, and Hybrid is by far the
+    # cheapest plan per purchaser -- so the low-end blend overstates the high
+    # end by 6.3%. The visible symptom was that this table's TOTAL came to
+    # $118.4M at 20% take-up while section 3's own 20% row came to $110.9M, on
+    # the same pool and the same scenario: a $7.5M gap that reads exactly like
+    # the red team S-3 pairing bug and invited the same question in a hearing.
+    # Striking the blend at each end makes the three bearer buckets sum to
+    # section 3's grid to the dollar.
+    blended_lo = (sum(v[0] * v[2] for v in per_plan.values())
+                  / max(1e-9, sum(v[0] for v in per_plan.values())))
+    blended_hi = (sum(v[1] * v[2] for v in per_plan.values())
+                  / max(1e-9, sum(v[1] for v in per_plan.values())))
+    print(f"    Pool-weighted blended A-3 net PV per purchaser: "
+          f"{money(blended_lo)} at the low end of the pool, "
+          f"{money(blended_hi)} at the high end")
+    print("    (The two differ because the plan mix is not constant across the")
+    print("     pool ends: Hybrid, the cheapest plan per purchaser, is a larger")
+    print("     share of the high end. Using one blend at both ends is what put")
+    print("     this table $7.5M above section 3's own 20% row.")
+    print("     ESTIMATE: applied uniformly across employer groups. Plan mix by")
     print("     employer group is not published. SPORS/VaLORS are Plan 1/Plan 2")
     print("     hazardous duty, where BOTH the benefit value and the member")
     print("     price are materially higher, so the net direction for those two")
@@ -929,12 +951,20 @@ def main():
     for b in ("state", "teacher", "local"):
         lo, hi, groups = buckets[b]
         print(f"    {label[b]:<44}{f'{lo:,.0f} - {hi:,.0f}':>20}"
-              f"{f'{money(lo*0.20*blended)} - {money(hi*0.20*blended)}':>30}")
+              f"{f'{money(lo*0.20*blended_lo)} - {money(hi*0.20*blended_hi)}':>30}")
         print(f"      ({', '.join(groups)})")
     tl = sum(buckets[b][0] for b in buckets)
     th = sum(buckets[b][1] for b in buckets)
     print(f"    {'TOTAL':<44}{f'{tl:,.0f} - {th:,.0f}':>20}"
-          f"{f'{money(tl*0.20*blended)} - {money(th*0.20*blended)}':>30}")
+          f"{f'{money(tl*0.20*blended_lo)} - {money(th*0.20*blended_hi)}':>30}")
+    grid_lo = sum(v[0] * 0.20 * v[2] for v in per_plan.values())
+    grid_hi = sum(v[1] * 0.20 * v[2] for v in per_plan.values())
+    print(f"\n    Reconciliation against section 3's 20% row "
+          f"({money(grid_lo)} - {money(grid_hi)}):")
+    print(f"      agrees at both ends: "
+          f"{'YES' if abs(tl*0.20*blended_lo - grid_lo) < 1 and abs(th*0.20*blended_hi - grid_hi) < 1 else 'NO'}")
+    print("      The bearer split and the headline grid are now two views of one")
+    print("      number, which is what a money committee will check first.")
     print("\n    Teachers are reported as their own bucket rather than split:")
     print("    the Commonwealth funds its share of the teacher retirement rate")
     print("    through the Standards of Quality and localities fund the rest, so")
@@ -963,7 +993,7 @@ def main():
             wn += per_plan[plan][0]
         bl = wsum / max(1e-9, wn)
         print(f"     {rec:>9.0%}" + "".join(f"{c:>14}" for c in cells)
-              + f"{money(bl):>12}{money(tl*0.20*bl):>16}")
+              + f"{money(bl):>12}{money(tl*0.20*bl):>16}")   # low pool end
     print("\n     FINDING — the age-graded schedule AS DRAFTED is a WEAK dial.")
     print("     Turning it from 0% to 100% removes only about 15% of the")
     print("     exposure. The reason is structural: grading on AGE recovers only")
@@ -990,7 +1020,7 @@ def main():
             wn += per_plan[plan][0]
         bl = wsum / max(1e-9, wn)
         print(f"     {rec:>9.0%}" + "".join(f"{c:>14}" for c in cells)
-              + f"{money(bl):>12}{money(tl*0.20*bl):>16}")
+              + f"{money(bl):>12}{money(tl*0.20*bl):>16}")   # low pool end
     print("\n     Reading: THIS is the dial that bites. At 50% recovery it halves")
     print("     the exposure; at 100% the bill is actuarially neutral by")
     print("     construction and the fiscal note is zero. It is the single most")

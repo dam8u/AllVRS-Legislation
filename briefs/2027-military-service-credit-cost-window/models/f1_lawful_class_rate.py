@@ -141,6 +141,33 @@ def class_stats(plan, age_band, svc_band, years):
     }
 
 
+def class_mean_recovery(years=YEARS_PURCHASED_AVG):
+    """Per-plan equal-weighted mean of what a LAWFUL uniform class rate can
+    recover, UNROUNDED.
+
+    THE SINGLE SOURCE OF THE 59% / 66% / 65% DIAL. Added October 25, 2026:
+    s9_subanc_leak.py was hardcoding the rounded {.59, .66, .65}, so the two
+    files printed 04 section 4.8.1's residual row as $22.3M-$43.4M and
+    $22.4M-$43.5M respectively -- the same quantity, 0.3% apart, for no reason
+    other than where the rounding happened. Both now call this.
+
+    Equal-weighted inside a plan because the age-and-service distribution of
+    the veteran pool is not published (A-22 / U-01), so no other weighting is
+    defensible.
+    """
+    out = {}
+    for plan in ("Plan 1", "Plan 2", "Hybrid"):
+        recs = []
+        for ab in AGE_BANDS:
+            for sb in SVC_BANDS:
+                st = class_stats(plan, ab, sb, years)
+                if st is None or st["recovery"] is None:
+                    continue
+                recs.append(st["recovery"])
+        out[plan] = sum(recs) / len(recs)
+    return out
+
+
 def table(years, label):
     print(f"\n{'=' * 78}")
     print(f"  LAWFUL UNIFORM CLASS RATE — {label}")

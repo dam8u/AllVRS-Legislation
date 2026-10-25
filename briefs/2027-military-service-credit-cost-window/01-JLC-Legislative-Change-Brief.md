@@ -7,9 +7,9 @@
 | **Prepared for** | Joint Leadership Council of Veterans Service Organizations (JLCVSO) |
 | **Target session** | 2027 Regular Session, Virginia General Assembly |
 | **Code section** | § 51.1-142.2, Code of Virginia (one subsection) |
-| **General fund ask** | **$0.** This is an employer-contribution-rate liability amortised under the VRS Funding Policy, not an appropriation |
+| **Appropriation requested** | **None.** The cost is absorbed in the employer contribution rates the VRS Board certifies under § 51.1-145 and amortised there under the VRS Funding Policy. That is **not** the same claim as "general fund cost: $0": the state-agency share, and the Commonwealth's share of teacher rates, reach the general fund in a later biennium, and school divisions and localities pay their own rates on the same basis. Narrowed per red team F-2 |
 | **Estimated cost** | **One-time present value of $28M – $166M**, depending on the eligible pool and take-up — **0.11% – 0.62% of VRS covered payroll** ($26.76bn), or **about 1 to 4 basis points** on employer contribution rates amortised over 20 years. Analyst estimate. See COST, below |
-| **People helped** | **All 110,474 active Plan 1 members — 29.2% of the entire VRS active population — are past the deadline as a matter of law.** Across all three plans, an estimated **10,600 – 26,300** members hold purchasable military service and are past the window |
+| **People helped** | **All 110,474 active Plan 1 members — 29.2% of the entire VRS active population — are past the deadline as a matter of law.** Across all three plans, an estimated **11,600 – 24,000** members hold purchasable military service and are past the window |
 | **Status** | Draft for JLCVSO review — not yet reviewed by VRS or Legislative Services |
 | **Version / date** | **v1.3, October 25, 2026.** Applies the red team findings to the COST section: the eligible-pool pairing correction (S-3), the publishable range rebuilt on one assumption set (S-5), the amortised rate impact added (M-5), and two claims withdrawn — that the HB 1867 comparison shows this estimate is conservative (S-1), and that a veteran under 47–48 subsidises the Fund (S-2). The general fund statement is narrowed to the one that is true (F-1/F-2). **Supersedes v1.2, v1.1 and the Annex B cost model.** Basis: [04-Annex-2-Closure-FM1-FM5](04-Annex-2-Closure-FM1-FM5.md), [05-Red-Team-and-Counsel-Review](05-Red-Team-and-Counsel-Review.md) |
 
@@ -107,7 +107,7 @@ Carrying those bands against the members who are past the window — vesting is 
 | | Low | High |
 |---|---:|---:|
 | Members past the 24-month window | 294,163 (77.8%) | 322,128 (85.2%) |
-| **Of those, veterans holding purchasable service** | **about 10,600** | **about 26,300** |
+| **Of those, veterans holding purchasable service** | **about 11,600** | **about 24,000** |
 
 (Derivation and the plan-by-plan split at Annex 2 Closure, FM-1 §§ 1.4–1.6. Each row applies a 90% factor for the 180-consecutive-day test of § 51.1-142.2 B 2.)
 
@@ -139,7 +139,7 @@ That matters politically: a bill that changes a price is far easier to pass, and
 
 **Amortised, which is the form a fiscal impact statement actually uses.** § 51.1-145 I certifies a *rate*, not a present value. Spread as a level percent of payroll over 20 years at the Board's own 6.75% return and 3.0% payroll growth, the same liability is **0.8 to 4.4 basis points** on employer contribution rates — against statewide employer rates in the **14%–20%** range. Both numbers are true and the brief should carry both: the present value is what the money committees will quote, and the rate impact is what employers will actually pay.
 
-> **Correction to v1.1, stated plainly because the money committees will find it otherwise.** Brief v1.1 said "under $2 million one-time, under $100,000 per year ongoing." That figure should not be used. It was not a calculation error — it was internally consistent for what it covered — but it covered only the state classified workforce (about 2,600 people against a pool of 10,600–26,300) and only the price-discount channel, leaving out retirement-date acceleration, which is 20%–49% of the cost. Carried to this bill's actual scope and with acceleration priced, the per-member figure moves from about $3,750 to $6,779–$47,967. **Do not quote the $2 million figure.**
+> **Correction to v1.1, stated plainly because the money committees will find it otherwise.** Brief v1.1 said "under $2 million one-time, under $100,000 per year ongoing." That figure should not be used. It was not a calculation error — it was internally consistent for what it covered — but it covered only the state classified workforce (about 2,600 people against a pool of 11,600–24,000) and only the price-discount channel, leaving out retirement-date acceleration, which is 20%–49% of the cost. Carried to this bill's actual scope and with acceleration priced, the per-member figure moves from about $3,750 to $6,779–$47,967. **Do not quote the $2 million figure.**
 
 ### The arithmetic
 
@@ -164,7 +164,7 @@ Take-up is the swing factor, and nobody outside VRS knows it. The **Low / Modera
 
 > **Two corrections to the v1.2 grid, both made October 25, 2026, and both raise the floor.** (1) *Red team S-3:* the model paired each end of the eligible pool with the **opposite** end of the past-window population, which inflated the spread and made this grid disagree with the "who bears it" table 25 lines below. Pairing like with like reconciles the two on a single pool of **11,565 – 24,036**. (2) *Red team S-5:* the published "$13M – $182M" took its **floor** from the 5% row of the superseded v1.1 band and its **ceiling** from the 30% row of the current scenario set — one range built from two assumption sets. Applying both corrections, **the range to publish is $28M – $166M**, and it supersedes both "$13M – $182M" and the "$26M – $182M" interim figure. Reproduce with `models/fm_model.py`, section 3.
 
-The payroll denominator is **$26,762,817,000** — Annual Covered Payroll across all six VRS groups, June 30, 2025 valuation (teachers $11.73bn, political subdivisions $8.04bn, state employees $6.28bn, VaLORS $433m, SPORS $183m, JRS $99m). Brief v1.1 used the classified state payroll of roughly $4.0bn and quoted "about 5 cents out of every $100." That phrase survives only at the very bottom cell of this grid and understates the top by roughly fourteen times.
+The payroll denominator is **$26,762,817,000** — Annual Covered Payroll across all six VRS groups, June 30, 2025 valuation (teachers $11.73bn, political subdivisions $8.04bn, state employees $6.28bn, VaLORS $433m, SPORS $183m, JRS $99m). Brief v1.1 used the classified state payroll of roughly $4.0bn and quoted "about 5 cents out of every $100." **That phrase now survives nowhere on the live grid.** The lowest cell of the current scenario set is 0.106% — about **11 cents** per $100 — and the highest is 0.622%, about **62 cents**. The retired phrase understates the publishable floor by roughly a factor of two and the ceiling by roughly twelve.
 
 **The single input that would most narrow this range is historical take-up**, which VRS holds and nobody else does. Prior-service purchase take-up is generally low because members must fund it from pay — **but past experience understates what this bill will produce.** The observed low take-up was produced under actuarial-equivalent pricing after 24 months, 6-to-12-month payment terms, and members who never heard of the option in time, and this bill removes all three. JLCVSO cannot tell legislators the bill will reach veterans who currently miss out and simultaneously tell the money committees that take-up will stay where it was. Historical take-up, when VRS supplies it, must be adjusted **upward** for the removal of those three frictions rather than used raw.
 
@@ -174,10 +174,12 @@ Because JLCVSO decided against a local opt-in, the exposure splits across three 
 
 | Who bears the employer-rate consequence | Eligible pool | Present value at 20% take-up |
 |---|---|---|
-| **State agencies** — state employees, SPORS, VaLORS, JRS | 4,113 – 8,099 | **$20.3M – $39.9M** |
-| **Teachers** — school divisions, shared with the Commonwealth through the Standards of Quality | 2,699 – 6,768 | **$13.3M – $33.3M** |
-| **Political subdivisions** — § 51.1-145 rates, **no general fund** | 4,753 – 9,169 | **$23.4M – $45.2M** |
-| **Total** | 11,565 – 24,036 | **$57.0M – $118.4M** |
+| **State agencies** — state employees, SPORS, VaLORS, JRS | 4,113 – 8,099 | **$20.3M – $37.4M** |
+| **Teachers** — school divisions, shared with the Commonwealth through the Standards of Quality | 2,699 – 6,768 | **$13.3M – $31.2M** |
+| **Political subdivisions** — § 51.1-145 rates, **no general fund** | 4,753 – 9,169 | **$23.4M – $42.3M** |
+| **Total** | 11,565 – 24,036 | **$57.0M – $110.9M** |
+
+These three sum to the 20% row of the grid above, at both ends. **Corrected October 25, 2026:** the high ends previously read $39.9M / $33.3M / $45.2M for a total of $118.4M, which did not match the grid's $110.9M for the same scenario. The blended per-purchaser figure had been struck once at the low end of the pool and applied to both ends; the plan mix is not constant across them, so it is now struck at each end ($24,627 low, $23,077 high). Annex 2 Closure § 4.7.
 
 **Why this total is not identical to the 20% row above ($57.0M – $110.9M).** The pool is the same — 11,565 – 24,036, and after the S-3 correction the two derivations agree exactly. The dollars differ because this table applies a single **pool-weighted blended** net cost of $24,627 per purchaser across employer groups, since VRS does not publish plan mix by employer group, while the grid applies the **per-plan** net costs. The low ends agree to the dollar; the high ends differ by about 7% for that reason alone. Quote the grid for the headline and this table for the split, and say which is which.
 
@@ -256,7 +258,7 @@ Because JLCVSO decided on **immediate access on the effective date**, the actuar
 
 > **The most important drafting finding in this package, and it is one phrase long.** Priced as a dial, the **age-graded** schedule removes only about **15%** of the exposure even when turned all the way up. Grading on age recovers the benefit-*amount* excess, but the dominant cost driver is retirement-date acceleration — and acceleration is driven by proximity to an eligibility *threshold*, which is age **and service** together. A 55-year-old with 25 years of service and a 55-year-old with 8 years would pay the identical age-graded rate while costing the Fund very different amounts.
 >
-> Express the same authority as varying by the member's **age and creditable service**, or by the member's **distance from unreduced retirement eligibility**, and the dial bites: at 50% recovery it **halves** the exposure ($57.0M → $28.5M at 20% take-up); at 100% the bill is actuarially neutral by construction and the fiscal note is **zero**.
+> Express the same authority as varying by the member's **age and creditable service**, or by the member's **distance from unreduced retirement eligibility**, and the dial bites — but it does not reach zero. **Withdrawn October 25, 2026 (red team F-1):** this paragraph previously said that "at 100% the bill is actuarially neutral by construction and the fiscal note is **zero**." That arithmetic priced each member individually, which the two constraints counsel attached to the authority in Annex A § 2.2 — uniformity within a classification, and a ceiling at the **individual** member's actuarial equivalent cost — together forbid. A lawful uniform class rate must sit at or below the *lowest* actuarial value in its class, so it recovers 100% only where that value is constant inside the class, and it never is. What the redrawn authority actually delivers is **0%–96% recovery depending on the class, 59%–66% at the class mean, and only about 23% in the Plan 1 long-service cohort this bill leads with** — a residual of **$22M–$44M at 20% take-up** against the $57.0M low end, not $0. **It is a mitigation, not a neutrality device, and it must be offered to the money committees as one.** (Annex 2 Closure § 4.8.1.)
 >
 > This is a drafting change, not a policy change — still a published schedule, still predictable, still no individualised actuarial bill handed to a veteran. **It is the single most powerful cost control available, it should be in the bill as filed, and it is the first thing to offer the money committees.** If only one guardrail survives negotiation, it must be this one. (Annex 2 Closure, FM-4 § 4.8. **Referred to VRS counsel and the Division of Legislative Services for the Annex A redraft.**)
 

@@ -9,6 +9,20 @@ to it. Four tests:
   T4  the uniformity + AEC-ceiling constraint in the draft: what a UNIFORM class
       rate can actually recover when the statute forbids charging any member more
       than that member's own actuarial equivalent cost
+
+HISTORICAL FILE — DO NOT QUOTE ITS FIGURES AS CURRENT.  Note added October 25,
+2026 in the MOO-301 reconciliation pass.  This is the red team's working file as
+run on October 24, 2026, and it is deliberately left on the state of the model
+it was reviewing: T3 hardcodes the by-plan pool at 10,561 - 26,321 and prints
+"Published headline: $13M - $182M".  Both are RETRACTED.  They are kept here
+because this file is the evidence for findings S-3 and S-5, and rewriting it
+would destroy the record of what the reviewer actually ran.
+
+The current figures, and where they come from:
+  eligible pool      11,565 - 24,036, one pool on both derivations
+                     (fm_model.fm1_pool_by_plan(), after the S-3 pairing fix)
+  publishable band   $28M - $166M, the 10%-30% scenario set
+                     (fm_model.py section 3; authority is 00-ONE-PAGE-BRIEF.md)
 """
 import sys, statistics
 sys.path.insert(0, __import__("os").path.dirname(__file__) or ".")
