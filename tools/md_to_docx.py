@@ -177,7 +177,14 @@ class Span:
 INLINE_PATTERNS = (
     ("code", re.compile(r"`([^`]+)`")),
     ("link", re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")),
-    ("bold", re.compile(r"\*\*(.+?)\*\*", re.S)),
+    # The (?!\*) is load-bearing. Annex C's source list nests italic inside
+    # bold and ends both at once -- "**Attachment 4: *JLC 2020 Work Plan***".
+    # Without the lookahead the lazy match closes on the FIRST two asterisks
+    # of that closing run of three, which both strands the italic's opening
+    # asterisk as a literal and leaves a stray one behind. Refusing to close
+    # mid-run makes the engine take the last two instead, so the italic closes
+    # cleanly inside the bold.
+    ("bold", re.compile(r"\*\*(.+?)\*\*(?!\*)", re.S)),
     ("strike", re.compile(r"~~(.+?)~~", re.S)),
     ("italic", re.compile(r"\*([^*]+)\*")),
 )

@@ -788,7 +788,17 @@ def main():
     pw_hi = sum(d["past_window_hi"] for d in pw.values())
     # DERIVED: effective veteran-with-qualifying-service rate across the whole
     # past-window population, used to allocate the pool across plans.
-    eff_lo, eff_hi = pool_lo / pw_hi, pool_hi / pw_lo
+    #
+    # Corrected October 25, 2026 (red team S-3). This previously read
+    #   eff_lo, eff_hi = pool_lo / pw_hi, pool_hi / pw_lo
+    # which paired each end of the pool with the OPPOSITE end of the
+    # past-window population. pool_lo is built in fm1_eligible_pool() from
+    # past_window_lo and pool_hi from past_window_hi, so the low rate must be
+    # divided by pw_lo. The cross-wiring widened the derived rate band from
+    # 3.93%-7.46% to 3.59%-8.17% and was the cause of this model reporting a
+    # different eligible pool, and a different answer for the same take-up
+    # scenario, than the by-plan table 25 lines further down.
+    eff_lo, eff_hi = pool_lo / pw_lo, pool_hi / pw_hi
     hybrid_pw_lo = pw_lo - ACTIVE_BY_PLAN["Plan 1"] - ACTIVE_BY_PLAN["Plan 2"]
     hybrid_pw_hi = pw_hi - ACTIVE_BY_PLAN["Plan 1"] - ACTIVE_BY_PLAN["Plan 2"]
     plan_pw = {
