@@ -878,7 +878,11 @@ plan × age-band × service-band classes the draft's five factors permit, the pu
 *itself* exceeds the lowest member's own AEC in **4 of 60** classes at 2.5 years (Plan 1 40–44/0–9,
 shortfall $4,590; Plan 1 45–49/0–9, $1,214; Plan 2 45–49/0–9, $289; Hybrid 45–49/0–9, $474) and
 **3 of 60** at the four-year statutory maximum. In those classes the dial cannot lawfully be set
-above 0% *and* the baseline rate is unlawful as to the cheapest member.
+above 0% *and* the baseline rate is unlawful as to the cheapest member. Annex 2 Closure § 4.8.1
+found that four-class instance independently and calls it an inconsistency between the ceiling and
+the published-rate floor; **S-9 is the general case of it.** The defect is not confined to four
+classes at their minimum — it bites for *every individual member* below the break-even purchase age,
+in every class, and it has a price tag the annex does not yet carry.
 
 The escape, and why it does not help: the ceiling binds only "any schedule of rates adopted pursuant
 to this paragraph," so the Board can avoid it entirely by adopting **no** schedule — which is the 0%
@@ -902,8 +906,15 @@ both directions: 0%–96%, unweighted mean 63%** (64% at the four-year maximum).
 reproduces at 23% (2.5 years) and 25% (four years), so the headline class holds — but the published
 band was too narrow, and some classes recover far better than I said. **F-1's conclusion is
 unchanged and stronger: 100% is unreachable at any lawful setting.** The error was in the band's
-width, not its direction. Fiscal & Impact Modeler should quote 0%–96% / mean ~63% on the full-cost
-reading, or 10%–16% on the statutory reading of F-1A — not 25%–73%.
+width, not its direction.
+
+**This correction has already landed independently.** Annex 2 Closure § 4.8.1 (revised October 25,
+commit `b0aa4fe`) withdraws the "$0 by construction" sentence, re-derives the band at **0%–96% with
+a 59%–66% class mean and 23% in the Plan 1 long-service cohort**, publishes the **$20M–$48M**
+residual at 20% take-up, and reaches the four-class baseline-breach point at § 4.8.1 on its own.
+That annex is now the controlling statement of the band and it is right; the figure to strike
+wherever it has been carried forward is my own first-pass "25%–73%", and the figure to quote
+alongside the band is the **10%–16%** ceiling of F-1A, which § 4.8.1 does not yet reflect.
 
 Restated exposure, PV at 20% take-up, both pool ends (`f1_lawful_class_rate.py`):
 
