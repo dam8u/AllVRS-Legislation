@@ -8,7 +8,7 @@ Retirement System (Title 51.1, Code of Virginia).
 
 | Brief | Subject | Target session | Status |
 |---|---|---|---|
-| [2027-military-service-credit-cost-window](briefs/2027-military-service-credit-cost-window/) | Remove the 24-month cost deadline for purchasing prior active duty military service credit (§ 51.1-142.2) | 2027 Regular Session | Draft v1.0 — pending VRS actuarial figures and red-team review |
+| [2027-military-service-credit-cost-window](briefs/2027-military-service-credit-cost-window/) | Remove the 24-month cost deadline for purchasing prior active duty military service credit (§ 51.1-142.2) | **2028 Regular Session** — changed from 2027 by board decision 2026-10-25; the directory name is a legacy label | Draft — targeting the 2028 JLC cycle, sponsor to approach authorised (VFW, Dept. of Virginia); pending VRS actuarial figures |
 
 ## Document formats
 
