@@ -1,13 +1,51 @@
 <!-- ============================================================
-     v1.3 — October 25, 2026. Restructured to the JLC Initiative format the
+     v1.4 — October 25, 2026. Restructured to the JLC Initiative format the
      board specified: JLC Initiative / OBJECTIVE / DISCUSSION / COST /
      RECOMMENDATION, in plain English for delegates, senators and staff.
 
-     PRINT STATUS: the two print-blocking copy defects are now FIXED here.
-     Clearance to print is the Policy Director's call and has not been given;
-     see "Remaining" in the brief README. The earlier HOLD banner recorded:
-     (1) the general fund overclaim and (2) the out-of-date range. Both are
-     resolved below. Do not print any earlier copy of this page.
+     PRINT STATUS: CLEARED TO PRINT. The HOLD is lifted. The board cleared
+     this page for printing and distribution to legislators on October 25,
+     2026 (MOO-293, confirmation b705ed7d, accepted). The two print-blocking
+     copy defects the earlier HOLD recorded -- (1) the general fund overclaim
+     and (2) the out-of-date range -- are resolved below. Do not print any
+     earlier copy of this page; the figures and three of the claims changed.
+
+     v1.4 applies the three remaining red team findings that were live on the
+     PRINTED page. They are copy corrections, not new claims, and each is a
+     subtraction or a label; none of them moves a cost figure:
+
+       M-7 (05-Red-Team-Review.md). "Four years costs about $18,666" carried
+            no plan label, and $18,666 is the CHEAPEST plan's price, printed
+            six lines above a population headline about the DEAREST plan. Now
+            labelled and given as a range: $18,668 Hybrid, $34,933 Plan 1,
+            roughly double in hazardous duty. (The figure also moves $2, from
+            $18,666 to $18,668: 6.68% x 4 x $69,865 = $18,667.93, which is
+            what Annex B § 7.2 already carried. 01 is corrected to match.)
+       S-8 (05-Red-Team-Review.md). The caveat line quoted VRS's HB 1867
+            band of $10,000-$60,000 three lines below our own per-member
+            figures of $47,967 and $6,779, with no basis label on either.
+            The two are not the same quantity -- HB 1867 was a FREE grant of
+            FOUR years to teachers; ours are net of what the veteran pays for
+            2.5 years -- and matched like for like OUR figures are the HIGHER
+            (04 § 4.6, MOO-304: Plan 1 $123,520 against VRS's $60,000
+            ceiling). Printed side by side the figures invite exactly the
+            "we come in inside VRS's band" inference this package has now
+            withdrawn twice. The band is REMOVED from this page; the full
+            bracket analysis stays in 01 and 04 for anyone who asks.
+       Guardrail concession. OBJECTIVE promises the regular price "at any
+            point in their career" on the same page that asks the Board for
+            authority to price by age and length of service, which can take
+            that promise back for late purchasers. Annex A § 2.5 concedes it
+            in one sentence; this page now does too, in the recommendation.
+
+     SESSION. The kicker now reads 2028 Session, not 2027, and the general
+     fund sentence no longer names a year. On October 25, 2026 the board
+     accepted the slip to the 2028 JLC cycle (Annex D § 1, MOO-302: "Nothing
+     in this package is now aimed at the 2027 session"). That decision landed
+     while this page was being cleared, so the version the board cleared still
+     said 2027. Applying it here is carrying out the board's decision, not
+     making one -- a leave-behind that names the wrong session is stale on
+     arrival. The folder name and the Annex D filename remain legacy labels.
 
      What changed, against the red team findings (05-Red-Team-Review.md F-2
      and 05-Red-Team-and-Counsel-Review.md F-1, S-1, S-2, S-4, M-5, m-1 --
@@ -53,12 +91,13 @@
      classified workforce", "General fund cost: $0", "costs the Fund less per
      member", "below about age 47-48 a veteran pays more than the credit is
      actuarially worth", "every veteran in VRS", "it stays the same tiny share
-     of payroll".
+     of payroll", "four years costs about $18,666" (unlabelled), and VRS's
+     "$10,000 to $60,000 per member" quoted on this page without its basis.
      ============================================================ -->
 
 # JLC Initiative
 
-**Joint Leadership Council of Veterans Service Organizations — 2027 Session**
+**Joint Leadership Council of Veterans Service Organizations — 2028 Session**
 Military service credit for veteran public employees — state, school division and local.
 One change, in one Code section: **§ 51.1-142.2**.
 
@@ -87,9 +126,10 @@ else changes — same four-year limit, same proof of service, same rules on who 
 prices. The only difference is how long they have worked for Virginia. The deadline lands
 in the wrong place for three reasons:
 
-- **It falls at the worst time to pay.** Four years costs about **$18,666**. The average
-  new state hire is **37.7 years old** — recently out of uniform, often taking a pay cut,
-  at the bottom of the pay scale.
+- **It falls at the worst time to pay.** Four years costs **$18,668** for a member hired
+  since 2014, **$34,933** in Plan 1, and roughly double that in hazardous duty — the price
+  is a percentage of pay, set by plan. The average new state hire is **37.7 years old** —
+  recently out of uniform, often taking a pay cut, at the bottom of the pay scale.
 - **It cannot be paid off slowly.** VRS payment plans run 6 to 12 months and cannot run
   past the 24-month deadline. Pay fast, or lose the price for good.
 - **Most veterans never hear about it in time.** It is one line in a long statute,
@@ -105,31 +145,29 @@ B 3 already bars a veteran whose service counts toward a military retirement the
 
 ## COST
 
-**This bill requests no appropriation.** There is no 2027 general fund ask. The cost is
+**This bill requests no appropriation** — there is no general fund ask. The cost is
 absorbed in the employer contribution rates the VRS Board certifies under **§ 51.1-145**.
-For state agencies, and for the Commonwealth's share of teacher rates, those contributions
-are carried in a **future** appropriation act — and **school divisions and local governments
-pay their own VRS rates on the same basis.**
+For state agencies, and the Commonwealth's share of teacher rates, those contributions
+arrive in a **future** appropriation act — and **school divisions and local governments pay
+their own VRS rates.**
 
 **The cost is real, and most of it is retirements arriving earlier.** Buying credit raises
-the member's monthly pension a little. It also moves the date they can retire unreduced
-**earlier**, and that is the larger half of the bill — new retirees, sooner. Modelled
-one-time cost to the Fund: **$28 million to $166 million**. Spread over 20 years, that is
-**about 1 to 4 cents per $100 of payroll per year**, against employer rates that run **14%
-to 20%** today.
+the monthly pension a little; it also moves the unreduced retirement date **earlier**, and
+those earlier retirements are the larger half of the bill. Modelled one-time cost to the
+Fund: **$28 million to $166 million**, or **1 to 4 cents per $100 of payroll a year** over
+20 years, against employer rates of **14% to 20%** today.
 
 **The range is wide for one reason: nobody outside VRS knows how many veterans will buy.**
-Members pay from their own pockets, so take-up is normally low — but this bill removes the
-three things holding it down, so past experience understates it. JLCVSO has asked VRS for
-that data.
+Members pay out of their own pockets, so take-up is normally low — but this bill removes the
+three things holding it down. JLCVSO has asked VRS for that data.
 
 **The cost per veteran falls on its own.** It is **$47,967** for a Plan 1 member and
 **$6,779** for a Hybrid member. Hybrid is 53% of the workforce today and **100% of future
 hires**, so this bill gets cheaper every year with no further legislation.
 
-> JLCVSO analyst estimates from published VRS rates — **not VRS figures**. VRS must file
-> its own statement on any VRS bill (§ 30-19.1:7); on a comparable 2023 bill it reported
-> $10,000 to $60,000 per member. **Ask VRS for its number before this bill is filed.**
+> JLCVSO analyst estimates from published VRS rates — **not VRS figures**. VRS must file its
+> own statement on any bill affecting VRS (§ 30-19.1:7), and that is the number the money
+> committees will use. **Ask VRS for it before this bill is filed.**
 
 ---
 
@@ -140,9 +178,10 @@ hires**, so this bill gets cheaper every year with no further legislation.
 1. **Remove the 24-month price deadline for military service only.** Leave it in place for
    every other kind of purchased service, so the bill stays narrow.
 2. **Allow payment over up to 60 months** by payroll deduction.
-3. **Give the VRS Board two guardrails:** authority to charge a published rate that varies
-   by **age and length of service**, and authority to withhold the credit where the member
-   retires within 12 months of buying it. These stop last-minute buying.
+3. **Give the VRS Board two guardrails:** authority to set the published price by **age and
+   length of service**, and authority to withhold the credit where the member retires within
+   12 months of buying it. These stop last-minute buying — which does mean a veteran buying
+   in sight of retirement may pay more than the flat rate.
 
 **No regulation change is needed.** The price rule is written into the statute, so this
 takes a bill.

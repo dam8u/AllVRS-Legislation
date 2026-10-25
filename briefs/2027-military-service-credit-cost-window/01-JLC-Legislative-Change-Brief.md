@@ -5,19 +5,19 @@
 | | |
 |---|---|
 | **Prepared for** | Joint Leadership Council of Veterans Service Organizations (JLCVSO) |
-| **Target session** | 2027 Regular Session, Virginia General Assembly |
+| **Target session** | **2028 Regular Session**, Virginia General Assembly — the board accepted the slip to the 2028 JLC cycle on October 25, 2026 (Annex D § 1). The 2027 session was the earlier target; the folder name is a legacy label |
 | **Code section** | § 51.1-142.2, Code of Virginia (one subsection) |
 | **Appropriation requested** | **None.** The cost is absorbed in the employer contribution rates the VRS Board certifies under § 51.1-145 and amortised there under the VRS Funding Policy. That is **not** the same claim as "general fund cost: $0": the state-agency share, and the Commonwealth's share of teacher rates, reach the general fund in a later biennium, and school divisions and localities pay their own rates on the same basis. Narrowed per red team F-2 |
 | **Estimated cost** | **One-time present value of $28M – $166M**, depending on the eligible pool and take-up — **0.11% – 0.62% of VRS covered payroll** ($26.76bn), or **about 1 to 4 basis points** on employer contribution rates amortised over 20 years. Analyst estimate. See COST, below |
 | **People helped** | **All 110,474 active Plan 1 members — 29.2% of the entire VRS active population — are past the deadline as a matter of law.** Across all three plans, an estimated **11,600 – 24,000** members hold purchasable military service and are past the window |
 | **Status** | Draft for JLCVSO review — not yet reviewed by VRS or Legislative Services |
-| **Version / date** | **v1.3, October 25, 2026.** Applies the red team findings to the COST section: the eligible-pool pairing correction (S-3), the publishable range rebuilt on one assumption set (S-5), the amortised rate impact added (M-5), and two claims withdrawn — that the HB 1867 comparison shows this estimate is conservative (S-1), and that a veteran under 47–48 subsidises the Fund (S-2). **The HB 1867 cross-check is now stated on a matched four-year basis as a bracket, with ours the higher** — the withdrawal alone left a mismatched table on the page (S-1, applied in full). The general fund statement is narrowed to the one that is true (F-1/F-2). **Supersedes v1.2, v1.1 and the Annex B cost model.** Basis: [04-Annex-2-Closure-FM1-FM5](04-Annex-2-Closure-FM1-FM5.md), [05-Red-Team-and-Counsel-Review](05-Red-Team-and-Counsel-Review.md) |
+| **Version / date** | **v1.3.1, October 25, 2026.** Applies the red team findings to the COST section: the eligible-pool pairing correction (S-3), the publishable range rebuilt on one assumption set (S-5), the amortised rate impact added (M-5), and two claims withdrawn — that the HB 1867 comparison shows this estimate is conservative (S-1), and that a veteran under 47–48 subsidises the Fund (S-2). **The HB 1867 cross-check is now stated on a matched four-year basis as a bracket, with ours the higher** — the withdrawal alone left a mismatched table on the page (S-1, applied in full). The general fund statement is narrowed to the one that is true (F-1/F-2). **v1.3.1** corrects two four-year purchase prices that did not reconcile with their own rates: Hybrid **$18,668** (was $18,666) and Plan 2 **$30,014** (was $30,017), both now matching 6.68% and 10.74% × 4 × $69,865 and the figures Annex B § 7.2 already carried. **Supersedes v1.2, v1.1 and the Annex B cost model.** Basis: [04-Annex-2-Closure-FM1-FM5](04-Annex-2-Closure-FM1-FM5.md), [05-Red-Team-and-Counsel-Review](05-Red-Team-and-Counsel-Review.md) |
 
 > ### The whole thing in 30 seconds
 >
 > Veteran public employees can already buy up to four years of military service toward
 > their VRS pension. **The cheap price expires 24 months after their first day of work** —
-> right when they can least afford the $18,666 bill, and before most of them even hear
+> right when they can least afford the $18,668 bill, and before most of them even hear
 > about it. We ask that the deadline be removed for military service, and that veterans be
 > allowed to pay over five years.
 >
@@ -60,19 +60,19 @@ That creates a cliff. Here is what it costs a veteran to buy the full four years
 
 | Plan the veteran is in | Normal-cost rate, per year of credit | Full 4-year purchase |
 |---|---|---|
-| Hybrid Retirement Plan (most members hired since Jan. 1, 2014) | 6.68% of salary | **$18,666** |
-| VRS Plan 2 (hired July 2010 – Dec. 2013, **and still open — see below**) | 10.74% of salary | $30,017 |
+| Hybrid Retirement Plan (most members hired since Jan. 1, 2014) | 6.68% of salary | **$18,668** |
+| VRS Plan 2 (hired July 2010 – Dec. 2013, **and still open — see below**) | 10.74% of salary | $30,014 |
 | VRS Plan 1 (longest-serving members; closed to hires after June 30, 2010) | 12.50% of salary | $34,933 |
 
 Hazardous-duty members pay roughly double: **23.78%** in Plan 1 and **19.15%** in Plan 2, with a separate **10.01%** alternate hazardous duty option for localities that have not adopted the full enhanced benefits. Judicial rates run from 19.21% to 31.97%. (All rates: VRS Board, Request for Board Action 2025-06-10, effective July 1, 2025. Full table at Annex 2 Closure, FM-3.)
 
 **Plan 2 is not a closed cohort, and the brief said so in error through v1.1.** VRS ACFR FY2025, Figure 2.10, is explicit: members covered under VaLORS, SPORS, or VRS with enhanced hazardous duty benefits or the hazardous duty alternate option are in Plan 2 "even if their membership dates are after December 31, 2013." Plan 2 therefore keeps admitting new members today — State Police officers, Virginia law officers, and political-subdivision hazardous duty employees — because § 51.1-169 A excludes hazardous duty members from the Hybrid plan entirely. And from **July 1, 2026**, newly appointed judges enter Plan 2 as well (2026 Acts of Assembly, SB 950). The fiscal note must contemplate a continuing inflow of Plan 2 hazardous-duty purchasers at the 19.15% rate, not a shrinking closed group.
 
-**The rates quoted here will not go stale during the 2027 session.** Approximate normal cost rates are reset only on the quadrennial cycle, following the Board's acceptance of a new experience study; the Board took no rate action in 2026, and VRS staff told the Benefits and Actuarial Committee on June 17, 2026 that the next assumption review is **2029**. The July 1, 2025 rates are therefore expected to hold through at least **June 30, 2029**.
+**The rates quoted here will not go stale before the 2028 session.** Approximate normal cost rates are reset only on the quadrennial cycle, following the Board's acceptance of a new experience study; the Board took no rate action in 2026, and VRS staff told the Benefits and Actuarial Committee on June 17, 2026 that the next assumption review is **2029**. The July 1, 2025 rates are therefore expected to hold through at least **June 30, 2029**.
 
 Three things make that 24-month deadline the wrong deadline:
 
-1. **It lands at the worst possible moment financially.** Veterans come to state service mid-career — the average new state hire is **37.7 years old**. A veteran who just left the military is settling a family, often taking a pay cut, and is at the *bottom* of the state pay scale. Asking for $18,666 in the first two years is asking at the one moment they cannot pay.
+1. **It lands at the worst possible moment financially.** Veterans come to state service mid-career — the average new state hire is **37.7 years old**. A veteran who just left the military is settling a family, often taking a pay cut, and is at the *bottom* of the state pay scale. Asking for $18,668 in the first two years is asking at the one moment they cannot pay.
 
 2. **Veterans cannot even spread the payments out past the cliff.** VRS payment agreements run 6 to 12 months and, by rule, **may not extend beyond the two-year cost window**. So a veteran cannot simply pay it off slowly. They must find the money fast or lose the price permanently.
 
