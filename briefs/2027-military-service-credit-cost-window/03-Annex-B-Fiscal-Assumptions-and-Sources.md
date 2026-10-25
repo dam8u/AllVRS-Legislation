@@ -413,7 +413,7 @@ So that the retraction can be defended rather than merely stated. Both figures c
 
 **Also corrected:** the scale sentence. "About 5 cents out of every $100 of a single year's payroll" is right only at the very bottom of the live grid (0.049%) and understates the top by about fourteen times (0.681%). Brief v1.2 and the one-pager carry the corrected framing.
 
-### 7.5 The HB 1867 statement, retrieved — and it validates the model more sharply than expected
+### 7.5 The HB 1867 statement, retrieved — and what it does and does not validate
 
 U-06 was opened and closed in this pass. The statement (VRS, *2023 Fiscal Impact Statement*, HB 1867, dated 1/16/2023) turned out to carry three things the package was not using.
 
