@@ -14,7 +14,16 @@ resolved.** Everything else on this list is fixable inside the drafting cycle. F
 drafting defects — they are two promises the package makes to two different audiences that cannot
 both be kept.
 
-**Count: 18 findings — 2 fatal, 8 serious, 6 moderate, 2 minor.** Most serious: **F-1**.
+**Count: 20 findings — 3 fatal, 9 serious, 6 moderate, 2 minor.** Most serious: **F-1**, as
+intensified by **F-1A**.
+
+> **§ 10 is a second pass added October 25, 2026**, after the board accepted this verdict. It adds
+> **F-1A** (fatal — on the statutory reading of "actuarial equivalent cost" the ceiling caps recovery
+> at 10%–16%, before uniformity is considered) and **S-9** (serious — the ceiling's unpriced downward
+> leg forces a price *below* today's for every member under the break-even purchase age), and it
+> **corrects my own first-pass recovery band from 25%–73% to 0%–96%, mean 63%**, over all 60
+> priceable classes. F-1's conclusion is unchanged: the $0 fiscal note is unreachable at any lawful
+> setting.
 
 ---
 
@@ -781,3 +790,157 @@ they are reasons not to file and not to print until resolved.
 *Internal risk analysis for JLCVSO and the Virginia Policy Lab. Pre-decisional. Not legal advice and
 not a clearance by counsel. Reviewer's working file: `rt_check.py`, run against an unmodified
 `models/fm_model.py` — no file in the package was altered by this review.*
+
+---
+
+# § 10. Addendum — second pass on F-1: what the § 2.2 ceiling actually caps
+
+**Added October 25, 2026, after the board accepted the verdict** (confirmation
+`confirmation:moo-289:redteam-verdict:v1`, accepted 02:17 UTC). Working files:
+`models/rt_check2.py` and `models/f1_lawful_class_rate.py`, both importing `fm_model` unmodified and
+writing nothing. **Two new findings — one fatal (F-1A, an intensification of F-1), one serious
+(S-9) — plus a correction to my own first-pass number.**
+
+F-1 offered the Director a choice between (a) capping at the *classification's* AEC and (b)
+re-stating the fiscal case on a recovery band. Neither option can be priced until one question is
+settled, and my first pass took the answer that is *most favourable to the package*: it read "the
+actuarial equivalent cost of the service credit purchased" as the member's full cost to the Fund —
+`fm4_acceleration(...)["cost_total"]`, benefit-amount channel **plus** retirement-date acceleration —
+because that is what `price_threshold_graded()` charges. That reading is probably wrong, and the
+wrong direction.
+
+## 10.1 F-1A — FATAL (intensifies F-1). On the statutory reading of "actuarial equivalent cost," the ceiling caps recovery at 10%–16% before uniformity is considered at all.
+
+**What is wrong.** The drafted ceiling uses a phrase already in use **two sentences earlier in the
+same paragraph** of § 51.1-142.2 B 3: "then, for each year or portion thereof to be credited at the
+time of purchase, the member shall pay **the actuarial equivalent cost**." That is the price VRS
+charges today after the 24-month window closes — the actuarial equivalent of *the credit*, i.e. the
+benefit-amount channel, which `fm_model` models at `aec_pct_of_salary`. Retirement-date acceleration
+is a cost the Fund bears because of what the member subsequently *does*; it is not the actuarial
+equivalent of the credit itself, and no VRS purchase price has ever included it. Under the
+consistent-usage canon, the same phrase in one paragraph carries one meaning, so the ceiling is the
+**statutory AEC**, not full cost to the Fund.
+
+**Failure scenario, with specific facts.** § 4.8's own representative profiles, 2.5 years purchased,
+salary $69,865 (`rt_check2.py`, Q1):
+
+| plan | ANC price (sentence 2) | AEC ceiling (sentence 4) | 100% dial charges | over the ceiling by | max lawful recovery |
+|---|---|---|---|---|---|
+| Plan 1 | $21,833 | $29,483 | $69,800 | **$40,317** | **16%** |
+| Plan 2 | $18,759 | $20,561 | $35,933 | $15,371 | **10%** |
+| Hybrid | $11,667 | $12,461 | $18,446 | $5,985 | **12%** |
+
+The Board adopts the § 4.8 schedule at the 100% dial. A member in the Plan 1 profile is billed
+$69,800 under a schedule whose own enabling sentence forbids "payment of an amount exceeding the
+actuarial equivalent cost of the service credit purchased" — $29,483 for that member. The schedule
+is ultra vires on its face as to him, and he is the plaintiff with the cleanest standing in the
+package: he paid, he can plead the text, and he files in the circuit court for the city of
+Richmond. **This constraint compounds with F-1's uniformity constraint; the two are not
+alternatives.** F-1 caps a uniform rate at the class minimum; F-1A caps the ceiling itself at the
+statutory AEC. Recovery of the above-ANC excess on the full-cost basis therefore tops out at
+10%–16%, not 25%–73%.
+
+**Authority.** § 51.1-142.2 B 3, sentences 2 and 4 as drafted (quoted in full at Annex A § 2.2);
+consistent-usage canon. *I have not pulled a Virginia case for the canon itself — routed to
+Statutory Researcher below rather than asserted.*
+
+**Fix direction.** If the fiscal case needs the acceleration channel inside the ceiling, the ceiling
+must say so in its own words ("the actuarial equivalent cost of the service credit purchased,
+determined with regard to the effect of such credit on the member's retirement eligibility date") —
+and Drafting Specialist should expect that phrase to draw the opposite objection, that it prices
+veterans above every other purchaser. Otherwise option (b) in F-1 is the only live path and the band
+is 10%–16%, not 25%–75%.
+
+## 10.2 S-9 — SERIOUS, new. The ceiling has a downward leg the package never prices: for every member below the break-even purchase age it forces a price *below* what § 51.1-142.2 B 3 charges today.
+
+**What is wrong.** The ceiling is a cap, not a floor, and it binds in both directions. Below the
+break-even purchase age the member's AEC is *less* than the published approximate normal cost, so
+a published schedule may not charge the published rate. `price_age_graded()`'s docstring assumes the
+opposite — "the schedule never charges less than the published ANC, which is what makes it
+politically presentable as 'still a published rate'." That is a modelling choice; the ceiling is
+statutory text, and the text wins.
+
+**Failure scenario, with specific facts.** Break-even purchase ages, recomputed: **Plan 1 46.60,
+Plan 2 47.43, Hybrid 48.16**. Below them the ceiling bites in **12 of 12** profiles tested
+(`rt_check2.py`, Q2; 2.5 years, $69,865):
+
+| plan | age | ANC price today | AEC ceiling | schedule must charge ≤ | vs. today |
+|---|---|---|---|---|---|
+| Plan 1 | 30 | $21,833 | $12,059 | $12,059 | **−$9,774** |
+| Plan 1 | 40 | $21,833 | $17,243 | $17,243 | −$4,590 |
+| Plan 2 | 30 | $18,759 | $10,056 | $10,056 | −$8,702 |
+| Hybrid | 30 | $11,667 | $6,095 | $6,095 | −$5,573 |
+
+A 30-year-old Plan 1 veteran buys 2.5 years the month the schedule takes effect and pays $12,059
+where the Code charges $21,833 today. Nothing in `fm_model` prices a sub-ANC purchase; every
+scenario floors at the published rate. The same defect appears at class level: across the 60
+plan × age-band × service-band classes the draft's five factors permit, the published ANC price
+*itself* exceeds the lowest member's own AEC in **4 of 60** classes at 2.5 years (Plan 1 40–44/0–9,
+shortfall $4,590; Plan 1 45–49/0–9, $1,214; Plan 2 45–49/0–9, $289; Hybrid 45–49/0–9, $474) and
+**3 of 60** at the four-year statutory maximum. In those classes the dial cannot lawfully be set
+above 0% *and* the baseline rate is unlawful as to the cheapest member.
+
+The escape, and why it does not help: the ceiling binds only "any schedule of rates adopted pursuant
+to this paragraph," so the Board can avoid it entirely by adopting **no** schedule — which is the 0%
+row, and the whole fiscal case depends on adopting one.
+
+**Authority.** Draft § 51.1-142.2 B 3 as proposed, sentence 4 ("shall not require payment of an
+amount exceeding…"); `models/fm_model.py` `price_age_graded()` and `aec_pct_of_salary`.
+
+**Fix direction.** Either floor the ceiling expressly ("provided that no such schedule shall require
+payment of less than the approximate normal cost otherwise determined under this subdivision"), or
+price the leak. It runs the wrong way for the fiscal note and it is a direct answer to the
+opposition's best line — the bill does not merely delay the cliff, it discounts young purchasers
+below today's price.
+
+## 10.3 Restated F-1 band, and a correction to my own first pass
+
+My first pass published "**25%–73%**, and 25% in the class that matters," off a three-class table.
+The full sweep over all 60 priceable classes (`f1_lawful_class_rate.py`) gives a **wider band in
+both directions: 0%–96%, unweighted mean 63%** (64% at the four-year maximum). Plan 1 0%–96%
+(mean 59%), Plan 2 0%–92% (mean 66%), Hybrid 0%–92% (mean 65%). The Plan 1 55–59/20–29 class
+reproduces at 23% (2.5 years) and 25% (four years), so the headline class holds — but the published
+band was too narrow, and some classes recover far better than I said. **F-1's conclusion is
+unchanged and stronger: 100% is unreachable at any lawful setting.** The error was in the band's
+width, not its direction. Fiscal & Impact Modeler should quote 0%–96% / mean ~63% on the full-cost
+reading, or 10%–16% on the statutory reading of F-1A — not 25%–73%.
+
+Restated exposure, PV at 20% take-up, both pool ends (`f1_lawful_class_rate.py`):
+
+| recovery setting | PV, low pool – high pool |
+|---|---|
+| 0% — plain published ANC | $52.0M – $121.5M |
+| lawful uniform, best class in plan | $2.7M – $6.5M |
+| lawful uniform, class mean | $20.5M – $47.7M |
+| lawful uniform, worst class in plan | $52.0M – $121.5M |
+| 100% individualised | $0 — **not lawful** |
+
+**The $0 fiscal note is the only row in that table that cannot be reached.** M-4 also reproduces on
+both derivations: by plan, 10,561–26,321 members → $52.0M–$121.5M; by employer group,
+11,565–24,036 → $57.0M–$118.4M. Annex A § 5.1's "$57.0M" is the low end of the group derivation
+quoted against a $182M ceiling taken from the plan derivation; they are not the same number at
+either end.
+
+## 10.4 Credit where it is due
+
+Annex A **Q3a** already asks VRS the right question — "a graded schedule is a **class** rate, not an
+individual calculation… what residual exposure remains from members who are favourably selected
+*within* a class?" — and § 2.2 ¶ 7 correctly identifies publication, uniformity and the AEC ceiling
+as the three constraints that make this a class rate rather than an individualised bill. The package
+saw the mechanism. What it did not do is carry the consequence back into the fiscal claim: Q3a
+frames it as a residual approximation, and the arithmetic makes it a 0%–96% band with the $0 row
+excluded.
+
+## 10.5 Routing of the addendum
+
+| Owner | Item |
+|---|---|
+| **Policy Director** (or the board, while paused) | F-1A — it narrows the F-1 choice rather than adding a new one. Option (a) now requires amending the ceiling's own words, not just the classification level. |
+| **Fiscal & Impact Modeler** | Restated band at § 10.3 (0%–96% / mean 63%, or 10%–16% under F-1A); price S-9's sub-ANC leak, which no scenario currently floors; stop quoting 25%–73% |
+| **Drafting Specialist** | S-9 — the express floor; F-1A — the ceiling's own definition if acceleration is to be inside it |
+| **Statutory Researcher** | Pull Virginia authority for the consistent-usage canon relied on in F-1A, and confirm that no VRS purchase price has historically included a retirement-date-acceleration component |
+| **Editor** | F-1A and S-9 are both risk-section items. Also strike "25%–73%" wherever it has already been carried forward. |
+
+*Second-pass working files: `models/rt_check2.py`, `models/f1_lawful_class_rate.py`. Both import
+`models/fm_model.py` unmodified; neither writes. No file in the package was altered by this pass.
+Internal risk analysis, pre-decisional, not legal advice, and not a clearance by counsel.*
