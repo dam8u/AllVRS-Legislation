@@ -300,6 +300,60 @@ def fm1_eligible_pool():
     return rows
 
 
+def fm1_pool_by_plan():
+    """The SAME eligible pool as fm1_eligible_pool(), reallocated from employer
+    groups onto plans so the FM-4 cost model can apply per-plan net costs.
+
+    Returns (by_plan, eff_lo, eff_hi, total_lo, total_hi).
+
+    THE SINGLE SOURCE OF THE BY-PLAN POOL. Added October 25, 2026 alongside the
+    red team S-3 fix, because S-3 was only possible while two scripts each kept
+    their own copy of this derivation. Anything that needs the by-plan pool must
+    import it from here; do not restate the numbers.
+
+    The reallocation is an identity, not a second estimate: the effective
+    veteran-with-qualifying-service rate is the pool divided by the past-window
+    population it was built from, and the plan legs sum back to that same
+    population. So sum(by_plan) == sum(fm1_eligible_pool()) at BOTH ends, and
+    the by-plan and by-employer-group derivations of the pool agree exactly.
+    (Before the S-3 fix they did not, which is what red team M-4 was reporting:
+    M-4 was a symptom of S-3, not an independent finding.)
+    """
+    rows = fm1_eligible_pool()
+    pool_lo = sum(r[3] for r in rows)
+    pool_hi = sum(r[4] for r in rows)
+    pw = fm1_past_window()
+    pw_lo = sum(d["past_window_lo"] for d in pw.values())
+    pw_hi = sum(d["past_window_hi"] for d in pw.values())
+    # DERIVED: effective veteran-with-qualifying-service rate across the whole
+    # past-window population, used to allocate the pool across plans.
+    #
+    # Corrected October 25, 2026 (red team S-3). This previously read
+    #   eff_lo, eff_hi = pool_lo / pw_hi, pool_hi / pw_lo
+    # which paired each end of the pool with the OPPOSITE end of the
+    # past-window population. pool_lo is built in fm1_eligible_pool() from
+    # past_window_lo and pool_hi from past_window_hi, so the low rate must be
+    # divided by pw_lo. The cross-wiring widened the derived rate band from
+    # 3.93%-7.46% to 3.59%-8.17% and was the cause of this model reporting a
+    # different eligible pool, and a different answer for the same take-up
+    # scenario, than the by-plan table 25 lines further down.
+    eff_lo, eff_hi = pool_lo / pw_lo, pool_hi / pw_hi
+    # Plan 1 is a fully closed cohort, so all of it is past the window as a
+    # matter of law; Plan 2's count is carried whole for the same reason at its
+    # low end. Hybrid takes the residual, which is where the non-vested
+    # estimate (A-18) actually bites.
+    hybrid_pw_lo = pw_lo - ACTIVE_BY_PLAN["Plan 1"] - ACTIVE_BY_PLAN["Plan 2"]
+    hybrid_pw_hi = pw_hi - ACTIVE_BY_PLAN["Plan 1"] - ACTIVE_BY_PLAN["Plan 2"]
+    plan_pw = {
+        "Plan 1": (ACTIVE_BY_PLAN["Plan 1"], ACTIVE_BY_PLAN["Plan 1"]),
+        "Plan 2": (ACTIVE_BY_PLAN["Plan 2"], ACTIVE_BY_PLAN["Plan 2"]),
+        "Hybrid": (hybrid_pw_lo, hybrid_pw_hi),
+    }
+    by_plan = {p: (plan_pw[p][0] * eff_lo, plan_pw[p][1] * eff_hi)
+               for p in ("Plan 1", "Plan 2", "Hybrid")}
+    return by_plan, eff_lo, eff_hi, pool_lo, pool_hi
+
+
 # ============================================================================
 # FM-2 — THE AEC / ANC MULTIPLE SURFACE
 # ============================================================================
@@ -780,37 +834,14 @@ def main():
         print()
 
     print("  3. Statewide take-up sensitivity, by plan.\n")
-    rows = fm1_eligible_pool()
-    pool_lo = sum(r[3] for r in rows)
-    pool_hi = sum(r[4] for r in rows)
-    pw = fm1_past_window()
-    pw_lo = sum(d["past_window_lo"] for d in pw.values())
-    pw_hi = sum(d["past_window_hi"] for d in pw.values())
-    # DERIVED: effective veteran-with-qualifying-service rate across the whole
-    # past-window population, used to allocate the pool across plans.
-    #
-    # Corrected October 25, 2026 (red team S-3). This previously read
-    #   eff_lo, eff_hi = pool_lo / pw_hi, pool_hi / pw_lo
-    # which paired each end of the pool with the OPPOSITE end of the
-    # past-window population. pool_lo is built in fm1_eligible_pool() from
-    # past_window_lo and pool_hi from past_window_hi, so the low rate must be
-    # divided by pw_lo. The cross-wiring widened the derived rate band from
-    # 3.93%-7.46% to 3.59%-8.17% and was the cause of this model reporting a
-    # different eligible pool, and a different answer for the same take-up
-    # scenario, than the by-plan table 25 lines further down.
-    eff_lo, eff_hi = pool_lo / pw_lo, pool_hi / pw_hi
-    hybrid_pw_lo = pw_lo - ACTIVE_BY_PLAN["Plan 1"] - ACTIVE_BY_PLAN["Plan 2"]
-    hybrid_pw_hi = pw_hi - ACTIVE_BY_PLAN["Plan 1"] - ACTIVE_BY_PLAN["Plan 2"]
-    plan_pw = {
-        "Plan 1": (ACTIVE_BY_PLAN["Plan 1"], ACTIVE_BY_PLAN["Plan 1"]),
-        "Plan 2": (ACTIVE_BY_PLAN["Plan 2"], ACTIVE_BY_PLAN["Plan 2"]),
-        "Hybrid": (hybrid_pw_lo, hybrid_pw_hi),
-    }
+    plan_pool, eff_lo, eff_hi, pool_lo, pool_hi = fm1_pool_by_plan()
     print(f"    Effective veteran-with-qualifying-service rate across the")
     print(f"    past-window population (DERIVED): {eff_lo:.2%} - {eff_hi:.2%}")
     print("    ESTIMATE: that rate is applied uniformly across plans. It is not")
     print("    uniform in reality — veterans enter state service mid-career, so")
-    print("    Hybrid is probably over-weighted and Plan 1 under-weighted here.\n")
+    print("    Hybrid is probably over-weighted and Plan 1 under-weighted here.")
+    print("    The plan legs sum back to the employer-group pool exactly, so the")
+    print("    two derivations of the pool agree (red team S-3 / M-4).\n")
 
     # Representative profile per plan, at the average years purchased.
     reps = {
@@ -824,8 +855,7 @@ def main():
     for plan, pr in reps.items():
         r = fm4_acceleration(pr, years_purchased=YEARS_PURCHASED_AVG)
         net = r["cost_total"] - price_a3_anc(pr, YEARS_PURCHASED_AVG)
-        lo = plan_pw[plan][0] * eff_lo
-        hi = plan_pw[plan][1] * eff_hi
+        lo, hi = plan_pool[plan]
         per_plan[plan] = (lo, hi, net)
         print(f"    {plan:<8}{f'{lo:,.0f} - {hi:,.0f}':>26}{money(net):>26}")
     tot_lo = sum(v[0] for v in per_plan.values())

@@ -62,15 +62,31 @@ from fm_model import (
     MEAN_CLASSIFIED_SALARY,
     YEARS_PURCHASED_AVG,
     Profile,
+    fm1_eligible_pool,
+    fm1_pool_by_plan,
     fm4_acceleration,
     money,
     price_a3_anc,
 )
 
-# Section 4.8's own basis: pool-low-end plan weights, group-low-end headcount.
-PLAN_WEIGHTS_LOW = {"Plan 1": 3_966, "Plan 2": 2_417, "Hybrid": 4_177}
-POOL_GROUP = (11_565, 24_036)   # M-4: the who-bears derivation, both ends
-POOL_PLAN = (10_561, 26_321)    # M-4: the by-plan derivation, both ends
+# The eligible pool is IMPORTED, never restated here.
+#
+# Restated October 25, 2026. This file previously hardcoded
+#   PLAN_WEIGHTS_LOW = {"Plan 1": 3_966, "Plan 2": 2_417, "Hybrid": 4_177}
+#   POOL_PLAN        = (10_561, 26_321)
+# which was fm_model's by-plan pool as it stood BEFORE the red team S-3
+# pool-pairing fix. Two files each keeping their own copy of the same
+# derivation is how S-3 survived as long as it did, so the copy is gone:
+# fm1_pool_by_plan() is now the single source and both ends come from it.
+PLAN_POOL, _EFF_LO, _EFF_HI, _POOL_LO, _POOL_HI = fm1_pool_by_plan()
+PLAN_WEIGHTS_LOW = {p: lo for p, (lo, _) in PLAN_POOL.items()}
+POOL_PLAN = (sum(lo for lo, _ in PLAN_POOL.values()),
+             sum(hi for _, hi in PLAN_POOL.values()))
+# The who-bears derivation, summed straight off the employer-group rows. Post
+# S-3 this equals POOL_PLAN at both ends; the check is kept and printed because
+# the agreement is the thing red team M-4 asked for.
+POOL_GROUP = (sum(r[3] for r in fm1_eligible_pool()),
+              sum(r[4] for r in fm1_eligible_pool()))
 TAKEUP = 0.20
 
 AGE_BANDS = [(40, 44), (45, 49), (50, 54), (55, 59), (60, 64)]
@@ -171,12 +187,10 @@ def table(years, label):
 
 
 # Section 4.8 / FM-1 price the pool PER PLAN and sum, rather than applying a
-# blended rate to a total headcount.  The two give different answers because
-# the plan mix is not constant across the pool ends, so every PV below is
-# built the same way the published grid is built:  sum_plan(pool x t x net).
-PLAN_POOL = {"Plan 1": (3_966, 9_027),
-             "Plan 2": (2_417, 5_502),
-             "Hybrid": (4_177, 11_792)}
+# blended rate to a total headcount, because the plan mix is not constant
+# across the pool ends.  Every PV below is therefore built the same way the
+# published grid is built:  sum_plan(pool x t x net).  PLAN_POOL is imported
+# above.
 
 
 def plan_nets(years):
@@ -240,18 +254,20 @@ def restated_pv(rows, years):
         out[label] = (lo, hi)
         print(f"  {label:<34}{f'{money(lo)} - {money(hi)}':>34}")
 
-    print(f"\n  M-4 check — the published 0% guardrail figure, both derivations:")
-    print(f"    by plan (FM-1 headline basis) {POOL_PLAN[0]:>7,} - "
-          f"{POOL_PLAN[1]:>7,}   "
-          f"{money(pv(net0, TAKEUP, 0))} - {money(pv(net0, TAKEUP, 1))}")
-    bl = sum(PLAN_WEIGHTS_LOW[p] * net0[p] for p in net0) / tw
-    print(f"    by employer group (who-bears) {POOL_GROUP[0]:>7,} - "
-          f"{POOL_GROUP[1]:>7,}   "
-          f"{money(POOL_GROUP[0] * TAKEUP * bl)} - "
-          f"{money(POOL_GROUP[1] * TAKEUP * bl)}")
-    print("    Annex A section 5.1 quotes $57.0M, which is the LOW end of the")
-    print("    group derivation, against a published ceiling of $182M from the")
-    print("    plan derivation. The two are not the same number at either end.")
+    print(f"\n  M-4 check — the eligible pool, both derivations, post S-3:")
+    print(f"    by plan (FM-1 cost basis)     {POOL_PLAN[0]:>7,.0f} - "
+          f"{POOL_PLAN[1]:>7,.0f}")
+    print(f"    by employer group (who-bears) {POOL_GROUP[0]:>7,.0f} - "
+          f"{POOL_GROUP[1]:>7,.0f}")
+    agree = (round(POOL_PLAN[0]) == round(POOL_GROUP[0])
+             and round(POOL_PLAN[1]) == round(POOL_GROUP[1]))
+    print(f"    AGREE: {'YES' if agree else 'NO'}  — M-4 reported these as two "
+          f"different pools.")
+    print("    They were two readings of ONE pool, split apart by the S-3")
+    print("    pool-pairing bug. With S-3 fixed the plan legs sum back to the")
+    print("    employer-group rows exactly, so M-4 closes as a symptom of S-3")
+    print("    and there is no longer a smaller pool for the dials to be")
+    print("    quoted on.")
     return net0
 
 
@@ -263,7 +279,7 @@ def takeup_grid(net0):
     print(f"{'-' * 78}")
     print(f"  {'take-up':<44}{'one-time PV':>34}")
     for label, t in (
-        ("5%  (published floor — SUPERSEDED band)", 0.05),
+        ("5%  (RETIRED v1.0 band — not a live scenario)", 0.05),
         ("10% (current Low)", 0.10),
         ("20% (current Moderate)", 0.20),
         ("30% (current High)", 0.30),
@@ -271,9 +287,10 @@ def takeup_grid(net0):
     ):
         print(f"  {label:<44}"
               f"{f'{money(pv(net0, t, 0))} - {money(pv(net0, t, 1))}':>34}")
-    print("\n  The published headline takes its FLOOR from the 5% row (the")
-    print("  superseded 5%-15% band) and its CEILING from the 30% row (the")
-    print("  current scenario set). On the current set alone the range is")
+    print("\n  The retracted '$13M-$182M' headline took its FLOOR from the 5%")
+    print("  row (the superseded 5%-15% band) and its CEILING from the 30% row")
+    print("  (the current scenario set) — one range from two assumption sets.")
+    print("  On the current set alone, and with S-3 fixed, the range is")
     print(f"  {money(pv(net0, 0.10, 0))} - {money(pv(net0, 0.30, 1))}.")
 
 
