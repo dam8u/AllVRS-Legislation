@@ -421,38 +421,46 @@ This is a present-value liability, not a cash appropriation. It would be absorbe
 >
 > **Consequences adopted here:** the 50% row is carried as a stress case rather than omitted; **data request item 5 is reclassified from a request to a pre-filing blocker** (Annex B A-22 / U-01); and historical take-up, when obtained, must be adjusted upward for the removal of the three frictions rather than used raw.
 
-### 4.6 Independent cross-check — and why it validates this and not the old figure
+### 4.6 Independent cross-check — what it validates, and the conservatism claim withdrawn
 
 **Source now pinpointed** (Annex B F-56, F-60 to F-63): VRS, *2023 Fiscal Impact Statement*, **HB 1867**, dated January 16, 2023, document HB1867.DOC/VRS — the § 30-19.1:7 statement on a bill that would have granted up to four years of active-duty military service to teachers **free**. VRS, Item 6, verbatim:
 
 > "each person who purchases up to 48 months of active military service would create an unfunded liability that **ranges from $10,000 - $60,000** depending on the age and service and compensation of the member."
 
-**Per-member comparison:**
+**The comparison must be drawn on a matched years basis, and the whole section is restated on one here.** HB 1867 priced a **free** grant of **up to 48 months**. The brief's per-member figures are **net of the member's price** for **2.5** purchased years (A-18). Those are not the same quantity, and until October 25, 2026 this section set one against the other and drew a conservatism conclusion from it. **That conclusion is withdrawn (red team S-1).** Everything below is the same model re-run at **4 years**, salary $69,865, so that both sides describe the thing VRS actually priced. Reproduce with `models/redteam_checks.py`, RT-2.
 
-| | Modelled A-3 net PV per member | Against the HB 1867 band |
-|---|---:|---|
-| Plan 1 | $47,967 | **inside** |
-| Plan 2 | $17,174 | **inside** |
-| Hybrid | $6,779 | below — as a *priced* purchase should be |
-| **Brief v1.0** | **~$3,750** | **an order of magnitude below the floor** |
+| At a matched 4 years | Plan 1 | Plan 2 | Hybrid | Pool-weighted blend |
+|---|---:|---:|---:|---:|
+| **Free-grant equivalent** — total PV to the Fund, no member price | **$123,520** | $58,971 | $30,281 | $71,864 lo / $68,254 hi |
+| Member price at the A-3 approximate normal cost | $34,932 | $30,014 | $18,668 | — |
+| Net PV to the Fund after the member pays | $88,587 | $28,957 | $11,614 | $44,491 lo / $41,637 hi |
+| Against VRS's $10,000 – $60,000 (average **$35,000**), free, 4 years | **2.06× the ceiling** | inside | inside | — |
 
-A purchase at which the member still pays must cost the Fund **less** than a free grant of the same service. These figures do; two of three sit inside VRS's own band and the third sits just below it, which is exactly the expected pattern. The brief v1.0 per-member figure sat roughly a factor of three below even the floor of a band VRS produced for a **free** benefit. That was the signal, available at the time in the HB 1867 statement itself, that the arithmetic was too low.
+> **The honest statement is a bracket, and it is also the better one to take to the money committees.** This model and VRS's own HB 1867 figures straddle the answer, and **this model is the higher of the two.** Run the comparison the other way — take VRS's $35,000 average as given and subtract the A-3 member price for four years — and the net to the Fund is **$68 (Plan 1), $4,986 (Plan 2), $16,332 (Hybrid)**, an order of magnitude below what this annex carries and ordering the plans oppositely, because VRS's band is flat across plans while the A-3 price rises steeply with the plan's normal-cost rate. So the defensible sentence is: *the two estimates bracket the answer, this model has carried the costlier side of the bracket, and the only figure that will count is the one VRS files under § 30-19.1:7.* **The word "conservative" should not appear in this comparison in either direction**, because the package has used it in both senses — once to mean "our cost figure is modest against VRS's band," which is now false, and once to mean "we have assumed the expensive outcome," which is true. Say *more expensive than VRS's* and *less expensive than VRS's* and leave the adjective out.
 
-**The agreement is structural, not just a matter of magnitude.** VRS also published a worked total — Items 6 and 9, verbatim: *"if 1,500 members (1% of the Teacher population) had this type of service, and the average cost was **$35,000**, the total cost to the fund could be **$50 million**."* Because the member pays the approximate normal cost, the Fund bears `1 − 1/m` of the value, where `m` is the AEC/ANC multiple:
+**The `1 − 1/m` structural claim is withdrawn, because it fails on its own identity once the years are matched.** Because the member pays the approximate normal cost, the Fund bears `1 − 1/m` of the value, where `m` is the AEC/ANC multiple — and `1 − 1/m < 1` for every `m > 1`. The ratio this annex published was computed across the mismatch:
 
 ```
-blended A-3 net PV per purchaser / VRS free-grant average
-  = $24,627 / $35,000  =  0.704
+WITHDRAWN - 2.5-year net against VRS's 4-year average:
+  $24,627 / $35,000  =  0.704      apparently inside 1 - 1/m for m = 2.76x - 3.54x (0.638 .. 0.718)
 
-predicted from the § 2.4 multiples (m = 2.76x - 3.54x):
-  1 - 1/2.76 = 0.638   ...   1 - 1/3.54 = 0.718      0.704 lands inside, nearest the 3.23x profile
+MATCHED at 4 years, this model's own blend:
+  $44,491 / $35,000  =  1.271      (low-end plan mix)
+  $41,637 / $35,000  =  1.190      (high-end plan mix)
+  -> above 1, so NO value of m can produce it; the identity is violated,
+     not satisfied. For 0.704 to hold at 4 years VRS's average would have
+     to be $63,198 - above the $60,000 ceiling of its own band.
 ```
 
-Two independently constructed quantities stand in the ratio the pricing structure requires, and neither was built to produce the other.
+The arithmetic above is red team **S-1**, reproduced. Two divergences from it, both recorded because the figures here are the ones to quote: S-1's per-plan 4-year figures reproduce exactly, but its **blend** column pairs a $55,573 free-grant equivalent with a $42,455 net, which implies a blended member price of $13,118 — below the cheapest plan's own 4-year price of $18,668, so no plan mix produces that pair. The pool-weighted blend from this model is $71,864 / $44,491 at the low-end mix, giving a matched ratio of **1.19 – 1.27** rather than S-1's 1.213. The conclusion is unchanged and the margin is wider.
 
-**The limit of this check travels with it.** VRS's $35,000 is a **teacher-only** average for a **free** grant; the $24,627 is pool-weighted across six employer groups and three plans, and the teacher plan mix is unpublished (§ 1.7 request item 1). This is a **magnitude-and-direction check, not a calibration.** Red Team **S-8** makes the same objection to a stronger version of this comparison on the one-pager and is right to; nothing here should be restated as "costs less per member" without the plan-mix qualifier. Residual uncertainty has a knowable direction: teachers are a longer-tenure workforce, so if they skew more Plan 1 than this blend, VRS's $35,000 reflects a costlier mix and the true comparable ratio is **higher** than 0.704.
+**The plan-mix limit travels with every line above.** VRS's $35,000 is a **teacher-only** average for a **free** grant; the blend here is pool-weighted across six employer groups and three plans, and the teacher plan mix is unpublished (§ 1.7 request item 1). This remains a **magnitude-and-direction check, not a calibration.** Red Team **S-8** makes that point against a stronger version of this comparison on the one-pager and is right to. The residual uncertainty has a knowable direction, and after the restatement it runs *against* us rather than for us: teachers are a longer-tenure workforce, so if they skew more Plan 1 than this blend, VRS's $35,000 reflects a costlier mix than ours and the matched ratio is **higher** than 1.19 – 1.27, not lower.
 
-**And it reframes which figure is the outlier.** The only total VRS has ever published for a benefit of this shape is **$50 million for the teacher population alone, at 1% participation, with no member price.** Against that, $13M–$182M across six employer groups, three plans and 5%–30% take-up, for a benefit the member pays for, is plainly the same order of magnitude — while "under $2 million" is not. That can now be shown from VRS's own arithmetic rather than argued. (Teacher Plan unfunded liability, for scale: **$11.8 billion**; VRS's $50M example is 0.42% of it.)
+**What the comparison does still establish, on any basis: the retracted figure was far too low.** A purchase at which the member still pays must cost the Fund less than a free grant of the same service, and brief v1.0's **~$3,750** per purchasing member sat roughly a factor of three below even the **floor** of a band VRS produced for a **free** benefit. That signal was available in the HB 1867 statement at the time. The live per-member figures, on the brief's own 2.5-year paid basis, are **$47,967 / $17,174 / $6,779** (§ 4.4) — and they are not to be compared cell-by-cell against VRS's band, for the reason stated at the top of this section.
+
+**VRS also published a worked total**, Items 6 and 9, verbatim: *"if 1,500 members (1% of the Teacher population) had this type of service, and the average cost was **$35,000**, the total cost to the fund could be **$50 million**."* That total is the subject of the next paragraph, and the same basis warning applies to it: it is a free grant, four years, teachers only, at 1% participation.
+
+**And it reframes which figure is the outlier.** The only total VRS has ever published for a benefit of this shape is **$50 million for the teacher population alone, at 1% participation, with no member price.** Against that, **$28M–$166M** across six employer groups, three plans and a 10%–30% take-up set, for a benefit the member pays for, is plainly the same order of magnitude — while "under $2 million" is not. That can now be shown from VRS's own arithmetic rather than argued. *(Range restated October 25, 2026 from "$13M–$182M, 5%–30% take-up," which predated the S-3 pool pairing correction and the S-5 single-assumption-set rebuild — § 4.4.)* **This is an order-of-magnitude statement and nothing more:** VRS's $50M is teachers only, free, four years, at an assumed 1%; ours is six groups, paid, 2.5 years, at 10%–30%. It establishes that the retracted figure was the outlier. It does not establish that either range is conservative against the other. (Teacher Plan unfunded liability, for scale: **$11.8 billion**; VRS's $50M example is 0.42% of it.)
 
 **Three further findings from the same document**, carried in full at Annex B § 7.5:
 
@@ -788,7 +796,7 @@ For MOO-288 to action. Listed most material first.
 
 0. **HOLD the printed one-page leave-behind.** `00-ONE-PAGE-BRIEF.pdf` is the artifact meant to be handed to legislators, and it carries both superseded figures: "under $2 million one time and under $100,000 a year," and "about 5 cents out of every $100." Its markdown source carries a hold banner as of this annex; **the PDF has not been regenerated and should not be distributed until the cost block is revised.** How to present a tens-of-millions present-value liability to a legislator — against a $0 general fund ask that remains entirely correct — is a presentational judgment for counsel, not a modelling one, which is why this annex flags it rather than rewriting it.
 
-1. **Replace the cost headline.** "Under $2 million one-time; under $100,000 per year ongoing" cannot survive contact with the money committees. Replace with the FM-4 § 4.4 grid, a plain statement that the present value is in the tens of millions on central assumptions, and the § 4.6 cross-check showing the figure is *conservative relative to VRS's own HB 1867 band*. The $0 general fund ask is unaffected and remains correct — this is an employer-contribution-rate liability amortised under the VRS Funding Policy, not an appropriation.
+1. **Replace the cost headline.** "Under $2 million one-time; under $100,000 per year ongoing" cannot survive contact with the money committees. Replace with the FM-4 § 4.4 grid, a plain statement that the present value is in the tens of millions on central assumptions, and the § 4.6 cross-check in the form § 4.6 now states it — *this model and VRS's own HB 1867 figures **bracket** the answer, and this model is the higher of the two.* **Do not offer the cross-check as evidence that this figure is conservative relative to HB 1867** (red team S-1, applied October 25, 2026): matched at four years the free-grant equivalent for a Plan 1 member is $123,520, or 2.06× the top of VRS's band. The $0 general fund ask is unaffected and remains correct — this is an employer-contribution-rate liability amortised under the VRS Funding Policy, not an appropriation.
 2. **Correct "Plan 2 is a closed cohort."** It is open for SPORS, VaLORS, political-subdivision hazardous duty, and — from July 1, 2026 — newly appointed judges. (FM-1 § 1.3, FM-3.)
 3. **Lead the population discussion with the one number that needs no estimate:** 110,474 active Plan 1 members, 29.2% of the entire VRS active population, are past the window as a matter of law. Then give the 11,600–24,000 range. (FM-1 § 1.2, § 1.6.)
 4. **Replace the single 6% veteran share with the four sourced bands**, and add the BLS 5.75% corroboration — it is the cheapest credibility the package can buy. (FM-1 § 1.4.)

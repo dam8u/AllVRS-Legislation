@@ -11,7 +11,7 @@
 | **Estimated cost** | **One-time present value of $28M – $166M**, depending on the eligible pool and take-up — **0.11% – 0.62% of VRS covered payroll** ($26.76bn), or **about 1 to 4 basis points** on employer contribution rates amortised over 20 years. Analyst estimate. See COST, below |
 | **People helped** | **All 110,474 active Plan 1 members — 29.2% of the entire VRS active population — are past the deadline as a matter of law.** Across all three plans, an estimated **11,600 – 24,000** members hold purchasable military service and are past the window |
 | **Status** | Draft for JLCVSO review — not yet reviewed by VRS or Legislative Services |
-| **Version / date** | **v1.3, October 25, 2026.** Applies the red team findings to the COST section: the eligible-pool pairing correction (S-3), the publishable range rebuilt on one assumption set (S-5), the amortised rate impact added (M-5), and two claims withdrawn — that the HB 1867 comparison shows this estimate is conservative (S-1), and that a veteran under 47–48 subsidises the Fund (S-2). The general fund statement is narrowed to the one that is true (F-1/F-2). **Supersedes v1.2, v1.1 and the Annex B cost model.** Basis: [04-Annex-2-Closure-FM1-FM5](04-Annex-2-Closure-FM1-FM5.md), [05-Red-Team-and-Counsel-Review](05-Red-Team-and-Counsel-Review.md) |
+| **Version / date** | **v1.3, October 25, 2026.** Applies the red team findings to the COST section: the eligible-pool pairing correction (S-3), the publishable range rebuilt on one assumption set (S-5), the amortised rate impact added (M-5), and two claims withdrawn — that the HB 1867 comparison shows this estimate is conservative (S-1), and that a veteran under 47–48 subsidises the Fund (S-2). **The HB 1867 cross-check is now stated on a matched four-year basis as a bracket, with ours the higher** — the withdrawal alone left a mismatched table on the page (S-1, applied in full). The general fund statement is narrowed to the one that is true (F-1/F-2). **Supersedes v1.2, v1.1 and the Annex B cost model.** Basis: [04-Annex-2-Closure-FM1-FM5](04-Annex-2-Closure-FM1-FM5.md), [05-Red-Team-and-Counsel-Review](05-Red-Team-and-Counsel-Review.md) |
 
 > ### The whole thing in 30 seconds
 >
@@ -28,8 +28,9 @@
 > Those contributions are carried in a future appropriation act for state agencies and for
 > the Commonwealth's share of teacher rates, and in their own § 51.1-145 rates for school
 > divisions and localities. VRS's own fiscal impact statement on HB 1867 (2023) priced a
-> *free* grant of this same service at **$10,000 – $60,000 of unfunded liability per
-> member**; VRS will file its own statement on this bill under § 30-19.1:7.
+> *free* four-year grant of this same service at **$10,000 – $60,000 of unfunded liability
+> per member**. Our model and VRS's bracket the answer and **ours is the higher**; VRS will
+> file its own statement on this bill under § 30-19.1:7.
 >
 > *For a leave-behind version of this, use **00-ONE-PAGE-BRIEF**.*
 
@@ -187,20 +188,21 @@ Two things to be straightforward about. The teacher line is **not** split betwee
 
 ### The only public Virginia anchor — and what it does and does not prove
 
-**VRS has already priced a related bill. Our figures and VRS's bracket the answer; do not claim ours is the conservative one.**
+**VRS has already priced a related bill. Our figures and VRS's bracket the answer, and ours are the more expensive — do not claim this bill comes in under VRS's band.**
 
-In 2023, VRS filed a § 30-19.1:7 fiscal impact statement on **HB 1867**, which would have granted active duty military service to teachers **free of charge**. VRS found **$10,000 to $60,000 of unfunded liability per participating member**, average **$35,000**.
+In 2023, VRS filed a § 30-19.1:7 fiscal impact statement on **HB 1867**, which would have granted active duty military service to teachers **free of charge**, up to **48 months**. VRS found **$10,000 to $60,000 of unfunded liability per participating member**, average **$35,000**.
 
-| | Net present value per member | Against VRS's own HB 1867 band |
-|---|---:|---|
-| Plan 1 | $47,967 | **inside the band** |
-| Plan 2 | $17,174 | **inside the band** |
-| Hybrid | $6,779 | below it |
-| *Brief v1.1* | *~$3,750* | *an order of magnitude below the floor* |
+**The comparison is only worth drawing on one footing, so here it is on VRS's — free, four years.** The table below is this brief's own model re-run at four years, against the figures VRS filed. It is not the brief's cost basis: the cost figures above are *net of what the veteran pays*, for the **2.5** years an average purchaser is modelled to buy.
 
-> **Read this table carefully, because the obvious inference from it is wrong.** Our figures are **net of what the member pays**, for **2.5** purchased years. VRS's are for a **free** grant of **four** years. Those are not the same quantity, so "inside the band" is not evidence that this estimate is conservative, and earlier drafts of this brief were wrong to say so. **Put on the same footing — free, four years — our Plan 1 figure is about $123,520, roughly twice the top of VRS's range.** The honest statement is a bracket: the two estimates straddle the answer, ours sits at the higher end on a like-for-like basis, and the only figure that will count is the one VRS files under § 30-19.1:7. There is also a plan-mix caveat that runs in a knowable direction: VRS's $35,000 is a **teacher-only** average, and teachers are a longer-tenure workforce, so if they skew more Plan 1 than our blend, VRS's average reflects a costlier mix than ours does.
+| At a matched four years, free of charge | Plan 1 | Plan 2 | Hybrid |
+|---|---:|---:|---:|
+| **This model, free-grant equivalent** | **$123,520** | $58,971 | $30,281 |
+| **VRS, HB 1867** | $10,000 – $60,000, average **$35,000** | same | same |
+| Where ours falls | **2.06× the top of VRS's band** | inside | inside |
 
-What the comparison **is** good for is magnitude and direction. It is how we know brief v1.1 was wrong: ~$3,750 per member sat roughly a factor of three below even the floor of a band VRS produced for a **free** benefit. That signal was available in the HB 1867 statement at the time.
+> **Say this much and no more: our figures and VRS's bracket the answer, and ours is the more expensive of the two.** Taken the other way — VRS's $35,000 average, less the price this bill would charge a member for four years — the Fund nets about **$68 in Plan 1, $4,986 in Plan 2 and $16,332 in Hybrid**. So the two estimates straddle the answer, this brief has modelled the costlier side of the bracket rather than the cheaper one, and the only figure that will count is the one VRS files under § 30-19.1:7. **Do not tell anyone that this bill costs the Fund less per member than the bill VRS already scored. Earlier drafts of this brief did** — that because veterans pay, the bill comes in at or below VRS's band per member — and that is withdrawn (red team S-1): it set a 2.5-year paid purchase against a four-year free grant, and matched at four years the ratio of our blended net to VRS's average is **1.19–1.27**, which the pricing identity cannot produce at any actuarial multiple. There is also a plan-mix caveat, and after the restatement it runs against us: VRS's $35,000 is a **teacher-only** average, and teachers are a longer-tenure workforce, so if they skew more Plan 1 than our blend, VRS's average reflects a costlier mix and the gap is wider still. (Annex 2 Closure § 4.6; reproduce with `models/redteam_checks.py` RT-2.)
+
+What the comparison **is** good for is magnitude and direction. It is how we know brief v1.1 was wrong: ~$3,750 per member sat roughly a factor of three below even the floor of a band VRS produced for a **free** benefit — and a purchase the member pays for must cost the Fund less than a free grant of the same service, not a third of its floor. That signal was available in the HB 1867 statement at the time.
 
 ### Where the cost actually comes from
 

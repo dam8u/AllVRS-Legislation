@@ -26,6 +26,20 @@ import fm_model as M
 
 BAR = "=" * 74
 
+# The three representative purchasers the brief's per-plan figures are struck
+# on. Module-level because RT-1 and RT-2 must use the same ones: RT-2's whole
+# point is that it changes the years purchased and nothing else.
+REPS = {
+    "Plan 1": M.Profile("Plan 1", 55, 25, M.MEAN_CLASSIFIED_SALARY, 45_000, 30),
+    "Plan 2": M.Profile("Plan 2", 50, 14, M.MEAN_CLASSIFIED_SALARY, 55_000, 36),
+    "Hybrid": M.Profile("Hybrid", 50, 9, M.MEAN_CLASSIFIED_SALARY, 60_000, 41),
+}
+
+# VRS, 2023 Fiscal Impact Statement, HB 1867 (1/16/2023), Items 6 and 9.
+VRS_BAND = (10_000, 60_000)
+VRS_AVERAGE = 35_000
+VRS_YEARS = 4.0           # "up to 48 months"
+
 
 def rt1_pool_pairing():
     print(BAR)
@@ -50,11 +64,7 @@ def rt1_pool_pairing():
     print(f"  effective rate LIKE-FOR-LIKE           : "
           f"{eff_lo_fix:.3%} - {eff_hi_fix:.3%}")
 
-    reps = {
-        "Plan 1": M.Profile("Plan 1", 55, 25, M.MEAN_CLASSIFIED_SALARY, 45_000, 30),
-        "Plan 2": M.Profile("Plan 2", 50, 14, M.MEAN_CLASSIFIED_SALARY, 55_000, 36),
-        "Hybrid": M.Profile("Hybrid", 50, 9, M.MEAN_CLASSIFIED_SALARY, 60_000, 41),
-    }
+    reps = dict(REPS)
     nets = {}
     for plan, pr in reps.items():
         r = M.fm4_acceleration(pr, years_purchased=M.YEARS_PURCHASED_AVG)
@@ -86,10 +96,11 @@ def rt1_pool_pairing():
             print(f"    take-up {t:>4.0%}  {M.money(lo):>14} - {M.money(hi):>14}"
                   f"   {lo/M.TOTAL_COVERED_PAYROLL:>7.3%} - "
                   f"{hi/M.TOTAL_COVERED_PAYROLL:.3%} of payroll")
-        return out, (tlo, thi)
+        return out, (tlo, thi), pools
 
-    shipped, pool_ship = grid(eff_lo_ship, eff_hi_ship, "AS SHIPPED (brief v1.2 COST grid)")
-    fixed, pool_fix = grid(eff_lo_fix, eff_hi_fix, "LIKE-FOR-LIKE")
+    shipped, pool_ship, _ = grid(eff_lo_ship, eff_hi_ship,
+                                 "AS SHIPPED (brief v1.2 COST grid)")
+    fixed, pool_fix, pools_fix = grid(eff_lo_fix, eff_hi_fix, "LIKE-FOR-LIKE")
 
     # The state/teacher/local table uses a pool-weighted blended per-purchaser
     # figure applied to the FM-1 pool, not the plan grid. Reproduce it.
@@ -111,10 +122,10 @@ def rt1_pool_pairing():
           f"{M.money(shipped[0.05][0])} - {M.money(shipped[0.30][1])}")
     print(f"  Headline band LIKE-FOR-LIKE: "
           f"{M.money(fixed[0.05][0])} - {M.money(fixed[0.30][1])}")
-    return nets, fixed, pool_fix
+    return nets, fixed, pool_fix, pools_fix
 
 
-def rt2_hb1867(nets):
+def rt2_hb1867(nets, pools_fix):
     print("\n" + BAR)
     print("RT-2  THE HB 1867 CROSS-CHECK, RESTATED LIKE-FOR-LIKE")
     print(BAR)
@@ -123,29 +134,74 @@ def rt2_hb1867(nets):
     print("  an unfunded liability that ranges from $10,000 - $60,000'.")
     print("  VRS's own illustration uses an AVERAGE COST of $35,000.")
     print("  HB 1867 granted the service FREE and up to FOUR years.\n")
-    print(f"  {'plan':<8}{'net PV @2.5y':>14}{'member price':>14}"
-          f"{'free-grant 2.5y':>17}{'free-grant 4y':>15}")
+
+    # The whole finding is that the two sides were on different years bases.
+    # So re-run the model at VRS's years rather than rescaling the 2.5-year
+    # answer: acceleration is not linear in years purchased (one purchased
+    # year moves a Plan 1 unreduced date by a full year and a Rule-of-90
+    # date by half a year, until the threshold binds), so a 1.6x rescale is
+    # not the same quantity as a 4-year run and understates Plan 1 by 10%.
+    free, price, net = {}, {}, {}
+    for plan, pr in REPS.items():
+        r = M.fm4_acceleration(pr, years_purchased=VRS_YEARS)
+        free[plan] = r["cost_total"]
+        price[plan] = M.price_a3_anc(pr, VRS_YEARS)
+        net[plan] = free[plan] - price[plan]
+
+    def blend(series, end):
+        w = {p: pools_fix[p][end] for p in pools_fix}
+        return sum(w[p] * series[p] for p in w) / sum(w.values())
+
+    print(f"  Matched basis - the model re-run at {VRS_YEARS:.0f} years, "
+          f"salary ${M.MEAN_CLASSIFIED_SALARY:,.0f}:\n")
+    print(f"  {'plan':<8}{'free-grant equiv':>18}{'member price':>14}"
+          f"{'net to Fund':>13}{'vs VRS ceiling':>16}")
     for plan in ("Plan 1", "Plan 2", "Hybrid"):
-        rate = M.ANC[(plan, "non-hazardous")]
-        price = rate * M.MEAN_CLASSIFIED_SALARY * M.YEARS_PURCHASED_AVG
-        free25 = nets[plan] + price
-        free4 = free25 * (4.0 / M.YEARS_PURCHASED_AVG)
-        print(f"  {plan:<8}{M.money(nets[plan]):>14}{M.money(price):>14}"
-              f"{M.money(free25):>17}{M.money(free4):>15}")
-    print("\n  VRS band for exactly that (free, 4 years): $10,000 - $60,000,")
-    print("  average $35,000.")
+        mult = free[plan] / VRS_BAND[1]
+        tag = f"{mult:.2f}x" if mult > 1 else "inside band"
+        print(f"  {plan:<8}{M.money(free[plan]):>18}{M.money(price[plan]):>14}"
+              f"{M.money(net[plan]):>13}{tag:>16}")
+    for end, label in ((0, "pool low end"), (1, "pool high end")):
+        print(f"  {'blend':<8}{M.money(blend(free, end)):>18}"
+              f"{'—':>14}{M.money(blend(net, end)):>13}"
+              f"{'  (' + label + ')':>16}")
+
+    print(f"\n  VRS band for exactly that (free, {VRS_YEARS:.0f} years): "
+          f"${VRS_BAND[0]:,} - ${VRS_BAND[1]:,}, average ${VRS_AVERAGE:,}.")
     print("  Implication: run like-for-like, the model is NOT conservative")
-    print("  relative to VRS's own figure for Plan 1.\n")
+    print("  relative to VRS's own figure. Plan 1's free-grant equivalent is")
+    print(f"  {free['Plan 1']/VRS_BAND[1]:.2f}x the TOP of VRS's whole band.\n")
+
+    # The structural claim the package made, tested on its own identity.
+    print("  The '1 - 1/m' structural check, at a matched years basis. The")
+    print("  member pays the ANC, so the Fund bears 1 - 1/m of the value,")
+    print("  where m is the AEC/ANC multiple. 1 - 1/m < 1 for every m > 1:")
+    r25 = blend(nets, 0) / VRS_AVERAGE
+    for end, label in ((0, "low end"), (1, "high end")):
+        ratio = blend(net, end) / VRS_AVERAGE
+        print(f"    blended net @{VRS_YEARS:.0f}y / VRS average  = "
+              f"{M.money(blend(net, end))} / ${VRS_AVERAGE:,}  =  {ratio:.3f}"
+              f"   ({label} plan mix)   ->  no m satisfies this")
+    for m in (2.76, 3.23, 3.54):
+        print(f"    1 - 1/{m:.2f} = {1 - 1/m:.3f}")
+    print(f"    the published 0.704 used a {M.YEARS_PURCHASED_AVG}-year net "
+          f"against VRS's {VRS_YEARS:.0f}-year average;")
+    print(f"    for 0.704 to hold at {VRS_YEARS:.0f} years VRS's average would "
+          f"have to be {M.money(blend(net, 0)/0.704)}.")
+    print(f"    (the mismatched ratio actually published, for reference: "
+          f"{r25:.3f})")
+
     # And the reverse: what does VRS's own band imply for a PAID purchase?
-    print("  Reverse test - take VRS's band as given and subtract the member")
+    print("\n  Reverse test - take VRS's band as given and subtract the member")
     print("  price actually charged under A-3 for 4 years at $69,865:")
     for plan in ("Plan 1", "Plan 2", "Hybrid"):
-        rate = M.ANC[(plan, "non-hazardous")]
-        price4 = rate * M.MEAN_CLASSIFIED_SALARY * 4
+        price4 = price[plan]
         print(f"    {plan:<8} member pays {M.money(price4):>9}  ->  net to Fund"
-              f" {M.money(10_000 - price4):>10} (VRS floor)"
-              f" .. {M.money(60_000 - price4):>10} (VRS ceiling)"
-              f" .. {M.money(35_000 - price4):>10} (VRS average)")
+              f" {M.money(VRS_BAND[0] - price4):>10} (VRS floor)"
+              f" .. {M.money(VRS_BAND[1] - price4):>10} (VRS ceiling)"
+              f" .. {M.money(VRS_AVERAGE - price4):>10} (VRS average)")
+    print("  That is the bracket to state: our model and VRS's own figures")
+    print("  straddle the answer, and ours is the higher one.")
 
 
 def rt3_profile_risk():
@@ -215,7 +271,7 @@ def rt4_rate_impact(fixed):
 
 
 if __name__ == "__main__":
-    nets, fixed, _ = rt1_pool_pairing()
-    rt2_hb1867(nets)
+    nets, fixed, _, pools_fix = rt1_pool_pairing()
+    rt2_hb1867(nets, pools_fix)
     rt3_profile_risk()
     rt4_rate_impact(fixed)

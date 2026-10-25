@@ -453,19 +453,31 @@ U-06 was opened and closed in this pass. The statement (VRS, *2023 Fiscal Impact
 
 So the only total VRS has ever published for a benefit of this shape is **$50 million against the teacher population alone, at 1% participation, for a free grant.** Our $28M–$166M across six employer groups, three plans and a 10%–30% take-up set, for a benefit the member still pays for, is plainly the same order of magnitude. **It is the retracted "under $2 million" that is the outlier, not the new range** — and that can now be demonstrated from VRS's own arithmetic rather than argued.
 
-**2. The per-member figures agree structurally, not just in magnitude.** A priced purchase must cost the Fund less than a free grant of identical service. By how much is predictable: the member pays the approximate normal cost, so the Fund bears `1 − 1/m` of the value, where `m` is the AEC/ANC multiple.
+**2. The per-member comparison, restated on a matched years basis — and the "structural agreement" claim withdrawn.** HB 1867 priced a **free** grant of **up to 48 months**; our per-member figures are **net of the member's price** for **2.5** purchased years (A-18). Setting one against the other is not a comparison, and the conservatism conclusion drawn from it through October 25, 2026 is **withdrawn (red team S-1)**. Re-run at 4 years, salary $69,865:
+
+| At a matched 4 years | Plan 1 | Plan 2 | Hybrid | Pool-weighted blend |
+|---|---:|---:|---:|---:|
+| **Free-grant equivalent** — total PV, no member price | **$123,520** | $58,971 | $30,281 | $71,864 lo / $68,254 hi |
+| Member price at the A-3 approximate normal cost | $34,932 | $30,014 | $18,668 | — |
+| Net PV to the Fund after the member pays | $88,587 | $28,957 | $11,614 | $44,491 lo / $41,637 hi |
+| Against VRS's $10,000 – $60,000 (average **$35,000**) | **2.06× the ceiling** | inside | inside | — |
+
+The `1 − 1/m` identity is sound and the comparison drawn from it was not. The member pays the approximate normal cost, so the Fund bears `1 − 1/m` of the value, where `m` is the AEC/ANC multiple — and `1 − 1/m < 1` for every `m > 1`:
 
 ```
-Our blended A-3 net PV per purchaser / VRS free-grant average
-  = $24,627 / $35,000  =  0.704
+WITHDRAWN - a 2.5-year net against VRS's 4-year average:
+  $24,627 / $35,000  =  0.704    apparently inside 1 - 1/m for m = 2.76x - 3.54x (0.638 .. 0.718)
 
-Predicted band from the modelled multiples (FM-2 § 2.4, m = 2.76x - 3.54x):
-  1 - 1/2.76 = 0.638   ...   1 - 1/3.54 = 0.718
+MATCHED at 4 years:
+  $44,491 / $35,000  =  1.271    (low-end plan mix)
+  $41,637 / $35,000  =  1.190    (high-end plan mix)
+  -> above 1, so no value of m can produce it. For 0.704 to hold at 4 years
+     VRS's average would have to be $63,198, above its own $60,000 ceiling.
 ```
 
-**0.704 sits inside that band**, and nearest to the 3.23× profile (0.690). Two independently constructed quantities — our per-purchaser present value, and VRS's average cost for a free grant — stand in the ratio the pricing structure requires, and neither half was built to produce the other.
+Reproduce with `models/redteam_checks.py`, RT-2. **The statement to carry is a bracket:** our figures and VRS's straddle the answer and **ours are the higher**. Taking VRS's $35,000 average as given and subtracting the A-3 four-year member price, the net to the Fund is **$68 / $4,986 / $16,332** across Plan 1 / Plan 2 / Hybrid — an order of magnitude below what we carry, and ordering the plans oppositely, because VRS's band is flat across plans while the A-3 price rises with the plan's normal-cost rate. Full derivation at FM-4 § 4.6.
 
-**The limit of this check, which must travel with it.** VRS's $35,000 is a **teacher-only** average for a **free** grant; our $24,627 is pool-weighted across all six employer groups and three plans. The plan mixes are not the same, and the teacher plan mix is unpublished (U-04). So this is a **magnitude-and-direction check, not a calibration** — it says the figures are the right size and in the right order, not that either is confirmed to three digits. Red Team finding S-8 makes the same point against a stronger version of this comparison on the one-pager, and it is right to. The direction of the residual uncertainty is knowable: teachers are a longer-tenure workforce, so if they skew more Plan 1 than our blend does, VRS's $35,000 reflects a costlier mix and the true comparable ratio is **higher** than 0.704, not lower.
+**The limit of this check, which must travel with it.** VRS's $35,000 is a **teacher-only** average for a **free** grant; our blend is pool-weighted across all six employer groups and three plans. The plan mixes are not the same, and the teacher plan mix is unpublished (U-04). So this remains a **magnitude-and-direction check, not a calibration** — it says the figures are the right size and in the right order, not that either is confirmed to three digits. Red Team finding S-8 makes the same point against a stronger version of this comparison on the one-pager, and it is right to. The direction of the residual uncertainty is knowable, and after the restatement it runs **against** us: teachers are a longer-tenure workforce, so if they skew more Plan 1 than our blend does, VRS's $35,000 reflects a costlier mix than ours and the matched ratio is **higher** than 1.19 – 1.27, not lower.
 
 **3. VRS's own words close two of our open items and support a third.**
 
