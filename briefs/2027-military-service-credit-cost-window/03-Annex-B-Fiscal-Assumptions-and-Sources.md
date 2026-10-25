@@ -161,7 +161,7 @@ AEC%  =  M × G × ä × v
 | 45 | 22 | 1.78 | 0.2376 | 9.3% | 10.74% | **−1.5%** | member overpays $1,020 |
 | 55 | 12 | 1.32 | 0.4567 | 13.3% | 10.74% | **+2.5%** | $1,768 |
 
-**The pattern that matters politically:** the gap is **negative or near zero for the entire Hybrid population below about age 50** — and the Hybrid plan covers every veteran hired since January 1, 2014 (F-09). The expensive cases sit in the closed Plan 1 and Plan 2 cohorts and at older ages. The 12-month pre-retirement deadline and age-graded rate authority in Annex A, § 2.2 are aimed precisely at the bottom rows of these tables.
+**The pattern that matters politically:** the gap is **negative or near zero for the entire Hybrid population below about age 50** — and the Hybrid plan covers every veteran hired since January 1, 2014 (F-09). The expensive cases sit in the closed Plan 1 and Plan 2 cohorts and at older ages. The 12-month pre-retirement deadline and the graded rate authority in Annex A, § 2.2 — graded on age **and** creditable service as of Annex A v1.1 — are aimed precisely at the bottom rows of these tables.
 
 ### 3.4 Total cost
 

@@ -27,7 +27,7 @@ Three of the five items close with official sources. Two close as qualified nega
 
 ### And one finding that was not asked for but outranks most of what was
 
-Pricing the Annex A guardrails as dials, as the scope decision requires, showed that **the age-graded rate schedule as currently described removes only about 15% of the exposure.** Grading on age recovers the benefit-amount excess but not the acceleration cost, which is driven by proximity to an eligibility threshold — age *and* service together. Graded instead on **distance from unreduced eligibility**, the same authority can remove anything up to 100%. That is a one-phrase drafting change and it is the highest-leverage edit available anywhere in this package. **FM-4 § 4.8.**
+Pricing the Annex A guardrails as dials, as the scope decision requires, showed that **the age-graded rate schedule as currently described removes only about 15% of the exposure.** Grading on age recovers the benefit-amount excess but not the acceleration cost, which is driven by proximity to an eligibility threshold — age *and* service together. Graded instead on **distance from unreduced eligibility**, the same authority can remove anything up to 100%. That is a one-phrase drafting change and it is the highest-leverage edit available anywhere in this package. **FM-4 § 4.8.** **Adopted October 25, 2026 in Annex A v1.1, § 2.2** — see the status note at the end of § 4.8.
 
 ### Compliance with the October 24, 2026 scope decision
 
@@ -432,6 +432,8 @@ Immediate access on the effective date means the actuary prices an **unbounded c
 **This is the dial that bites.** At 50% recovery it halves the exposure; at 100% the bill is actuarially neutral by construction and the fiscal note is zero. It is the single most powerful cost control available and the one to offer the money committees first.
 
 > **Recommendation to Legislative Services.** Express the Board's rate-schedule authority as varying by the member's **age and creditable service**, or by the member's **distance from unreduced retirement eligibility** — *not* by age alone. One phrase, and it is the difference between a guardrail that removes 15% of the exposure and one that can remove all of it.
+
+> **Status: adopted, October 25, 2026 — Annex A v1.1, § 2.2.** Counsel widened the authority to age **and** creditable service (with distance from unreduced eligibility named as the equivalent alternative), added the amount of service purchased as a third factor, and attached publication, uniformity-within-classification, and actuarial-equivalent-cost-ceiling constraints plus an express sentence confining the schedule to subdivision B 2. The counsel analysis is at Annex A § 2.5. **Guardrail A as modelled above is therefore superseded by Guardrail A′ as the description of what Annex A actually grants** — the 15% figure is retained here as the record of why the change was made, not as a current description of the draft. Two confirmations remain open at Annex A Q3a (how closely a published *class* rate tracks true AEC at the 100% setting) and Q14 (age/service as rate factors).
 
 **Guardrail B — require completion at least N months before the effective date of retirement.** This does not change the price. It caps how close to the unreduced date a purchase may be made, and therefore caps the multiple the Fund can be exposed to. Ceiling on the AEC/ANC multiple:
 

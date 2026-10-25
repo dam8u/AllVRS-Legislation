@@ -257,7 +257,7 @@ Because JLCVSO decided on **immediate access on the effective date**, the actuar
 
 2. **Let veterans pay over up to 60 months** through payroll deduction, instead of being capped at 12 months inside a closing window. This fixes the cash-flow problem that is the real barrier, and it costs the retirement system nothing.
 
-3. **Give the VRS Board two guardrails** against eve-of-retirement purchases: authority to set a graded normal-cost schedule for military purchases **varying by the member's age and creditable service — or equivalently by distance from unreduced retirement eligibility, not by age alone** — and authority to require that a purchase be completed at least 12 months before retirement. The wording of the first guardrail is the difference between removing 15% of the exposure and being able to remove all of it; see the fiscal risk discussion above. **The Annex A draft still says "age," and needs this one-phrase amendment before it goes to Legislative Services.**
+3. **Give the VRS Board two guardrails** against eve-of-retirement purchases: authority to set a graded normal-cost schedule for military purchases **varying by the member's age and creditable service — or equivalently by distance from unreduced retirement eligibility, not by age alone** — and authority to require that a purchase be completed at least 12 months before retirement. The wording of the first guardrail is the difference between removing 15% of the exposure and being able to remove all of it; see the fiscal risk discussion above. **Applied in Annex A v1.1, § 2.2, with the counsel analysis at § 2.5.**
 
 **No regulatory change is required.** The pricing rule is in statute, so it takes a bill. Once the statute is amended, the VRS Board already has authority to set the applicable normal-cost rate "in its sole discretion," so VRS can implement the rate schedule administratively.
 
@@ -281,7 +281,7 @@ This matters because counsel ranked A-1 preferred on fiscal-note grounds. That r
 
 **A-3 also has an administrative advantage worth quoting.** Every rate group — non-hazardous, hazardous duty, the alternate hazardous duty option, and judicial — **already has a Board-adopted approximate normal cost rate**. Striking the cliff for § 51.1-142.2 B 2 service simply extends an existing published rate in time. A-3 requires **no new rate-setting by the Board and no new actuarial product**. A-1 and A-2 both require the General Assembly to invent a price that does not currently exist in Virginia law.
 
-> **Drafting note for the Division of Legislative Services.** The **10.01%** alternate hazardous duty option is published as a stand-alone rate with **no plan column at all**, available only to localities that have elected the option. Drafting A-3 by reference to "the approximate normal cost of the retirement plan under which the member is covered" may therefore not cleanly reach it. See Annex 2 Closure, FM-3.
+> **Drafting note for the Division of Legislative Services.** The **10.01%** alternate hazardous duty option is published as a stand-alone rate with **no plan column at all**, available only to localities that have elected the option. Drafting A-3 by reference to "the approximate normal cost of the retirement plan under which the member is covered" may therefore not cleanly reach it. See Annex 2 Closure, FM-3. **Addressed in Annex A v1.1, § 2.6:** the graded rate schedule for military purchases may vary by the benefit coverage applicable to the member's position, including "the benefits permitted by § 51.1-138," which reaches the alternate option. The same pre-existing mismatch for the *other* purchase categories is deliberately left unamended — curing it generally would widen the bill — and is flagged to Legislative Services as Annex A Q13.
 
 ### If the full fix cannot pass
 
@@ -301,7 +301,7 @@ Two fallbacks, in order of preference:
 5. **Ask DPB for the Standards of Quality composite share** so the teacher line of the exposure table can be split between the Commonwealth and localities. It is a budget input, not a VRS one, and this brief deliberately does not assume it.
 6. **Brief the Commission on Local Government** before filing. The political-subdivision line is the largest of the three and arrives without a local opt-in.
 7. **Identify patrons** on House Appropriations and Senate Finance & Appropriations, plus the chair of the Military and Veterans Caucus.
-8. **Amend Annex A's rate-schedule authority from "age" to "age and creditable service"** — see item 3 of the recommendation — and then **send Annex A to the Division of Legislative Services** for formal drafting, with the 10.01% alternate hazardous duty note above.
+8. **Send Annex A to the Division of Legislative Services** for formal drafting. The rate-schedule authority has been amended from "age" to "age and creditable service" — **Annex A v1.1, § 2.2, with the counsel analysis at § 2.5** — and the 10.01% alternate hazardous duty note above is now addressed in the draft at § 2.6. Transmit **v1.1**; it does not need to wait for the VRS actuarial figures or the red-team review.
 
 ---
 
