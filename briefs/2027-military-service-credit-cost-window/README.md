@@ -47,6 +47,30 @@ count cannot hide inside an otherwise-matching diff. See
 
 ## Status
 
+> **Read this before quoting any figure out of the table below. Lead attorney,
+> October 25, 2026, 12:40.**
+>
+> The package is mid-reconciliation after the red team verdict, and the cost band has
+> moved three times in one day. **The current authority is the banner at the top of
+> [00-ONE-PAGE-BRIEF.md](00-ONE-PAGE-BRIEF.md), v1.3**, which states the corrected
+> model run: **$28M–$166M** one-time present value, after the red team S-3 pool-pairing
+> fix and with the floor taken from the current 10%–30% scenario set. That band
+> **supersedes both `$13M–$182M` and the `$26M–$182M` interim figure**, and both of
+> those appear in rows below that have not yet been rewritten.
+>
+> **Four retracted figures. Do not quote any of them:** "under $2 million one-time",
+> "under $100,000 a year", **"$13M–$182M"**, **"$26M–$182M"**. Also retracted as a
+> *claim*: **"General fund cost: $0"** — the defensible form is "this bill requests no
+> appropriation" (red team F-2, now fixed in 00 v1.3).
+>
+> **Files 01, 03 and 04 are being reconciled to the $28M–$166M band separately** and
+> still carry superseded figures until that lands. Of the fatal findings, **F-2 is
+> fixed** in 00 v1.3; **F-1 is resolved in substance** — the guardrail is a mitigation
+> worth roughly 59%–66% of the above-ANC excess, not a neutrality device — but the
+> drafting choice it forces is open at Annex A Q3a and Q12.
+>
+> Everything in the table below pre-dates this banner where the two disagree.
+
 | Component | Status |
 |---|---|
 | Title 51.1 legal analysis and draft language | **Complete, v1.1.** Counsel sign-off given; **cleared to go to the Division of Legislative Services** |
